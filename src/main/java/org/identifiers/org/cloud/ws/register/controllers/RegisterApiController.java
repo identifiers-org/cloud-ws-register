@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.controllers;
 
+import org.identifiers.org.cloud.ws.register.models.RegisterApiModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,4 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class RegisterApiController {
+
+    @Autowired
+    private RegisterApiModel registerApiModel;
 }
