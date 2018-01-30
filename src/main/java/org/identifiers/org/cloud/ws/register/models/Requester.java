@@ -20,7 +20,7 @@ public class Requester implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
+    public Requester setName(String name) {
         this.name = name;
     }
 
@@ -28,7 +28,8 @@ public class Requester implements Serializable {
         return email;
     }
 
-    public void setEmail(String email) {
+    public Requester setEmail(String email) {
         this.email = email;
+        return this;
     }
 }
