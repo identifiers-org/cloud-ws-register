@@ -8,5 +8,5 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public interface PrefixRegistrationAgent {
-    void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest);
+    void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException;
 }
