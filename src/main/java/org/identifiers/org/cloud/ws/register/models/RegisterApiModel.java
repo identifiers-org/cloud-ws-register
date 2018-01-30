@@ -24,11 +24,9 @@ public class RegisterApiModel {
     public RegisterApiResponse registerPrefix(RegisterApiRequestRegisterPrefix request) {
         RegisterApiResponse response = new RegisterApiResponse();
         // Validate the request
-        boolean validates = true;
         try {
             validatorStrategy.validate(request);
         } catch (PrefixRegistrationRequestValidatorException e) {
-            validates = false;
             response.setErrorMessage(e.getMessage());
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
         }
