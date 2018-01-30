@@ -17,4 +17,5 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
     private String description;
     private String homePage;
     private String organization;
+    private String preferredPrefix;
 }
