@@ -1,10 +1,14 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -14,10 +18,15 @@ import java.util.Collection;
  * ---
  */
 @RunWith(Parameterized.class)
-public class PrefixRegistrationRequestValidatorTests {
+public class PrefixRegistrationRequestValidatorValidCasesTests {
     private PrefixRegistrationRequestValidator validator;
     private RegisterApiRequestRegisterPrefix request;
     private String testDescription;
+
+    @Test
+    public void testValidUseCase() {
+        assertThat(testDescription, validator.validate(request), is(true));
+    }
 
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
