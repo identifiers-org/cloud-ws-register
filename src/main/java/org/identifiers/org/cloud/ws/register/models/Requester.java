@@ -22,6 +22,7 @@ public class Requester implements Serializable {
 
     public Requester setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getEmail() {
