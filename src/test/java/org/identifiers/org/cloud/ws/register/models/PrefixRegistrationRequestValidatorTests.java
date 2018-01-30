@@ -14,4 +14,5 @@ import org.junit.runners.Parameterized;
 public class PrefixRegistrationRequestValidatorTests {
     private PrefixRegistrationRequestValidator validator;
     private RegisterApiRequestRegisterPrefix request;
+    private String testDescription;
 }
