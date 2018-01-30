@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Timestamp: 2018-01-30 17:03
  * ---
  */
-
+// For this iteration, it is ok for this model to be a singleton
 @Component
 public class RegisterApiModel {
 }
