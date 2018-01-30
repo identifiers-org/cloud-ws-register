@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,4 +14,7 @@ import org.springframework.stereotype.Component;
 // For this iteration, it is ok for this model to be a singleton
 @Component
 public class RegisterApiModel {
+    private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
+
+    
 }
