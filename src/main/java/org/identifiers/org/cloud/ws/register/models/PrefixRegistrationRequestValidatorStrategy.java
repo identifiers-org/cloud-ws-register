@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -32,7 +33,7 @@ public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegist
                 })
                 .collect(Collectors.toList())
                 .stream()
-                .filter(item -> item != null).collect(Collectors.toList());
+                .filter(Objects::nonNull).collect(Collectors.toList());
         if (!errors.isEmpty()) {
             // Report the errors
             throw new PrefixRegistrationRequestValidatorException(String.join("\n", errors));
