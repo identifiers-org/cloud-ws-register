@@ -10,6 +10,6 @@ package org.identifiers.org.cloud.ws.register.models;
 public interface PrefixRegistrationRequestValidator {
     // Well, this default implementation doesn't really bring anything on the table but semantic sugar
     default boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return true;
+        return false;
     }
 }
