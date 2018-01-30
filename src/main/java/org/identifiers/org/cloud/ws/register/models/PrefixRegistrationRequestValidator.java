@@ -8,5 +8,5 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public interface PrefixRegistrationRequestValidator {
-    boolean validate(RegisterApiRequestRegisterPrefix request);
+    boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException;
 }
