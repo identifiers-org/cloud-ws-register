@@ -8,4 +8,9 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegistrationRequestValidator {
+    @Override
+    default boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+        // TODO
+        return false;
+    }
 }
