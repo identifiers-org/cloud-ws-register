@@ -34,6 +34,6 @@ public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegist
                 .collect(Collectors.toList())
                 .stream()
                 .filter(item -> item != null).collect(Collectors.toList());
-        return false;
+        return true;
     }
 }
