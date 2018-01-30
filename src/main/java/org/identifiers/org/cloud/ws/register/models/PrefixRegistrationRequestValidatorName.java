@@ -10,6 +10,9 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorName implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return request.getName() != null;
+        if (request.getName() == null) {
+            new PrefixRegistrationRequestValidatorException("'Name' attribute must be provided");
+        }
+        return true;
     }
 }
