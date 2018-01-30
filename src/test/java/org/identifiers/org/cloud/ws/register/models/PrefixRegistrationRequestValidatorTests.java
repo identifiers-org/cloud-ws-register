@@ -3,6 +3,8 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import java.util.Collection;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -15,4 +17,9 @@ public class PrefixRegistrationRequestValidatorTests {
     private PrefixRegistrationRequestValidator validator;
     private RegisterApiRequestRegisterPrefix request;
     private String testDescription;
+
+    @Parameterized.Parameters
+    public static Collection<Object[]> getTestingValues() {
+        // TODO
+    }
 }
