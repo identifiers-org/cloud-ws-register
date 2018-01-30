@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,6 +13,8 @@ import java.util.List;
 public class PrefixRegistrationRequestValidatorStrategyFullValidation implements PrefixRegistrationRequestValidatorStrategy {
     @Override
     public List<PrefixRegistrationRequestValidator> getValidationChain() {
-        return null;
+        return Arrays.asList(
+                new PrefixRegistrationRequestValidatorName()
+        );
     }
 }
