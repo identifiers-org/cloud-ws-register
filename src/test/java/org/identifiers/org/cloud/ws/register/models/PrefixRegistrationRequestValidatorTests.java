@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -21,5 +22,8 @@ public class PrefixRegistrationRequestValidatorTests {
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
         // TODO
+        return; Arrays.asList(new Object[][]{
+                // Test name validator
+                {new PrefixRegistrationRequestValidatorName(),}
     }
 }
