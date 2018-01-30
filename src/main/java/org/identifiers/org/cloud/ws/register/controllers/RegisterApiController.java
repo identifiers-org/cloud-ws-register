@@ -7,5 +7,5 @@ package org.identifiers.org.cloud.ws.register.controllers;
  * Timestamp: 2018-01-30 17:02
  * ---
  */
-public class RegisterApplicationApiController {
+public class RegisterApiController {
 }
