@@ -21,6 +21,9 @@ public class RegisterApiModel {
     @Autowired
     private PrefixRegistrationRequestValidatorStrategy validatorStrategy;
 
+    @Autowired
+    private PrefixRegistrationAgent prefixRegistrationAgent;
+
     public RegisterApiResponse registerPrefix(RegisterApiRequestRegisterPrefix request) {
         RegisterApiResponse response = new RegisterApiResponse();
         // Validate the request
