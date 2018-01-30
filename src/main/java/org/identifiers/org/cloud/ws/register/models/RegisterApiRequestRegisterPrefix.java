@@ -14,4 +14,5 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RegisterApiRequestRegisterPrefix implements Serializable {
     private String name;
+    private String description;
 }
