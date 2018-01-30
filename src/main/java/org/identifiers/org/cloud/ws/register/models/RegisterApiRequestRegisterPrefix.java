@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import java.io.Serializable;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -7,5 +9,5 @@ package org.identifiers.org.cloud.ws.register.models;
  * Timestamp: 2018-01-30 17:47
  * ---
  */
-public class RegisterApiRequestRegisterPrefix {
+public class RegisterApiRequestRegisterPrefix implements Serializable {
 }
