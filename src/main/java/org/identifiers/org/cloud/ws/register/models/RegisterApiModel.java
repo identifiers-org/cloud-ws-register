@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,8 +17,12 @@ import org.springframework.stereotype.Component;
 public class RegisterApiModel {
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
+    @Autowired
+    private PrefixRegistrationRequestValidatorStrategy validatorStrategy;
+
     public RegisterApiResponse registerPrefix(RegisterApiRequestRegisterPrefix request) {
         RegisterApiResponse response = new RegisterApiResponse();
+        // Validate the request
         // TODO
         return response;
     }
