@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -14,11 +15,25 @@ public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegist
     default List<PrefixRegistrationRequestValidator> getValidationChain() {
         return new ArrayList<>();
     }
+
     @Override
     default boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // List of errors for reporting to the client
         List<String> errors = new ArrayList<>();
-        // TODO
+        // Get all the validation errors
+        errors = getValidationChain()
+                .parallelStream()
+                .map(validator -> {
+                    try {
+                        validate(request);
+                    } catch (PrefixRegistrationRequestValidatorException e) {
+                        return e.getMessage();
+                    }
+                    return null;
+                })
+                .collect(Collectors.toList())
+                .stream()
+                .filter(item -> item != null).collect(Collectors.toList());
         return false;
     }
 }
