@@ -15,4 +15,6 @@ import java.io.Serializable;
 @JsonIgnoreProperties(value = {"httpStatus"})
 public class RegisterApiResponse implements Serializable {
     private HttpStatus httpStatus = HttpStatus.OK;
+    // Make room for a possible error message
+    private String errorMessage;
 }
