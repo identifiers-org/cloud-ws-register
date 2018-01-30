@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 /**
@@ -23,6 +24,14 @@ public class RegisterApiModel {
     public RegisterApiResponse registerPrefix(RegisterApiRequestRegisterPrefix request) {
         RegisterApiResponse response = new RegisterApiResponse();
         // Validate the request
+        boolean validates = true;
+        try {
+            validatorStrategy.validate(request);
+        } catch (PrefixRegistrationRequestValidatorException e) {
+            validates = false;
+            response.setErrorMessage(e.getMessage());
+            response.setHttpStatus(HttpStatus.BAD_REQUEST);
+        }
         // TODO
         return response;
     }
