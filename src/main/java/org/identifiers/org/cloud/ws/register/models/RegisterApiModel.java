@@ -30,7 +30,6 @@ public class RegisterApiModel {
             response.setErrorMessage(e.getMessage());
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
         }
-        // TODO
         return response;
     }
 }
