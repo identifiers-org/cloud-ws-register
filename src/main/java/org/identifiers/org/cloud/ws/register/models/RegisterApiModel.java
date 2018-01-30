@@ -17,6 +17,8 @@ public class RegisterApiModel {
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
     public RegisterApiResponse registerPrefix(RegisterApiRequestRegisterPrefix request) {
+        RegisterApiResponse response = new RegisterApiResponse();
         // TODO
+        return response;
     }
 }
