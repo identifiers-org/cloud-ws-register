@@ -19,4 +19,5 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
     private String organization;
     private String preferredPrefix;
     private String resourceAccessRule;
+    private String exampleIdentifier;
 }
