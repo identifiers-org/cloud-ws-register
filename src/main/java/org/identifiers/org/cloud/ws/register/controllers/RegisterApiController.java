@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.controllers;
 
 import org.identifiers.org.cloud.ws.register.models.RegisterApiModel;
 import org.identifiers.org.cloud.ws.register.models.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.RegisterApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,9 @@ public class RegisterApiController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<?> registerPrefix(RegisterApiRequestRegisterPrefix registerApiRequestRegisterPrefix) {
-        // TODO
+        // The model associated with the controller should handle any possible exception that could happen while running
+        // the business logic, thus, the controller should handle only exceptions within the domain of the controller.
+        RegisterApiResponse registerApiResponse = registerApiModel.registerPrefix(registerApiRequestRegisterPrefix);
+        return new ResponseEntity<>(registerApiResponse, registerApiResponse.getHttpStatus());
     }
 }
