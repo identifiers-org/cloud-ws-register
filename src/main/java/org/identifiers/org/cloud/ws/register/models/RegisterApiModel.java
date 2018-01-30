@@ -16,5 +16,7 @@ import org.springframework.stereotype.Component;
 public class RegisterApiModel {
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
-    
+    public RegisterApiResponse registerPrefix(RegisterApiRequestRegisterPrefix request) {
+        // TODO
+    }
 }
