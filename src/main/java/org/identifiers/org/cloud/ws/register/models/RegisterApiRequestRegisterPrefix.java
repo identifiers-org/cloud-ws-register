@@ -23,6 +23,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
     private String regexPattern;
     private String[] references;
     private String additionalInformation;
+    private Requester requester;
 
     public String getName() {
         return name;
