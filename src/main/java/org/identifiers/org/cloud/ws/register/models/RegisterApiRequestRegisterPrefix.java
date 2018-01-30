@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 /**
@@ -9,5 +11,6 @@ import java.io.Serializable;
  * Timestamp: 2018-01-30 17:47
  * ---
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RegisterApiRequestRegisterPrefix implements Serializable {
 }
