@@ -114,4 +114,13 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         this.additionalInformation = additionalInformation;
         return this;
     }
+
+    public Requester getRequester() {
+        return requester;
+    }
+
+    public RegisterApiRequestRegisterPrefix setRequester(Requester requester) {
+        this.requester = requester;
+        return this;
+    }
 }
