@@ -32,7 +32,9 @@ public class RegisterApiModel {
             response.setErrorMessage(e.getMessage());
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
         }
-        // TODO - Use a registration agent to push the request further
+        if (isValidRequest) {
+            // TODO - Use a registration agent to push the request further
+        }
         return response;
     }
 }
