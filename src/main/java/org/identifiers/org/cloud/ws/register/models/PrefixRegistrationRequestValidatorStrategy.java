@@ -16,6 +16,8 @@ public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegist
     }
     @Override
     default boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+        // List of errors for reporting to the client
+        List<String> errors = new ArrayList<>();
         // TODO
         return false;
     }
