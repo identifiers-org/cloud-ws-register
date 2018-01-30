@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.springframework.http.HttpStatus;
+
 import java.io.Serializable;
 
 /**
@@ -10,4 +12,5 @@ import java.io.Serializable;
  * ---
  */
 public class RegisterApiResponse implements Serializable {
+    private HttpStatus httpStatus = HttpStatus.OK;
 }
