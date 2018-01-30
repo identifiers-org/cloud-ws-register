@@ -22,8 +22,9 @@ public class PrefixRegistrationRequestValidatorTests {
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
         // TODO
-        return; Arrays.asList(new Object[][]{
+        return Arrays.asList(new Object[][]{
                 // Test name validator
-                {new PrefixRegistrationRequestValidatorName(),}
+                {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix().setName("TestName"), "Request with valid name"}
+        });
     }
 }
