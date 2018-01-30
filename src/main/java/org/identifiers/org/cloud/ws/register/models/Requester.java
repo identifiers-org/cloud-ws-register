@@ -11,4 +11,5 @@ import java.io.Serializable;
  */
 public class Requester implements Serializable {
     private String name;
+    private String email;
 }
