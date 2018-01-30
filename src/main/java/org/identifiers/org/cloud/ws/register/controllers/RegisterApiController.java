@@ -1,7 +1,9 @@
 package org.identifiers.org.cloud.ws.register.controllers;
 
 import org.identifiers.org.cloud.ws.register.models.RegisterApiModel;
+import org.identifiers.org.cloud.ws.register.models.RegisterApiRequestRegisterPrefix;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,5 +19,7 @@ public class RegisterApiController {
     @Autowired
     private RegisterApiModel registerApiModel;
 
-
+    public ResponseEntity<?> registerPrefix(RegisterApiRequestRegisterPrefix registerApiRequestRegisterPrefix) {
+        // TODO
+    }
 }
