@@ -36,6 +36,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
         // Set the expected exception and test description
         expectedException.expect(PrefixRegistrationRequestValidatorException.class);
         expectedException.expectMessage(testDescription);
+        // Unit testing code that will throw the exception
         validator.validate(request);
     }
 
