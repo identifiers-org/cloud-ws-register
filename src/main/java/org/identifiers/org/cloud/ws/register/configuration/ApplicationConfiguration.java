@@ -1,9 +1,6 @@
 package org.identifiers.org.cloud.ws.register.configuration;
 
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgent;
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgentViaEmail;
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationRequestValidatorStrategy;
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationRequestValidatorStrategyFullValidation;
+import org.identifiers.org.cloud.ws.register.models.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -25,5 +22,10 @@ public class ApplicationConfiguration {
     @Bean
     public PrefixRegistrationAgent prefixRegistrationAgent() {
         return new PrefixRegistrationAgentViaEmail();
+    }
+
+    @Bean
+    public WebPageChecker webPageChecker() {
+        return new WebPageCheckerDefault();
     }
 }
