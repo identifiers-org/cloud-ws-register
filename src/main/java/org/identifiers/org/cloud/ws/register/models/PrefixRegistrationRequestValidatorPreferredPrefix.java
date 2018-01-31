@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -13,8 +14,11 @@ import org.slf4j.LoggerFactory;
 public class PrefixRegistrationRequestValidatorPreferredPrefix implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorPreferredPrefix.class);
 
-    // TODO - Let's see how this plays with Docker, later
+    // TODO - Let's see how this plays with Docker, later. It should go through a discovery service, but I'll find out
+    // TODO - later how to lay all the pieces together for testing, development and production
+    @Value("${org.identifiers.cloud.ws.register.resolver.host}")
     private String resolverHost;
+
     private int resolverPort;
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
