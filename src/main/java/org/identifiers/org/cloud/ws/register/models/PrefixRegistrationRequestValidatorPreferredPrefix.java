@@ -18,8 +18,9 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
     // TODO - later how to lay all the pieces together for testing, development and production
     @Value("${org.identifiers.cloud.ws.register.resolver.host}")
     private String resolverHost;
-
+    @Value("${org.identifiers.cloud.ws.register.resolver.port}")
     private int resolverPort;
+    
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // TODO
