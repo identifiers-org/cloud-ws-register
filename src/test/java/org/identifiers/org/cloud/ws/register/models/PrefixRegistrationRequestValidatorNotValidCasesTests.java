@@ -1,6 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -20,13 +22,16 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
     private RegisterApiRequestRegisterPrefix request;
     private String testDescription;
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     public PrefixRegistrationRequestValidatorNotValidCasesTests(PrefixRegistrationRequestValidator validator, RegisterApiRequestRegisterPrefix request, String testDescription) {
         this.validator = validator;
         this.request = request;
         this.testDescription = testDescription;
     }
 
-    @Test(expected = PrefixRegistrationRequestValidatorException.class)
+    @Test
     public void invalidTestCases() {
         // TODO
     }
