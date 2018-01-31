@@ -3,6 +3,8 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -32,7 +34,8 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         }
         String fakeCompactId = String.format("%s:093846", request.getPreferredPrefix());
         String queryUrl = String.format("%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
-
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.getForEntity(queryUrl, String.class);
         return false;
     }
 }
