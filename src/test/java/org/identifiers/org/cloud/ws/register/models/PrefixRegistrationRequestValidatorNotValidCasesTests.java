@@ -35,6 +35,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
     public void invalidTestCases() {
         // TODO
         expectedException.expect(PrefixRegistrationRequestValidatorException.class);
+        expectedException.expectMessage(testDescription);
     }
 
     @Parameterized.Parameters
