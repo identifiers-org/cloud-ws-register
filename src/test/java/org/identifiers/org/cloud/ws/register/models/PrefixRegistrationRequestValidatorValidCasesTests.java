@@ -23,8 +23,6 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
     private RegisterApiRequestRegisterPrefix request;
     private String testDescription;
 
-    // Testing subjects
-
     public PrefixRegistrationRequestValidatorValidCasesTests(PrefixRegistrationRequestValidator validator, RegisterApiRequestRegisterPrefix request, String testDescription) {
         this.validator = validator;
         this.request = request;
