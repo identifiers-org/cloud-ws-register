@@ -33,7 +33,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
 
     @Test
     public void invalidTestCases() {
-        // TODO
+        // Set the expected exception and test description
         expectedException.expect(PrefixRegistrationRequestValidatorException.class);
         expectedException.expectMessage(testDescription);
         validator.validate(request);
