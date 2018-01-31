@@ -12,9 +12,13 @@ import org.slf4j.LoggerFactory;
  */
 public class PrefixRegistrationRequestValidatorPreferredPrefix implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorPreferredPrefix.class);
-    
+
+    // TODO - Let's see how this plays with Docker, later
+    private String resolverHost;
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+        // TODO
+
         return false;
     }
 }
