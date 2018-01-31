@@ -11,7 +11,7 @@ public class PrefixRegistrationRequestValidatorName implements PrefixRegistratio
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         if (request.getName() == null) {
-            new PrefixRegistrationRequestValidatorException("'Name' attribute must be provided");
+            throw new PrefixRegistrationRequestValidatorException("'Name' attribute must be provided");
         }
         return true;
     }
