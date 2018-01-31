@@ -23,9 +23,13 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
 
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        // TODO
         // TODO - This method is going to call a Resolver WS, and it will do it straight away for this iteration of the
-        // TODO - software, but in the future, we need to provide Resolver Web Service clients for several languages, e.g. Java and Python, so people don't have to write their own code every time
+        // TODO - software, but in the future, we need to provide Resolver Web Service clients for several languages,
+        // TODO - e.g. Java and Python, so people don't have to write their own code every time
+        // TODO
+        if (request.getPreferredPrefix() == null) {
+            throw new PrefixRegistrationRequestValidatorException("MISSING Preferred Prefix");
+        }
         return false;
     }
 }
