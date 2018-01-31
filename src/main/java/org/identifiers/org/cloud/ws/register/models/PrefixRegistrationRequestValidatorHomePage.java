@@ -1,6 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
 import org.apache.commons.validator.routines.UrlValidator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 import java.io.IOException;
@@ -15,6 +16,10 @@ import java.net.URL;
  * ---
  */
 public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistrationRequestValidator {
+
+    @Autowired
+    private WebPageChecker webPageChecker;
+
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // TODO - Refactor this code out as a URL checker
