@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -30,6 +31,9 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         if (request.getPreferredPrefix() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING Preferred Prefix");
         }
+        String fakeCompactId = String.format("%s:093846", request.getPreferredPrefix());
+        
+
         return false;
     }
 }
