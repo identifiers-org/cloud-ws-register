@@ -16,7 +16,8 @@ public class PrefixRegistrationRequestValidatorStrategyFullValidation implements
         return Arrays.asList(
                 new PrefixRegistrationRequestValidatorName(),
                 new PrefixRegistrationRequestValidatorDescription(),
-                new PrefixRegistrationRequestValidatorHomePage()
+                new PrefixRegistrationRequestValidatorHomePage(),
+                new PrefixRegistrationRequestValidatorOrganization()
         );
     }
 }
