@@ -49,8 +49,9 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorDescription(), new RegisterApiRequestRegisterPrefix(), "Prefix registration request description is missing"},
                 {new PrefixRegistrationRequestValidatorDescription(), new RegisterApiRequestRegisterPrefix().setDescription("This description is not enough"), "Prefix registration request description is present but it doesn't meet the requirements"},
                 {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix(), "Missing URL error catched"},
-                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("ht:/this_url_is_not_valid"), "Invalid URL error catched"},
-                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("http://httpstat.us/404"), "Dead homepage error catched"}
+                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("ht:/this_url_is_not_valid"), "Invalid URL error caught"},
+                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("http://httpstat.us/404"), "Dead homepage error caught"},
+                {new PrefixRegistrationRequestValidatorOrganization(), new RegisterApiRequestRegisterPrefix(), "Missing organization information error is caught"}
         });
     }
 
