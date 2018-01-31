@@ -8,5 +8,5 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public interface WebPageChecker {
-    boolean checkWebPageUrl(String webPageUrl);
+    boolean checkWebPageUrl(String webPageUrl) throws WebPageCheckerException;
 }
