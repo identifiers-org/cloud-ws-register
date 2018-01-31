@@ -23,4 +23,9 @@ public class ApplicationConfiguration {
     public PrefixRegistrationAgent prefixRegistrationAgent() {
         return new PrefixRegistrationAgentViaEmail();
     }
+
+    @Bean
+    public WebPageChecker webPageChecker() {
+        return new WebPageCheckerDefault();
+    }
 }
