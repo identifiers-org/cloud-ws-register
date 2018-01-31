@@ -15,6 +15,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
 
     // TODO - Let's see how this plays with Docker, later
     private String resolverHost;
+    private int resolverPort;
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // TODO
