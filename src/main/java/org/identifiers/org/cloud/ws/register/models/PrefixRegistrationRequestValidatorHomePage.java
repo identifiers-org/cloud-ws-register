@@ -30,6 +30,7 @@ public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistr
         // checkers can be externalized, and pack as dead home page detection strategies
         int status = 0;
         try {
+            // TODO - Add a re-try policy for when we try to connect the URL
             URL testUrl = new URL(request.getHomePage());
             HttpURLConnection connection = (HttpURLConnection) testUrl.openConnection();
             connection.setRequestMethod("GET");
