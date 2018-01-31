@@ -10,6 +10,7 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        // TODO
+        return true;
     }
 }
