@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -36,6 +37,11 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         String queryUrl = String.format("%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(queryUrl, String.class);
-        return false;
+        if (response.getStatusCode() != HttpStatus.NOT_FOUND) {
+            String errorMessage = String.format("Preferred Prefix COULD NOT BE VALIDATED, internal status %s, IT MAY ALREADY BEEN REGISTERED", response.getStatusCode());
+            logger.error(errorMessage);
+            throw new PrefixRegistrationRequestValidatorException(errorMessage);
+        }
+        return true;
     }
 }
