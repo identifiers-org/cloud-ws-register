@@ -48,7 +48,8 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix(), "This request has an invalid name, it is null"},
                 {new PrefixRegistrationRequestValidatorDescription(), new RegisterApiRequestRegisterPrefix(), "Prefix registration request description is missing"},
                 {new PrefixRegistrationRequestValidatorDescription(), new RegisterApiRequestRegisterPrefix().setDescription("This description is not enough"), "Prefix registration request description is present but it doesn't meet the requirements"},
-                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix(), "Missing URL error catched"}
+                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix(), "Missing URL error catched"},
+                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("ht:/this_url_is_not_valid"), "Invalid URL error catched"}
         });
     }
 
