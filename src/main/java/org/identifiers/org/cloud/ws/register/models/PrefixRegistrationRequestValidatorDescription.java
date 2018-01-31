@@ -8,6 +8,8 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class PrefixRegistrationRequestValidatorDescription implements PrefixRegistrationRequestValidator {
+    public static final int DESCRIPTION_CONTENT_MIN_CHARS = 50;
+    
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         return false;
