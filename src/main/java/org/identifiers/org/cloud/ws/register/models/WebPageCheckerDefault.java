@@ -23,7 +23,7 @@ public class WebPageCheckerDefault implements WebPageChecker {
 
     public static boolean checkForOkUrlEndpoint(String url) throws WebPageCheckerException {
         // Detect Dead endpoint by accessing it and making sure we get an HTTP 200 OK, in the future, more complex
-        // checkers can be externalized, and pack as dead home page detection strategies
+        // checkers can be externalized, and pack as dead URL Endpoint detection strategies
         int status = 0;
         try {
             // TODO - Add a re-try policy for when we try to connect the URL
