@@ -35,7 +35,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
     public void invalidTestCases() {
         // Set the expected exception and test description
         expectedException.expect(PrefixRegistrationRequestValidatorException.class);
-        expectedException.expectMessage(testDescription);
+        expectedException.reportMissingExceptionWithMessage(String.format("MISSING INVALIDATION for '%s'", testDescription));
         // Unit testing code that will throw the exception
         validator.validate(request);
     }
