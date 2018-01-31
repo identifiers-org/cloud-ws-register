@@ -14,7 +14,8 @@ public class PrefixRegistrationRequestValidatorStrategyFullValidation implements
     @Override
     public List<PrefixRegistrationRequestValidator> getValidationChain() {
         return Arrays.asList(
-                new PrefixRegistrationRequestValidatorName()
+                new PrefixRegistrationRequestValidatorName(),
+                new PrefixRegistrationRequestValidatorDescription()
         );
     }
 }
