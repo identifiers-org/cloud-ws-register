@@ -16,4 +16,9 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
     private RegisterApiRequestRegisterPrefix request;
     private String testDescription;
 
+    public PrefixRegistrationRequestValidatorNotValidCasesTests(PrefixRegistrationRequestValidator validator, RegisterApiRequestRegisterPrefix request, String testDescription) {
+        this.validator = validator;
+        this.request = request;
+        this.testDescription = testDescription;
+    }
 }
