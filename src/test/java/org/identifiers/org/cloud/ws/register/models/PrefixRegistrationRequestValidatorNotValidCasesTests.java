@@ -3,6 +3,9 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -21,4 +24,14 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
         this.request = request;
         this.testDescription = testDescription;
     }
+
+    @Parameterized.Parameters
+    public static Collection<Object[]> getTestingValues() {
+        // TODO
+        return Arrays.asList(new Object[][]{
+                // Test name validator
+                {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix(), "This request has an invalid name, it is null"}
+        });
+    }
+
 }
