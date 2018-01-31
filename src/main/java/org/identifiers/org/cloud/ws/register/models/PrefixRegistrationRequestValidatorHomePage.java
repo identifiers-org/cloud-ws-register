@@ -10,6 +10,7 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+        // Home Page URL for the resource is required
         if (request.getHomePage() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING URL describing the resource");
         }
