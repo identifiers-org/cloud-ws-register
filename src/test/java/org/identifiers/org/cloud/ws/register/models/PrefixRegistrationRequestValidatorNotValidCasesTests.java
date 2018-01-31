@@ -45,7 +45,8 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
         // TODO
         return Arrays.asList(new Object[][]{
                 // Test name validator
-                {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix(), "This request has an invalid name, it is null"}
+                {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix(), "This request has an invalid name, it is null"},
+                {new PrefixRegistrationRequestValidatorDescription(), new RegisterApiRequestRegisterPrefix(), "Prefix registration request description is missing"}
         });
     }
 
