@@ -10,6 +10,8 @@ import org.apache.commons.validator.routines.UrlValidator;
  * ---
  */
 public class WebPageCheckerDefault implements WebPageChecker {
+    // By breaking different checking steps into externalized pieces, I can reuse this code on other possible new web
+    // page checkers
     public static boolean checkForValidUrl(String url) {
         return (new UrlValidator()).isValid(url);
     }
