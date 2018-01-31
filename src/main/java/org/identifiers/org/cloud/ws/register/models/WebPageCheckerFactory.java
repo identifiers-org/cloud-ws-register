@@ -8,4 +8,7 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class WebPageCheckerFactory {
+    public static WebPageChecker getWebPageChecker() {
+        return new WebPageCheckerDefault();
+    }
 }
