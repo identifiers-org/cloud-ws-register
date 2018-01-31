@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -14,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
  * Timestamp: 2018-01-31 14:40
  * ---
  */
+@AutoConfigureAfter
 public class PrefixRegistrationRequestValidatorPreferredPrefix implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorPreferredPrefix.class);
 
@@ -34,7 +36,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
             throw new PrefixRegistrationRequestValidatorException("MISSING Preferred Prefix");
         }
         String fakeCompactId = String.format("%s:093846", request.getPreferredPrefix());
-        String queryUrl = String.format("%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
+        String queryUrl = String.format("http://%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(queryUrl, String.class);
         if (response.getStatusCode() != HttpStatus.NOT_FOUND) {
