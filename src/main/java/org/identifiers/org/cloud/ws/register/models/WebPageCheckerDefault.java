@@ -10,11 +10,15 @@ import org.apache.commons.validator.routines.UrlValidator;
  * ---
  */
 public class WebPageCheckerDefault implements WebPageChecker {
+    public static boolean checkForValidUrl(String url) {
+        return (new UrlValidator()).isValid(url);
+    }
+
     @Override
     public boolean checkWebPageUrl(String webPageUrl) throws WebPageCheckerException {
         // TODO
         // Check for invalid URL
-        if (!(new UrlValidator()).isValid(webPageUrl)) {
+        if (!checkForValidUrl(webPageUrl)) {
             throw new WebPageCheckerException(String.format("Home Page URL '%s' is NOT VALID", webPageUrl));
         }
         return true;
