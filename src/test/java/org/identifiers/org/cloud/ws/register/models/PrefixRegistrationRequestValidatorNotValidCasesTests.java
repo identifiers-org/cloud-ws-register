@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -23,6 +24,11 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
         this.validator = validator;
         this.request = request;
         this.testDescription = testDescription;
+    }
+
+    @Test(expected = PrefixRegistrationRequestValidatorException.class)
+    public void invalidTestCases() {
+        // TODO
     }
 
     @Parameterized.Parameters
