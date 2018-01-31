@@ -20,11 +20,12 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
     private String resolverHost;
     @Value("${org.identifiers.cloud.ws.register.resolver.port}")
     private int resolverPort;
-    
+
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // TODO
-
+        // TODO - This method is going to call a Resolver WS, and it will do it straight away for this iteration of the
+        // TODO - software, but in the future, we need to provide Resolver Web Service clients for several languages, e.g. Java and Python, so people don't have to write their own code every time
         return false;
     }
 }
