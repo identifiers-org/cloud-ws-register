@@ -10,6 +10,9 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorOrganization implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        if (request.getOrganization() == null) {
+            throw new PrefixRegistrationRequestValidatorException("The name of the providing organization is MISSING");
+        }
+        return true;
     }
 }
