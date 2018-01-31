@@ -32,6 +32,7 @@ public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistr
             URL testUrl = new URL(request.getHomePage());
             HttpURLConnection connection = (HttpURLConnection) testUrl.openConnection();
             connection.setRequestMethod("GET");
+            // TODO - Refactor this out as constants
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
             status = connection.getResponseCode();
