@@ -1,7 +1,5 @@
 package org.identifiers.org.cloud.ws.register.models;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -11,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistrationRequestValidator {
 
-    @Autowired
-    private WebPageChecker webPageChecker;
+    private WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
 
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
