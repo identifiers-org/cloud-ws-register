@@ -47,7 +47,6 @@ public class WebPageCheckerDefault implements WebPageChecker {
 
     @Override
     public boolean checkWebPageUrl(String webPageUrl) throws WebPageCheckerException {
-        // TODO
         // Check for invalid URL
         if (!checkForValidUrl(webPageUrl)) {
             throw new WebPageCheckerException(String.format("URL '%s' is NOT VALID", webPageUrl));
