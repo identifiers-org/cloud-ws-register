@@ -10,6 +10,7 @@ package org.identifiers.org.cloud.ws.register.models;
 public class WebPageCheckerDefault implements WebPageChecker {
     @Override
     public boolean checkWebPageUrl(String webPageUrl) throws WebPageCheckerException {
-        return false;
+        // TODO
+        return true;
     }
 }
