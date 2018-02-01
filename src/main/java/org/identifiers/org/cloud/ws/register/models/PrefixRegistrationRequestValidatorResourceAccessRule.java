@@ -17,6 +17,8 @@ public class PrefixRegistrationRequestValidatorResourceAccessRule implements Pre
             throw new PrefixRegistrationRequestValidatorException("MISSING required Resource Access Rule");
         }
         WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
+        // TODO - Check that PLACEHOLDER_ID is uniquely present
+        // TODO - Remove the PLACEHOLDER_ID from thr URL for standalone checking
         if (!webPageChecker.checkForValidUrl(request.getResourceAccessRule())) {
             throw new PrefixRegistrationRequestValidatorException(String.format("INVALID resource access rule '%s'", request.getResourceAccessRule()));
         }
