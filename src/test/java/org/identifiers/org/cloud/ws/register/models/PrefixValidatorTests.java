@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * ---
  */
 @SpringBootTest
+@SpringBootConfiguration
 @RunWith(Parameterized.class)
 public class PrefixValidatorTests {
 
