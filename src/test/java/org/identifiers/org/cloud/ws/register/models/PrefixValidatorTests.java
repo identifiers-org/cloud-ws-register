@@ -20,4 +20,5 @@ public class PrefixValidatorTests {
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
     // Test parameters
     private RegisterApiRequestRegisterPrefix request;
+    private String testDescription;
 }
