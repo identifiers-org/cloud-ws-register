@@ -52,6 +52,11 @@ public class PrefixValidatorTests {
         getValidTestCasesData().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.request), is(true)));
     }
 
+    @Test
+    public void testInvalidUseCases() {
+
+    }
+
     private List<TestDataUseCase> getValidTestCasesData() {
         // TODO
         return Arrays.asList(
@@ -65,4 +70,19 @@ public class PrefixValidatorTests {
                         .setValidator(prefixValidator)
         );
     }
+
+    private List<TestDataUseCase> getNotValidTestCasesData() {
+        // TODO
+        return Arrays.asList(
+                new TestDataUseCase()
+                        .setTestDescription("Valid prefix accepted")
+                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("chebi"))
+                        .setValidator(prefixValidator),
+                new TestDataUseCase()
+                        .setTestDescription("Another valid prefix accepted")
+                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("pdb"))
+                        .setValidator(prefixValidator)
+        );
+    }
+
 }
