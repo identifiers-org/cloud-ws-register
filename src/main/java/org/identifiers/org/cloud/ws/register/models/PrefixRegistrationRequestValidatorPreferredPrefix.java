@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
+
+import java.io.IOException;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -20,6 +24,21 @@ import org.springframework.web.client.RestTemplate;
 @Scope("prototype")
 public class PrefixRegistrationRequestValidatorPreferredPrefix implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorPreferredPrefix.class);
+
+    class RestTemplateErrorHandler implements ResponseErrorHandler {
+        ClientHttpResponse clientHttpResponse;
+
+        @Override
+        public boolean hasError(ClientHttpResponse clientHttpResponse) throws IOException {
+            // By default we'll tell the rest template there is no error here
+            return false;
+        }
+
+        @Override
+        public void handleError(ClientHttpResponse clientHttpResponse) throws IOException {
+            // Thus, we don't need to do anything to handle a non-existing error
+        }
+    }
 
     // TODO - Let's see how this plays with Docker, later. It should go through a discovery service, but I'll find out
     // TODO - later how to lay all the pieces together for testing, development and production
@@ -41,6 +60,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         String queryUrl = String.format("http://%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
         logger.info("Prefix Validation, hack URL '{}'", queryUrl);
         RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setErrorHandler(new RestTemplateErrorHandler());
         ResponseEntity<String> response = restTemplate.getForEntity(queryUrl, String.class);
         if (response.getStatusCode() != HttpStatus.NOT_FOUND) {
             String errorMessage = String.format("Preferred Prefix COULD NOT BE VALIDATED, internal status %s, IT MAY ALREADY BEEN REGISTERED", response.getStatusCode());
