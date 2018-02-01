@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -25,6 +25,11 @@ public class PrefixValidatorTests {
     class TestDataUseCase {
         PrefixRegistrationRequestValidator validator;
         String testDescription;
+
+        public TestDataUseCase(PrefixRegistrationRequestValidator validator, String testDescription) {
+            this.validator = validator;
+            this.testDescription = testDescription;
+        }
     }
 
     @Autowired
@@ -35,11 +40,10 @@ public class PrefixValidatorTests {
         // TODO
     }
 
-    public static Collection<Object[]> getValidTestCasesData() {
+    public List<TestDataUseCase> getValidTestCasesData() {
         // TODO
-        return Arrays.asList(new Object[][]{
-                // Test name validator
-                {new RegisterApiRequestRegisterPrefix().setPreferredPrefix("myfirstprefix"), "This request has an invalid name, it is null"}
-        });
+        return Arrays.asList(
+
+        );
     }
 }
