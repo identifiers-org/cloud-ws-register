@@ -49,9 +49,6 @@ public class PrefixValidatorTests {
 
     @Test
     public void testValidUseCases() {
-        if (prefixValidator == null) {
-            System.out.println("========================================= FUCKING SPRING BOOT ====================================");
-        }
         getValidTestCasesData().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.request), is(true)));
     }
 
