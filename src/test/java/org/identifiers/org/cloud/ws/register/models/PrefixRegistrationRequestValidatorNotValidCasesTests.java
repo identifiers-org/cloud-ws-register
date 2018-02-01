@@ -51,7 +51,11 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix(), "Missing URL error catched"},
                 {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("ht:/this_url_is_not_valid"), "Invalid URL error caught"},
                 {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("http://httpstat.us/404"), "Dead homepage error caught"},
-                {new PrefixRegistrationRequestValidatorOrganization(), new RegisterApiRequestRegisterPrefix(), "Missing organization information error is caught"}
+                {new PrefixRegistrationRequestValidatorOrganization(), new RegisterApiRequestRegisterPrefix(), "Missing organization information error is caught"},
+                {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix(), "Missing resource access rule caught"},
+                {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("://www.ebi.ac.uk/pdbe/entry/{$id}/another"), "Invalid resource access rule caught"},
+                {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/another/path"), "Missing '{$id}' placeholder caught"}
+
         });
     }
 
