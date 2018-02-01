@@ -18,4 +18,6 @@ public class PrefixValidatorTests {
 
     @Autowired
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
+    // Test parameters
+    private RegisterApiRequestRegisterPrefix request;
 }
