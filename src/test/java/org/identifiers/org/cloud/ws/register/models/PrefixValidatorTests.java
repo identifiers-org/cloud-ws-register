@@ -21,4 +21,9 @@ public class PrefixValidatorTests {
     // Test parameters
     private RegisterApiRequestRegisterPrefix request;
     private String testDescription;
+
+    public PrefixValidatorTests(RegisterApiRequestRegisterPrefix request, String testDescription) {
+        this.request = request;
+        this.testDescription = testDescription;
+    }
 }
