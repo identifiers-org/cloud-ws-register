@@ -39,6 +39,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         }
         String fakeCompactId = String.format("%s:093846", request.getPreferredPrefix());
         String queryUrl = String.format("http://%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
+        logger.info("Prefix Validation, hack URL '{}'", queryUrl);
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(queryUrl, String.class);
         if (response.getStatusCode() != HttpStatus.NOT_FOUND) {
