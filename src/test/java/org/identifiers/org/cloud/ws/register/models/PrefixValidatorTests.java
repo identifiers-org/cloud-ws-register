@@ -1,6 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,6 +49,9 @@ public class PrefixValidatorTests {
     @Autowired
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void testValidUseCases() {
         getValidTestCasesData().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.request), is(true)));
@@ -54,7 +59,12 @@ public class PrefixValidatorTests {
 
     @Test
     public void testInvalidUseCases() {
-
+        // Set the expected exception and test description
+        expectedException.expect(PrefixRegistrationRequestValidatorException.class);
+        getNotValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
+            expectedException.reportMissingExceptionWithMessage(String.format("MISSING INVALIDATION for '%s'", testDataUseCase.testDescription));
+            testDataUseCase.validator.validate(testDataUseCase.request);
+        });
     }
 
     private List<TestDataUseCase> getValidTestCasesData() {
