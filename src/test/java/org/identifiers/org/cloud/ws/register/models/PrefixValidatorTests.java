@@ -54,7 +54,10 @@ public class PrefixValidatorTests {
     public List<TestDataUseCase> getValidTestCasesData() {
         // TODO
         return Arrays.asList(
-                new TestDataUseCase(prefixValidator, "")
+                new TestDataUseCase()
+                        .setTestDescription("Valid prefix accepted")
+                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("myfirstprefix"))
+                        .setValidator(prefixValidator)
         );
     }
 }
