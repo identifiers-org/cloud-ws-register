@@ -29,8 +29,8 @@ public class PrefixValidatorTests {
     public void testValidUseCases() {
         // TODO
     }
-    
-    public static Collection<Object[]> getTestingValues() {
+
+    public static Collection<Object[]> getValidTestCasesData() {
         // TODO
         return Arrays.asList(new Object[][]{
                 // Test name validator
