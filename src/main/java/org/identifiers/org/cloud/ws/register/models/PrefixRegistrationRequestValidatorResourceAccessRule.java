@@ -16,6 +16,10 @@ public class PrefixRegistrationRequestValidatorResourceAccessRule implements Pre
         if (request.getResourceAccessRule() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING required Resource Access Rule");
         }
+        WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
+        if (!webPageChecker.checkForValidUrl(request.getResourceAccessRule())) {
+            throw new PrefixRegistrationRequestValidatorException(String.format("INVALID resource access rule '%s'", request.getResourceAccessRule()));
+        }
         return true;
     }
 }
