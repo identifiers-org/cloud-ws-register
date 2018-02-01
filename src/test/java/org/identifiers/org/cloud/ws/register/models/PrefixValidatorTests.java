@@ -57,6 +57,10 @@ public class PrefixValidatorTests {
                 new TestDataUseCase()
                         .setTestDescription("Valid prefix accepted")
                         .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("myfirstprefix"))
+                        .setValidator(prefixValidator),
+                new TestDataUseCase()
+                        .setTestDescription("Another valid prefix accepted")
+                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("myotherprefix"))
                         .setValidator(prefixValidator)
         );
     }
