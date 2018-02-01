@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -9,4 +11,6 @@ package org.identifiers.org.cloud.ws.register.models;
  */
 public class PrefixValidatorTests {
 
+    @Autowired
+    private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
 }
