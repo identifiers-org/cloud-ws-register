@@ -13,6 +13,9 @@ public class PrefixRegistrationRequestValidatorResourceAccessRule implements Pre
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // TODO
+        if (request.getResourceAccessRule() == null) {
+            throw new PrefixRegistrationRequestValidatorException("MISSING required Resource Access Rule");
+        }
         return true;
     }
 }
