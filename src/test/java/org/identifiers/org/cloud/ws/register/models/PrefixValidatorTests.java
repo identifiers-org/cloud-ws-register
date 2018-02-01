@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.Collection;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -28,6 +32,11 @@ public class PrefixValidatorTests {
     public PrefixValidatorTests(RegisterApiRequestRegisterPrefix request, String testDescription) {
         this.request = request;
         this.testDescription = testDescription;
+    }
+
+    @Test
+    public void testValidUseCase() {
+        assertThat(testDescription, prefixValidator.validate(request), is(true));
     }
 
     @Parameterized.Parameters
