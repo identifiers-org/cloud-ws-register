@@ -5,6 +5,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
@@ -24,6 +27,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @SpringBootConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 public class PrefixValidatorTests {
+
+    @Configuration
+    static class Config {
+
+        @Bean
+        public static PropertySourcesPlaceholderConfigurer propertiesResolver() {
+            return new PropertySourcesPlaceholderConfigurer();
+        }
+
+    }
 
     class TestDataUseCase {
         PrefixRegistrationRequestValidator validator;
