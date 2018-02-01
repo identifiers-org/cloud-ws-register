@@ -24,10 +24,12 @@ public class PrefixValidatorTests {
 
     class TestDataUseCase {
         PrefixRegistrationRequestValidator validator;
+        RegisterApiRequestRegisterPrefix request;
         String testDescription;
 
-        public TestDataUseCase(PrefixRegistrationRequestValidator validator, String testDescription) {
+        public TestDataUseCase(PrefixRegistrationRequestValidator validator, RegisterApiRequestRegisterPrefix request, String testDescription) {
             this.validator = validator;
+            this.request = request;
             this.testDescription = testDescription;
         }
     }
@@ -43,7 +45,7 @@ public class PrefixValidatorTests {
     public List<TestDataUseCase> getValidTestCasesData() {
         // TODO
         return Arrays.asList(
-
+                new TestDataUseCase(prefixValidator, "")
         );
     }
 }
