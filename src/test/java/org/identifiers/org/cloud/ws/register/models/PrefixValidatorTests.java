@@ -1,9 +1,9 @@
 package org.identifiers.org.cloud.ws.register.models;
 
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * ---
  */
 @SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(Parameterized.class)
 public class PrefixValidatorTests {
 
     @Autowired
