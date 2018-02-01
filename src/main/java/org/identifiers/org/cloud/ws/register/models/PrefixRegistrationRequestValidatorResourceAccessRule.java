@@ -12,6 +12,7 @@ public class PrefixRegistrationRequestValidatorResourceAccessRule implements Pre
 
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        // TODO
+        return true;
     }
 }
