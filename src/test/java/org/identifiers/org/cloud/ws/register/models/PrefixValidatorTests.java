@@ -9,5 +9,6 @@ package org.identifiers.org.cloud.ws.register.models;
  */
 public class PrefixValidatorTests {
     private RegisterApiRequestRegisterPrefix request;
+    private String testDescription;
 
 }
