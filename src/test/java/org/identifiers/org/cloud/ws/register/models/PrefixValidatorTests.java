@@ -10,6 +10,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -48,7 +51,7 @@ public class PrefixValidatorTests {
 
     @Test
     public void testValidUseCases() {
-        // TODO
+        getValidTestCasesData().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.request), is(true)));
     }
 
     public List<TestDataUseCase> getValidTestCasesData() {
