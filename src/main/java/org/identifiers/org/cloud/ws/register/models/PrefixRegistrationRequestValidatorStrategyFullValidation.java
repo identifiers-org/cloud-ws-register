@@ -1,5 +1,9 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,14 +14,12 @@ import java.util.List;
  * Timestamp: 2018-01-30 22:34
  * ---
  */
+@Component
+@Scope("prototype")
 public class PrefixRegistrationRequestValidatorStrategyFullValidation implements PrefixRegistrationRequestValidatorStrategy {
 
+    @Autowired
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
-
-    // This is for dependency injection via constructor
-    public PrefixRegistrationRequestValidatorStrategyFullValidation(PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator) {
-        this.prefixValidator = prefixValidator;
-    }
 
     @Override
     public List<PrefixRegistrationRequestValidator> getValidationChain() {
