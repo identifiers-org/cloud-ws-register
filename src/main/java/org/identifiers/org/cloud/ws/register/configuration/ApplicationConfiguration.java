@@ -2,6 +2,9 @@ package org.identifiers.org.cloud.ws.register.configuration;
 
 import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgentViaEmail;
+import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationRequestValidatorStrategy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,7 +17,14 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ApplicationConfiguration {
-    
+
+    @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
+    private PrefixRegistrationRequestValidatorStrategy sectedValidatorStrategy;
+
+    @Bean
+    public PrefixRegistrationRequestValidatorStrategy validatorStrategy() {
+        return sectedValidatorStrategy;
+    }
     @Bean
     public PrefixRegistrationAgent prefixRegistrationAgent() {
         return new PrefixRegistrationAgentViaEmail();
