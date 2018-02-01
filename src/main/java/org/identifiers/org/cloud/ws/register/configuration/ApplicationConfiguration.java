@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ApplicationConfiguration {
-
+    
     @Bean
     public PrefixRegistrationAgent prefixRegistrationAgent() {
         return new PrefixRegistrationAgentViaEmail();
