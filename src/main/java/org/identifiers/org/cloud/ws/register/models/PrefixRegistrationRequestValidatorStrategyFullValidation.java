@@ -11,13 +11,22 @@ import java.util.List;
  * ---
  */
 public class PrefixRegistrationRequestValidatorStrategyFullValidation implements PrefixRegistrationRequestValidatorStrategy {
+
+    private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
+
+    // This is for dependency injection via constructor
+    public PrefixRegistrationRequestValidatorStrategyFullValidation(PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator) {
+        this.prefixValidator = prefixValidator;
+    }
+
     @Override
     public List<PrefixRegistrationRequestValidator> getValidationChain() {
         return Arrays.asList(
                 new PrefixRegistrationRequestValidatorName(),
                 new PrefixRegistrationRequestValidatorDescription(),
                 new PrefixRegistrationRequestValidatorHomePage(),
-                new PrefixRegistrationRequestValidatorOrganization()
+                new PrefixRegistrationRequestValidatorOrganization(),
+                prefixValidator
         );
     }
 }
