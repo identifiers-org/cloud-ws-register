@@ -22,6 +22,11 @@ import java.util.Collection;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class PrefixValidatorTests {
 
+    class TestDataUseCase {
+        PrefixRegistrationRequestValidator validator;
+        String testDescription;
+    }
+
     @Autowired
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
 
