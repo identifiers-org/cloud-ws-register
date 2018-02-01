@@ -19,12 +19,12 @@ public class PrefixRegistrationRequestValidatorResourceAccessRule implements Pre
             throw new PrefixRegistrationRequestValidatorException("MISSING required Resource Access Rule");
         }
         WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
-        // TODO - Check that PLACEHOLDER_ID is uniquely present
+        // Check that PLACEHOLDER_ID is uniquely present
         if (StringUtils.countOccurrencesOf(request.getResourceAccessRule(), PLACEHOLDER_ID) != 1) {
             throw new PrefixRegistrationRequestValidatorException(String.format("ID placeholder '%s' IS REQUIRED to be present at least once in the resource access rule", PLACEHOLDER_ID));
         }
         String urlToCheck = StringUtils.replace(request.getResourceAccessRule(), PLACEHOLDER_ID, "placeholderId");
-        // TODO - Remove the PLACEHOLDER_ID from thr URL for standalone checking
+        // Remove the PLACEHOLDER_ID from thr URL for standalone checking
         if (!webPageChecker.checkForValidUrl(urlToCheck)) {
             throw new PrefixRegistrationRequestValidatorException(String.format("INVALID resource access rule '%s'", request.getResourceAccessRule()));
         }
