@@ -27,10 +27,19 @@ public class PrefixValidatorTests {
         RegisterApiRequestRegisterPrefix request;
         String testDescription;
 
-        public TestDataUseCase(PrefixRegistrationRequestValidator validator, RegisterApiRequestRegisterPrefix request, String testDescription) {
+        public TestDataUseCase setValidator(PrefixRegistrationRequestValidator validator) {
             this.validator = validator;
+            return this;
+        }
+
+        public TestDataUseCase setRequest(RegisterApiRequestRegisterPrefix request) {
             this.request = request;
+            return this;
+        }
+
+        public TestDataUseCase setTestDescription(String testDescription) {
             this.testDescription = testDescription;
+            return this;
         }
     }
 
