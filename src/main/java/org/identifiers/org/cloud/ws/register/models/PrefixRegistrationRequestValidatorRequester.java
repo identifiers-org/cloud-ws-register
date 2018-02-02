@@ -13,7 +13,7 @@ public class PrefixRegistrationRequestValidatorRequester implements PrefixRegist
         if (request.getRequester() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Requester information");
         }
-        // TODO - Delegate validation to specialized validator
+        // Delegate validation to specialized validator
         try {
             RequesterValidatorFactory.getDefaultValidator().validate(request.getRequester());
         } catch (RequesterValidatorException e) {
