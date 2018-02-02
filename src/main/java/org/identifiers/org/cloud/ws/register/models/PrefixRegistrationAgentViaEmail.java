@@ -12,9 +12,10 @@ import org.slf4j.LoggerFactory;
  */
 public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentViaEmail.class);
-    
+
     @Override
     public void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException {
         // TODO
+        logger.info("REGISTERING PREFIX registration request\n{}", prefixRegistrationRequest.toString());
     }
 }
