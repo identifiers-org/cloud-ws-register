@@ -52,7 +52,8 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
                 {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("34765"), "Example Identifier is present"},
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(chebiAccessRule).setExampleIdentifier(String.valueOf(chebiSampleId)), "Valid cross validation of resource access rule and example identifier"},
                 {new PrefixRegistrationRequestValidatorRegexPattern(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$"), "Regex Pattern is present"},
-                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern(chebiRegexPattern).setExampleIdentifier(String.valueOf(chebiSampleId)), "Valid cross-validation of example identifier and regular expression pattern describing the identifier"}
+                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern(chebiRegexPattern).setExampleIdentifier(String.valueOf(chebiSampleId)), "Valid cross-validation of example identifier and regular expression pattern describing the identifier"},
+                {new PrefixRegistrationRequestValidatorReferences(), new RegisterApiRequestRegisterPrefix(), "Empty provision of References validates"}
         });
     }
 }
