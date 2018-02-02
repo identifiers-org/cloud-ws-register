@@ -32,7 +32,8 @@ public class PrefixRegistrationRequestValidatorStrategyFullValidation implements
                 new PrefixRegistrationRequestValidatorOrganization(),
                 prefixValidator,
                 new PrefixRegistrationRequestValidatorResourceAccessRule(),
-                new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule()
+                new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(),
+                new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier()
         );
     }
 }
