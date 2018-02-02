@@ -31,6 +31,9 @@ public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceA
             throw new PrefixRegistrationRequestValidatorException(String.join("\n", errors));
         }
         // Cross-validate example identifier
+        try {
+            // TODO
+        }
         return true;
     }
 }
