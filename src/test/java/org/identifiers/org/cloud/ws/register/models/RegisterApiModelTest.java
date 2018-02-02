@@ -59,8 +59,22 @@ public class RegisterApiModelTest {
         return Arrays.asList(
                 // TODO
                 new TestDataUseCase()
-                        .setTestDescription("Valid prefix registration request").
-        );
+                        .setTestDescription("Valid prefix registration request")
+                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                                .setName("Valid new testing prefix mynewprefix")
+                                .setDescription("This is a valid test prefix registration request")
+                                .setHomePage("http://identifiers.org/")
+                                .setOrganization("EMBL-EBI Unit Testing Organization")
+                                .setPreferredPrefix("mynewprefix")
+                                .setResourceAccessRule("http://httpstat.us/{$id}")
+                                .setExampleIdentifier("200")
+                                .setRegexPattern("\\d+$")
+                                .setReferences(new String[]{"Reference 1", "Publication 1", "Citation 1"})
+                                .setAdditionalInformation("Additional information for this EMBL-EBI testing prefix")
+                                .setRequester(new Requester()
+                                        .setName("EBI Tester")
+                                        .setEmail("ebitester@ebi.ac.uk"))
+        ));
     }
 
     private List<TestDataUseCase> getNotValidTestCasesData() {
