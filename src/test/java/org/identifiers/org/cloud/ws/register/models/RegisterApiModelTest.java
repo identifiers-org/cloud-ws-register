@@ -37,7 +37,11 @@ public class RegisterApiModelTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     private RegisterApiModel registerApiModel;
-    
+
+    public RegisterApiModelTest(RegisterApiModel registerApiModel) {
+        this.registerApiModel = registerApiModel;
+    }
+
     @Test
     public void testValidPrefixRegistrationRequests() {
         // TODO
