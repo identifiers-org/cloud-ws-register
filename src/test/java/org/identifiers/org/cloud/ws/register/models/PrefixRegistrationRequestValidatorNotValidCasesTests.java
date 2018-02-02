@@ -59,7 +59,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix(), "Missing resource access rule and example identifier"},
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(String.format("http://httpstat.us/200%s", ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID)), "Resource Access Rule present, but missing Example Identifier"},
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("873465"), "Example Identifier present, but missing Resource Access Rule"},
-                {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(String.format("http://httpstat.us/", ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID)), "Example Identifier present, but missing Resource Access Rule"}
+                {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(String.format("http://httpstat.us/%s", ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID)).setExampleIdentifier("404"), "Resource Access Rule and Example Identifier present, but they lead to a bad landing page"}
         });
     }
 
