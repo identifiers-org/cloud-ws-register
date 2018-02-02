@@ -36,7 +36,6 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
 
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
-        // TODO
         String chebiAccessRule = "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:{$id}";
         int chebiSampleId = 36927;
         String chebiRegexPattern = "\\d+$";
