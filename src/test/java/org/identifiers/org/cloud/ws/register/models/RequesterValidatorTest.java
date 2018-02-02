@@ -1,10 +1,13 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -17,18 +20,29 @@ import java.util.List;
 public class RequesterValidatorTest {
 
     class TestDataUseCase {
+        RequesterValidator requesterValidator;
         Requester requester;
         String testDescription;
 
-        public TestDataUseCase setRequester(Requester requester) {
+        TestDataUseCase setRequester(Requester requester) {
             this.requester = requester;
             return this;
         }
 
-        public TestDataUseCase setTestDescription(String testDescription) {
+        TestDataUseCase setTestDescription(String testDescription) {
             this.testDescription = testDescription;
             return this;
         }
+
+        TestDataUseCase setRequesterValidator(RequesterValidator requesterValidator) {
+            this.requesterValidator = requesterValidator;
+            return this;
+        }
+    }
+
+    @Test
+    public void testValidUseCases() {
+        getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription));
     }
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
