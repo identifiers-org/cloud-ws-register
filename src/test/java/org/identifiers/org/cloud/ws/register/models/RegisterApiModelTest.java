@@ -50,6 +50,11 @@ public class RegisterApiModelTest {
         // TODO
     }
 
+    @Test
+    public void testInvalidUseCases() {
+        // TODO
+    }
+
     private List<PrefixValidatorTests.TestDataUseCase> getValidTestCasesData() {
         return Arrays.asList(
                 // TODO
