@@ -7,6 +7,5 @@ package org.identifiers.org.cloud.ws.register.models;
  * Timestamp: 2018-02-02 13:19
  * ---
  */
-public class RequesterValidator {
-
+public interface RequesterValidator {
 }
