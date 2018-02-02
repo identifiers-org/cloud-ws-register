@@ -10,6 +10,9 @@ package org.identifiers.org.cloud.ws.register.models;
 public class RequesterValidatorEmail implements RequesterValidator {
     @Override
     public boolean validate(Requester requester) throws RequesterValidatorException {
+        if (requester.getEmail() == null) {
+            throw new RequesterValidatorException("MISSING REQUIRED Requester e-mail address");
+        }
         return true;
     }
 }
