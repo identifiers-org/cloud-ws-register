@@ -20,6 +20,12 @@ public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIden
         } catch (PrefixRegistrationRequestValidatorException e) {
             errors.add(e.getMessage());
         }
+        // Check Regex Pattern
+        try {
+            new PrefixRegistrationRequestValidatorRegexPattern().validate(request);
+        } catch (PrefixRegistrationRequestValidatorException e) {
+            errors.add(e.getMessage());
+        }
         return true;
     }
 }
