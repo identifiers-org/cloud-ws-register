@@ -45,7 +45,8 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
                 {new PrefixRegistrationRequestValidatorOrganization(), new RegisterApiRequestRegisterPrefix().setOrganization("This is a Sample Organization Inc."), "Organization information is supplied"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/pdb/{$id}"), "Valid resource access rule"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another"), "Valid resource access rule"},
-                {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another/path"), "Valid resource access rule"}
+                {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another/path"), "Valid resource access rule"},
+                {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("34765"), "Example Identifier is present"}
         });
     }
 }
