@@ -33,6 +33,10 @@ public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIden
         } catch (PrefixRegistrationRequestValidatorException e) {
             errors.add(e.getMessage());
         }
+        // Report errors if any
+        if (!errors.isEmpty()) {
+            throw new PrefixRegistrationRequestValidatorException(String.join("\n", errors));
+        }
         // Cross-validation
         logger.debug("Validating regex pattern '{}' against '{}'", request.getRegexPattern(), request.getExampleIdentifier());
         Pattern pattern = Pattern.compile(request.getRegexPattern());
