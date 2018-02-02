@@ -55,13 +55,15 @@ public class RegisterApiModelTest {
         // TODO
     }
 
-    private List<PrefixValidatorTests.TestDataUseCase> getValidTestCasesData() {
+    private List<TestDataUseCase> getValidTestCasesData() {
         return Arrays.asList(
                 // TODO
+                new TestDataUseCase()
+                        .setTestDescription("Valid prefix registration request").
         );
     }
 
-    private List<PrefixValidatorTests.TestDataUseCase> getNotValidTestCasesData() {
+    private List<TestDataUseCase> getNotValidTestCasesData() {
         return Arrays.asList(
                 // TODO
         );
