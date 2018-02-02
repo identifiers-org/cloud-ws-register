@@ -14,6 +14,12 @@ public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIden
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         List<String> errors = new ArrayList<>();
+        // Check Example Identifier
+        try {
+            new PrefixRegistrationRequestValidatorExampleIdentifier().validate(request);
+        } catch (PrefixRegistrationRequestValidatorException e) {
+            errors.add(e.getMessage());
+        }
         return true;
     }
 }
