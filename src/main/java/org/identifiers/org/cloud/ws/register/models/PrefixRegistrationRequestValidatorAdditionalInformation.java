@@ -12,11 +12,12 @@ import org.slf4j.LoggerFactory;
  */
 public class PrefixRegistrationRequestValidatorAdditionalInformation implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorAdditionalInformation.class);
-    
+
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // Validate by default, no requirements are enforced
-
+        logger.info("DEFAULT policy for Additional Information is ALWAYS VALID");
+        
         return true;
     }
 }
