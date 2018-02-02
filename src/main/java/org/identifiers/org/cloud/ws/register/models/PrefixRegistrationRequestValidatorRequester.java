@@ -10,6 +10,9 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorRequester implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        if (request.getRequester() == null) {
+            throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Requester information");
+        }
+        return true;
     }
 }
