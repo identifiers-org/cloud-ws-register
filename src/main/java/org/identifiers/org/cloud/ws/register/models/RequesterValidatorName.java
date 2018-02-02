@@ -12,9 +12,12 @@ import org.slf4j.LoggerFactory;
  */
 public class RequesterValidatorName implements RequesterValidator {
     private static Logger logger = LoggerFactory.getLogger(RequesterValidatorName.class);
-    
+
     @Override
     public boolean validate(Requester requester) throws RequesterValidatorException {
+        if (requester.getName() == null) {
+            logger.info("MISSING Requester Name");
+        }
         return true;
     }
 }
