@@ -8,4 +8,5 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public interface RequesterValidator {
+    boolean validate(Requester requester) throws RequesterValidatorException;
 }
