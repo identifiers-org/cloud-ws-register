@@ -29,6 +29,6 @@ public class RequesterValidatorFullValidator implements RequesterValidator {
         if (!errors.isEmpty()) {
             throw new RequesterValidatorException(String.join("\n", errors));
         }
-        return false;
+        return true;
     }
 }
