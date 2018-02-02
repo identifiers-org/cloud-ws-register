@@ -32,7 +32,15 @@ public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceA
         }
         // Cross-validate example identifier
         try {
-            // TODO
+            WebPageCheckerFactory.getWebPageChecker().checkWebPageUrl(ResourceAccessHelper.getResourceUrlFor(request.getResourceAccessRule(), request.getExampleIdentifier()));
+        } catch (WebPageCheckerException e) {
+            throw new PrefixRegistrationRequestValidatorException(
+                    String.format("The provided Resource Access Rule '%s' " +
+                            "combined with the provided Example Identifier '%s' " +
+                            "into '%s' DOES NOT VALIDATE", request.getResourceAccessRule(),
+                            request.getExampleIdentifier(),
+                            ResourceAccessHelper.getResourceUrlFor(request.getResourceAccessRule(),
+                                    request.getExampleIdentifier())));
         }
         return true;
     }
