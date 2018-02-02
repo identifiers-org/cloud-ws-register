@@ -62,6 +62,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(String.format("http://httpstat.us/%s", ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID)).setExampleIdentifier("404"), "Resource Access Rule and Example Identifier present, but they lead to a bad landing page"},
                 {new PrefixRegistrationRequestValidatorRegexPattern(), new RegisterApiRequestRegisterPrefix(), "Missing regex pattern"},
                 {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix(), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier, missing regex pattern and example identifier"},
+                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier, present regex pattern but missing example identifier"},
                 {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$").setExampleIdentifier("ENSX00000139618"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier"}
         });
     }
