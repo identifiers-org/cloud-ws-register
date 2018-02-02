@@ -1,5 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -8,8 +11,10 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class RequesterValidatorName implements RequesterValidator {
+    private static Logger logger = LoggerFactory.getLogger(RequesterValidatorName.class);
+    
     @Override
     public boolean validate(Requester requester) throws RequesterValidatorException {
-        return false;
+        return true;
     }
 }
