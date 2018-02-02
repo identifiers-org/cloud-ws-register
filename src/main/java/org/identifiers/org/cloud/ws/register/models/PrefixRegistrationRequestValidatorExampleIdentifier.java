@@ -10,6 +10,10 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorExampleIdentifier implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        // Check the ID information is present
+        if (request.getExampleIdentifier() == null) {
+            throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Example Identifier");
+        }
+        return true;
     }
 }
