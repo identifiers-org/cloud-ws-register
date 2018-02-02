@@ -37,6 +37,7 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
         // TODO
+        String chebiAccessRule = "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:{$id}";
         return Arrays.asList(new Object[][]{
                 // Test name validator
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix().setName("TestName"), "Request with valid name"},
@@ -46,7 +47,8 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/pdb/{$id}"), "Valid resource access rule"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another"), "Valid resource access rule"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another/path"), "Valid resource access rule"},
-                {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("34765"), "Example Identifier is present"}
+                {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("34765"), "Example Identifier is present"},
+                {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), }
         });
     }
 }
