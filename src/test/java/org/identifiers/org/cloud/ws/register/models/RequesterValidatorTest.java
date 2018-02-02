@@ -1,6 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -41,10 +43,14 @@ public class RequesterValidatorTest {
         }
     }
 
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
+
     @Test
     public void testValidUseCases() {
         getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.requester), is(true)));
     }
+
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
         // TODO
