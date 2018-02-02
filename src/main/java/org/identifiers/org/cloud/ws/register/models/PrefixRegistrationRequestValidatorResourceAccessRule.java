@@ -10,8 +10,6 @@ import org.springframework.util.StringUtils;
  * ---
  */
 public class PrefixRegistrationRequestValidatorResourceAccessRule implements PrefixRegistrationRequestValidator {
-    private static String PLACEHOLDER_ID = "{$id}";
-
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // TODO
@@ -20,10 +18,10 @@ public class PrefixRegistrationRequestValidatorResourceAccessRule implements Pre
         }
         WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
         // Check that PLACEHOLDER_ID is uniquely present
-        if (StringUtils.countOccurrencesOf(request.getResourceAccessRule(), PLACEHOLDER_ID) != 1) {
-            throw new PrefixRegistrationRequestValidatorException(String.format("ID placeholder '%s' IS REQUIRED to be present at least once in the resource access rule", PLACEHOLDER_ID));
+        if (StringUtils.countOccurrencesOf(request.getResourceAccessRule(), ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID) != 1) {
+            throw new PrefixRegistrationRequestValidatorException(String.format("ID placeholder '%s' IS REQUIRED to be present at least once in the resource access rule", ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID));
         }
-        String urlToCheck = StringUtils.replace(request.getResourceAccessRule(), PLACEHOLDER_ID, "placeholderId");
+        String urlToCheck = StringUtils.replace(request.getResourceAccessRule(), ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID, "placeholderId");
         // Remove the PLACEHOLDER_ID from thr URL for standalone checking
         if (!webPageChecker.checkForValidUrl(urlToCheck)) {
             throw new PrefixRegistrationRequestValidatorException(String.format("INVALID resource access rule '%s'", request.getResourceAccessRule()));
