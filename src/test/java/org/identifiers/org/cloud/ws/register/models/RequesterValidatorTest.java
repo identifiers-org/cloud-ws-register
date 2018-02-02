@@ -56,5 +56,6 @@ public class RequesterValidatorTest {
 
     private List<TestDataUseCase> getNotValidTestCasesData() {
         // TODO
+        return null;
     }
 }
