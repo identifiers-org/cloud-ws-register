@@ -38,6 +38,7 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
     public static Collection<Object[]> getTestingValues() {
         // TODO
         String chebiAccessRule = "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:{$id}";
+        int chebiSampleId = 36927;
         return Arrays.asList(new Object[][]{
                 // Test name validator
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix().setName("TestName"), "Request with valid name"},
