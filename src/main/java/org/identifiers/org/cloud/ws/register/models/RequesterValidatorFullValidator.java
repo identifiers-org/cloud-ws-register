@@ -16,6 +16,7 @@ public class RequesterValidatorFullValidator implements RequesterValidator {
     public boolean validate(Requester requester) throws RequesterValidatorException {
         List<String> errors = new ArrayList<>();
         List<RequesterValidator> validators = Arrays.asList(new RequesterValidatorEmail(), new RequesterValidatorName());
+        // Iterate over the validators
         for (RequesterValidator validator :
                 validators) {
             try {
@@ -23,6 +24,10 @@ public class RequesterValidatorFullValidator implements RequesterValidator {
             } catch (RequesterValidatorException e) {
                 errors.add(e.getMessage());
             }
+        }
+        // Report errors if any
+        if (!errors.isEmpty()) {
+            throw new RequesterValidatorException(String.join("\n", errors));
         }
         return false;
     }
