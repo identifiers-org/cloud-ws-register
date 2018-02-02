@@ -17,6 +17,6 @@ public class RegisterApiModelTest {
 
     class TestDataUseCase {
         RegisterApiRequestRegisterPrefix request;
-
+        String testDescription;
     }
 }
