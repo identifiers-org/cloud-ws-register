@@ -16,6 +16,14 @@ public class RequesterValidatorFullValidator implements RequesterValidator {
     public boolean validate(Requester requester) throws RequesterValidatorException {
         List<String> errors = new ArrayList<>();
         List<RequesterValidator> validators = Arrays.asList(new RequesterValidatorEmail(), new RequesterValidatorName());
+        for (RequesterValidator validator :
+                validators) {
+            try {
+                validator.validate(requester);
+            } catch (RequesterValidatorException e) {
+                errors.add(e.getMessage());
+            }
+        }
         return false;
     }
 }
