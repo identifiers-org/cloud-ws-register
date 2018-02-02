@@ -33,6 +33,8 @@ public class RegisterApiModelTest {
     }
 
     @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    private ExpectedException expectedException = ExpectedException.none();
+
+
 
 }
