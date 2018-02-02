@@ -16,5 +16,15 @@ public class RequesterValidatorTest {
     class TestDataUseCase {
         Requester requester;
         String testDescription;
+
+        public TestDataUseCase setRequester(Requester requester) {
+            this.requester = requester;
+            return this;
+        }
+
+        public TestDataUseCase setTestDescription(String testDescription) {
+            this.testDescription = testDescription;
+            return this;
+        }
     }
 }
