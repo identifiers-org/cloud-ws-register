@@ -3,6 +3,8 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -26,5 +28,9 @@ public class RequesterValidatorTest {
             this.testDescription = testDescription;
             return this;
         }
+    }
+
+    private List<TestDataUseCase> getValidTestDataUseCases() {
+        // TODO
     }
 }
