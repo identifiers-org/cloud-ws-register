@@ -1,5 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -10,6 +13,7 @@ package org.identifiers.org.cloud.ws.register.models;
 public class RequesterValidatorFullValidator implements RequesterValidator {
     @Override
     public boolean validate(Requester requester) throws RequesterValidatorException {
+        List<RequesterValidator> validators = Arrays.asList(new RequesterValidatorEmail(), new RequesterValidatorName());
         return false;
     }
 }
