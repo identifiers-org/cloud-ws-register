@@ -20,6 +20,12 @@ public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceA
         } catch (PrefixRegistrationRequestValidatorException e) {
             errors.add(e.getMessage());
         }
+        // Check example identifier
+        try {
+            new PrefixRegistrationRequestValidatorExampleIdentifier().validate(request);
+        } catch (PrefixRegistrationRequestValidatorException e) {
+            errors.add(e.getMessage());
+        }
         return true;
     }
 }
