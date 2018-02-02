@@ -2,6 +2,8 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -25,6 +27,12 @@ public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIden
             new PrefixRegistrationRequestValidatorRegexPattern().validate(request);
         } catch (PrefixRegistrationRequestValidatorException e) {
             errors.add(e.getMessage());
+        }
+        // Cross-validation
+        Pattern pattern = Pattern.compile(request.getRegexPattern());
+        Matcher matcher = pattern.matcher(request.getExampleIdentifier());
+        if (!matcher.matches()) {
+            throw new PrefixRegistrationRequestValidatorException(String.format("There is a MISMATCH between the provided Example Identifier '%s' and the provided Regular Expression Pattern '%s'", request.getExampleIdentifier(), request.getRegexPattern()));
         }
         return true;
     }
