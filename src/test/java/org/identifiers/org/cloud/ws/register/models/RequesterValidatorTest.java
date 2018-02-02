@@ -33,4 +33,8 @@ public class RequesterValidatorTest {
     private List<TestDataUseCase> getValidTestDataUseCases() {
         // TODO
     }
+
+    private List<TestDataUseCase> getNotValidTestCasesData() {
+        // TODO
+    }
 }
