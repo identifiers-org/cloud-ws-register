@@ -7,6 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -45,5 +48,11 @@ public class RegisterApiModelTest {
     @Test
     public void testValidPrefixRegistrationRequests() {
         // TODO
+    }
+
+    private List<PrefixValidatorTests.TestDataUseCase> getValidTestCasesData() {
+        return Arrays.asList(
+                // TODO
+        );
     }
 }
