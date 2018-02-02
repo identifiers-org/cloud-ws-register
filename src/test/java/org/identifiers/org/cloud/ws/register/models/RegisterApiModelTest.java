@@ -36,6 +36,8 @@ public class RegisterApiModelTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
+    private RegisterApiModel registerApiModel;
+    
     @Test
     public void testValidPrefixRegistrationRequests() {
         // TODO
