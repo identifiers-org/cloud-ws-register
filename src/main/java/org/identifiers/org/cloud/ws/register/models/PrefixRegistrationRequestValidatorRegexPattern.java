@@ -10,6 +10,9 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorRegexPattern implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        if (request.getRegexPattern() == null) {
+            throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Regex Pattern");
+        }
+        return true;
     }
 }
