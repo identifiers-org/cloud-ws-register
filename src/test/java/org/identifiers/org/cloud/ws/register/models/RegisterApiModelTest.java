@@ -1,6 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,6 +36,8 @@ public class RegisterApiModelTest {
     @Rule
     private ExpectedException expectedException = ExpectedException.none();
 
-
-
+    @Test
+    public void testValidPrefixRegistrationRequests() {
+        // TODO
+    }
 }
