@@ -26,6 +26,11 @@ public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceA
         } catch (PrefixRegistrationRequestValidatorException e) {
             errors.add(e.getMessage());
         }
+        // If any error, report back
+        if (!errors.isEmpty()) {
+            throw new PrefixRegistrationRequestValidatorException(String.join("\n", errors));
+        }
+        // Cross-validate example identifier
         return true;
     }
 }
