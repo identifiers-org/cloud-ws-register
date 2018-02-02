@@ -31,7 +31,6 @@ public class RegisterApiModel {
         try {
             isValidRequest = validatorStrategy.validate(request);
         } catch (PrefixRegistrationRequestValidatorException e) {
-            isValidRequest = false;
             response.setErrorMessage(e.getMessage());
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
         }
