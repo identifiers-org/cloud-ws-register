@@ -51,6 +51,11 @@ public class RequesterValidatorTest {
         getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.requester), is(true)));
     }
 
+    @Test
+    public void testInvalidUseCases() {
+        // Set the expected exception and test description
+        expectedException.expect(RequesterValidatorException.class);
+    }
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
         // TODO
