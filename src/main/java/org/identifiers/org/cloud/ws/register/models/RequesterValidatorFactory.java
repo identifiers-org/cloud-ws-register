@@ -8,4 +8,7 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class RequesterValidatorFactory {
+    public static RequesterValidator getDefaultValidator() {
+        return new RequesterValidatorFullValidator();
+    }
 }
