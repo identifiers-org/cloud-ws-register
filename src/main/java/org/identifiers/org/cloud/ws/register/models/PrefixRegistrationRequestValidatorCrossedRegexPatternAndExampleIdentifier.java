@@ -1,5 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -13,6 +16,8 @@ import java.util.regex.Pattern;
  * ---
  */
 public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier implements PrefixRegistrationRequestValidator {
+    private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier.class);
+    
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         List<String> errors = new ArrayList<>();
@@ -29,6 +34,7 @@ public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIden
             errors.add(e.getMessage());
         }
         // Cross-validation
+
         Pattern pattern = Pattern.compile(request.getRegexPattern());
         Matcher matcher = pattern.matcher(request.getExampleIdentifier());
         if (!matcher.matches()) {
