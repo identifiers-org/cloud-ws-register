@@ -8,4 +8,7 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class RequesterValidatorException extends RuntimeException {
+    public RequesterValidatorException(String message) {
+        super(message);
+    }
 }
