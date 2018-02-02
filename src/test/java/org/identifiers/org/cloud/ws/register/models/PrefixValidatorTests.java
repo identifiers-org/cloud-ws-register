@@ -68,7 +68,6 @@ public class PrefixValidatorTests {
     }
 
     private List<TestDataUseCase> getValidTestCasesData() {
-        // TODO
         return Arrays.asList(
                 new TestDataUseCase()
                         .setTestDescription("Valid prefix accepted")
