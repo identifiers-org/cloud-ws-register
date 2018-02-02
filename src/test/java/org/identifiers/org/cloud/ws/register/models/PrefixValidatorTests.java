@@ -67,6 +67,10 @@ public class PrefixValidatorTests {
         });
     }
 
+    // TODO - On these data providers, keep in mind that this unit test is not prefect, it provides no sample data and
+    // TODO - it gives for granted that some particular prefixes are not registered but others are, but this is extreme agile
+    // TODO - building a prototype to make it evolve over time later on. This note is just a reminder that, in the future, some
+    // TODO - iteration could improve how strict this test is.
     private List<TestDataUseCase> getValidTestCasesData() {
         return Arrays.asList(
                 new TestDataUseCase()
