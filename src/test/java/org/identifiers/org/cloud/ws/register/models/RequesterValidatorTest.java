@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -32,6 +33,9 @@ public class RequesterValidatorTest {
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
         // TODO
+        return Arrays.asList(
+                new TestDataUseCase().setTestDescription("Requester Name provided").setRequester(new Requester())
+        )
     }
 
     private List<TestDataUseCase> getNotValidTestCasesData() {
