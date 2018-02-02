@@ -55,6 +55,10 @@ public class RequesterValidatorTest {
     public void testInvalidUseCases() {
         // Set the expected exception and test description
         expectedException.expect(RequesterValidatorException.class);
+        getNotValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
+            expectedException.reportMissingExceptionWithMessage(String.format("MISSING INVALIDATION for '%s'", testDataUseCase.testDescription));
+            testDataUseCase.validator.validate(testDataUseCase.requester);
+        });
     }
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
