@@ -34,8 +34,9 @@ public class RequesterValidatorTest {
     private List<TestDataUseCase> getValidTestDataUseCases() {
         // TODO
         return Arrays.asList(
-                new TestDataUseCase().setTestDescription("Requester Name provided").setRequester(new Requester())
-        )
+                new TestDataUseCase().setTestDescription("Requester Name NOT provided, validates").setRequester(new Requester()),
+                new TestDataUseCase().setTestDescription("Requester Name provided, validates").setRequester(new Requester().setName("Just a name"))
+        );
     }
 
     private List<TestDataUseCase> getNotValidTestCasesData() {
