@@ -50,7 +50,7 @@ public class PrefixValidatorTests {
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
 
     @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    private ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void testValidUseCases() {
