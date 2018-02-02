@@ -1,5 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -10,6 +13,8 @@ package org.identifiers.org.cloud.ws.register.models;
 public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        return false;
+        List<String> errors = new ArrayList<>();
+        // TODO
+        return true;
     }
 }
