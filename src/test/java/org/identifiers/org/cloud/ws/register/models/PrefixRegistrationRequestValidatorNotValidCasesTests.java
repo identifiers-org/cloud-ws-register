@@ -42,7 +42,6 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
 
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
-        // TODO
         return Arrays.asList(new Object[][]{
                 // Test name validator
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix(), "This request has an invalid name, it is null"},
