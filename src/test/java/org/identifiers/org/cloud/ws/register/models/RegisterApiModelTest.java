@@ -55,4 +55,10 @@ public class RegisterApiModelTest {
                 // TODO
         );
     }
+
+    private List<PrefixValidatorTests.TestDataUseCase> getNotValidTestCasesData() {
+        return Arrays.asList(
+                // TODO
+        );
+    }
 }
