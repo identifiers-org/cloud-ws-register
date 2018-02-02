@@ -55,8 +55,8 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix(), "Missing resource access rule caught"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("://www.ebi.ac.uk/pdbe/entry/{$id}/another"), "Invalid resource access rule caught"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/another/path"), "Missing '{$id}' placeholder caught"},
-                {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix(), "Missing Example Identifier caught"}
-
+                {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix(), "Missing Example Identifier caught"},
+                {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix(), "Missing resource access rule and example identifier"},
         });
     }
 
