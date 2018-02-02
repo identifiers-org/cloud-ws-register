@@ -56,7 +56,8 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
                 {new PrefixRegistrationRequestValidatorReferences(), new RegisterApiRequestRegisterPrefix(), "Empty provision of References validates"},
                 {new PrefixRegistrationRequestValidatorReferences(), new RegisterApiRequestRegisterPrefix().setReferences(new String[] {"Unrestricted provision of references"}), "Provision of References, validates"},
                 {new PrefixRegistrationRequestValidatorAdditionalInformation(), new RegisterApiRequestRegisterPrefix(), "Empty provision of Additional Information, validates"},
-                {new PrefixRegistrationRequestValidatorAdditionalInformation(), new RegisterApiRequestRegisterPrefix().setAdditionalInformation("Unrestricted provision of additional information"), "provision of Additional Information, validates"}
+                {new PrefixRegistrationRequestValidatorAdditionalInformation(), new RegisterApiRequestRegisterPrefix().setAdditionalInformation("Unrestricted provision of additional information"), "provision of Additional Information, validates"},
+                {new PrefixRegistrationRequestValidatorRequester(), new RegisterApiRequestRegisterPrefix().setRequester(new Requester().setEmail("valid@email.com")),"Provisioned requester details validate"}
         });
     }
 }
