@@ -7,6 +7,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
@@ -20,7 +21,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class RequesterValidatorTest {
 
     class TestDataUseCase {
-        RequesterValidator requesterValidator;
+        RequesterValidator validator;
         Requester requester;
         String testDescription;
 
@@ -34,22 +35,22 @@ public class RequesterValidatorTest {
             return this;
         }
 
-        TestDataUseCase setRequesterValidator(RequesterValidator requesterValidator) {
-            this.requesterValidator = requesterValidator;
+        TestDataUseCase setValidator(RequesterValidator validator) {
+            this.validator = validator;
             return this;
         }
     }
 
     @Test
     public void testValidUseCases() {
-        getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription));
+        getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.request), is(true)));
     }
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
         // TODO
         return Arrays.asList(
-                new TestDataUseCase().setRequesterValidator(new RequesterValidatorName()).setTestDescription("Requester Name NOT provided, validates").setRequester(new Requester()),
-                new TestDataUseCase().setRequesterValidator(new RequesterValidatorName()).setTestDescription("Requester Name provided, validates").setRequester(new Requester().setName("Just a name"))
+                new TestDataUseCase().setValidator(new RequesterValidatorName()).setTestDescription("Requester Name NOT provided, validates").setRequester(new Requester()),
+                new TestDataUseCase().setValidator(new RequesterValidatorName()).setTestDescription("Requester Name provided, validates").setRequester(new Requester().setName("Just a name"))
         );
     }
 
