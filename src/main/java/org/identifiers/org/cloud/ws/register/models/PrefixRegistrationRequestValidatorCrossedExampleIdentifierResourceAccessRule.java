@@ -14,7 +14,12 @@ public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceA
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         List<String> errors = new ArrayList<>();
-        // TODO
+        // Check resource access rule
+        try {
+            new PrefixRegistrationRequestValidatorResourceAccessRule().validate(request);
+        } catch (PrefixRegistrationRequestValidatorException e) {
+            errors.add(e.getMessage());
+        }
         return true;
     }
 }
