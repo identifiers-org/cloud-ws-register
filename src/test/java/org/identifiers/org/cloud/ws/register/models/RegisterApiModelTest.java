@@ -18,5 +18,15 @@ public class RegisterApiModelTest {
     class TestDataUseCase {
         RegisterApiRequestRegisterPrefix request;
         String testDescription;
+
+        public TestDataUseCase setRequest(RegisterApiRequestRegisterPrefix request) {
+            this.request = request;
+            return this;
+        }
+
+        public TestDataUseCase setTestDescription(String testDescription) {
+            this.testDescription = testDescription;
+            return this;
+        }
     }
 }
