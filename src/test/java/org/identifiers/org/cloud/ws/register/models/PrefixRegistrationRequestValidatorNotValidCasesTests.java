@@ -63,6 +63,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorRegexPattern(), new RegisterApiRequestRegisterPrefix(), "Missing regex pattern"},
                 {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix(), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier, missing regex pattern and example identifier"},
                 {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier, present regex pattern but missing example identifier"},
+                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("ENSX00000139618"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier, present example identifier but missing regex pattern"},
                 {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$").setExampleIdentifier("ENSX00000139618"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier"}
         });
     }
