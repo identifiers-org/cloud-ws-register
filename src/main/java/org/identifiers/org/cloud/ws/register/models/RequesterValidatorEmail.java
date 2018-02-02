@@ -10,6 +10,6 @@ package org.identifiers.org.cloud.ws.register.models;
 public class RequesterValidatorEmail implements RequesterValidator {
     @Override
     public boolean validate(Requester requester) throws RequesterValidatorException {
-        return false;
+        return true;
     }
 }
