@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier.class);
-    
+
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         List<String> errors = new ArrayList<>();
@@ -34,7 +34,7 @@ public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIden
             errors.add(e.getMessage());
         }
         // Cross-validation
-
+        logger.debug("Validating regex pattern '{}' against '{}'", request.getRegexPattern(), request.getExampleIdentifier());
         Pattern pattern = Pattern.compile(request.getRegexPattern());
         Matcher matcher = pattern.matcher(request.getExampleIdentifier());
         if (!matcher.matches()) {

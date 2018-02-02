@@ -43,7 +43,6 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
     @Parameterized.Parameters
     public static Collection<Object[]> getTestingValues() {
         // TODO
-        String ensemblRegexPattern = "^((ENS[A-Z]*[FPTG]\\d{11}(\\.\\d+)?)|(FB\\w{2}\\d{7})|(Y[A-Z]{2}\\d{3}[a-zA-Z](\\-[A-Z])?)|([A-Z_a-z0-9]+(\\.)?(t)?(\\d+)?([a-z])?))$";
         return Arrays.asList(new Object[][]{
                 // Test name validator
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix(), "This request has an invalid name, it is null"},
@@ -62,7 +61,7 @@ public class PrefixRegistrationRequestValidatorNotValidCasesTests {
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("873465"), "Example Identifier present, but missing Resource Access Rule"},
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(String.format("http://httpstat.us/%s", ResourceAccessHelper.RESOURCE_ACCESS_RULE_PLACEHOLDER_ID)).setExampleIdentifier("404"), "Resource Access Rule and Example Identifier present, but they lead to a bad landing page"},
                 {new PrefixRegistrationRequestValidatorRegexPattern(), new RegisterApiRequestRegisterPrefix(), "Missing regex pattern"},
-                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern(ensemblRegexPattern).setExampleIdentifier("ENSX00000139618"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier"}
+                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$").setExampleIdentifier("ENSX00000139618"), "NOT Valid cross-validation of example identifier and regular expression pattern describing the identifier"}
         });
     }
 
