@@ -57,6 +57,8 @@ public class RequesterValidatorTest {
 
     private List<TestDataUseCase> getNotValidTestCasesData() {
         // TODO
-        return null;
+        return Arrays.asList(
+                new TestDataUseCase().setValidator(new RequesterValidatorEmail()).setTestDescription("Requester invalid e-mail address is provided and valid").setRequester(new Requester().setEmail("myemailATsomedomain.com"))
+        );
     }
 }
