@@ -15,4 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class RegisterApiModelTest {
 
+    class TestDataUseCase {
+
+    }
 }
