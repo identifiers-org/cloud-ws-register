@@ -66,7 +66,8 @@ public class RequesterValidatorTest {
         return Arrays.asList(
                 new TestDataUseCase().setValidator(new RequesterValidatorName()).setTestDescription("Requester Name NOT provided, validates").setRequester(new Requester()),
                 new TestDataUseCase().setValidator(new RequesterValidatorName()).setTestDescription("Requester Name provided, validates").setRequester(new Requester().setName("Just a name")),
-                new TestDataUseCase().setValidator(new RequesterValidatorEmail()).setTestDescription("Requester valid e-mail address is provided and valid").setRequester(new Requester().setEmail("myemail@somedomain.com"))
+                new TestDataUseCase().setValidator(new RequesterValidatorEmail()).setTestDescription("Requester valid e-mail address is provided and valid").setRequester(new Requester().setEmail("myemail@somedomain.com")),
+                new TestDataUseCase().setValidator(new RequesterValidatorFullValidator()).setTestDescription("Full Requester validation").setRequester(new Requester().setEmail("valid@email.com"))
         );
     }
 
