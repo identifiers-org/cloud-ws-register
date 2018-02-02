@@ -17,7 +17,9 @@ public class PrefixRegistrationRequestValidatorAdditionalInformation implements 
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // Validate by default, no requirements are enforced
         logger.info("DEFAULT policy for Additional Information is ALWAYS VALID");
-        
+        if (request.getAdditionalInformation() == null) {
+            logger.info("NO Additional Information has been provided");
+        }
         return true;
     }
 }
