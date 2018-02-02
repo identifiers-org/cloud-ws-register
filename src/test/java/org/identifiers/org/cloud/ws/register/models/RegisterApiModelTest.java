@@ -25,12 +25,12 @@ public class RegisterApiModelTest {
         RegisterApiRequestRegisterPrefix request;
         String testDescription;
 
-        public TestDataUseCase setRequest(RegisterApiRequestRegisterPrefix request) {
+        TestDataUseCase setRequest(RegisterApiRequestRegisterPrefix request) {
             this.request = request;
             return this;
         }
 
-        public TestDataUseCase setTestDescription(String testDescription) {
+        TestDataUseCase setTestDescription(String testDescription) {
             this.testDescription = testDescription;
             return this;
         }
@@ -58,7 +58,6 @@ public class RegisterApiModelTest {
     private List<PrefixValidatorTests.TestDataUseCase> getValidTestCasesData() {
         return Arrays.asList(
                 // TODO
-
         );
     }
 
