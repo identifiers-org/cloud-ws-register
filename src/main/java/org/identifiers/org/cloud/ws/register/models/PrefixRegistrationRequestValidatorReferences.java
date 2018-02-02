@@ -12,10 +12,16 @@ import org.slf4j.LoggerFactory;
  */
 public class PrefixRegistrationRequestValidatorReferences implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorReferences.class);
-    
+
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // References are not enforced, so they just validate
+        logger.info("References validation policy is VALID by default");
+        if (request.getReferences() == null) {
+            logger.info("No references have been provided");
+        } else {
+            logger.info(String.format("#%d Reference entries have been provided", request.getReferences().length));
+        }
         return true;
     }
 }
