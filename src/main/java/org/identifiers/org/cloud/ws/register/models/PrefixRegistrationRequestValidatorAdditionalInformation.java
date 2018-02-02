@@ -1,5 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -8,9 +11,12 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class PrefixRegistrationRequestValidatorAdditionalInformation implements PrefixRegistrationRequestValidator {
+    private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorAdditionalInformation.class);
+    
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
         // Validate by default, no requirements are enforced
+
         return true;
     }
 }
