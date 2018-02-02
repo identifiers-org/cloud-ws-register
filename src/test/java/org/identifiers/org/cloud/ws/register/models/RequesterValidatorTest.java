@@ -43,7 +43,7 @@ public class RequesterValidatorTest {
 
     @Test
     public void testValidUseCases() {
-        getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.request), is(true)));
+        getValidTestDataUseCases().parallelStream().forEach(testDataUseCase -> assertThat(testDataUseCase.testDescription, testDataUseCase.validator.validate(testDataUseCase.requester), is(true)));
     }
 
     private List<TestDataUseCase> getValidTestDataUseCases() {
