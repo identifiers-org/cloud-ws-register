@@ -39,6 +39,7 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
         // TODO
         String chebiAccessRule = "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:{$id}";
         int chebiSampleId = 36927;
+        String chebiRegexPattern = "\\d+$";
         return Arrays.asList(new Object[][]{
                 // Test name validator
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix().setName("TestName"), "Request with valid name"},
@@ -50,7 +51,8 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another/path"), "Valid resource access rule"},
                 {new PrefixRegistrationRequestValidatorExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setExampleIdentifier("34765"), "Example Identifier is present"},
                 {new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule(chebiAccessRule).setExampleIdentifier(String.valueOf(chebiSampleId)), "Valid cross validation of resource access rule and example identifier"},
-                {new PrefixRegistrationRequestValidatorRegexPattern(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$"), "Regex Pattern is present"}
+                {new PrefixRegistrationRequestValidatorRegexPattern(), new RegisterApiRequestRegisterPrefix().setRegexPattern("\\d+$"), "Regex Pattern is present"},
+                {new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(), new RegisterApiRequestRegisterPrefix().setRegexPattern(chebiRegexPattern).setExampleIdentifier(String.valueOf(chebiSampleId)), "Valid cross-validation of example identifier and regular expression pattern describing the identifier"}
         });
     }
 }
