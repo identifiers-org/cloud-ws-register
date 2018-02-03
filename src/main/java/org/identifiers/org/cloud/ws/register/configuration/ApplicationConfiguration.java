@@ -35,6 +35,7 @@ public class ApplicationConfiguration {
     private String emailTransportProtocol;
     @Value("${WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_SMTP_AUTH}")
     private String emailBooleanSmtpAuth;
+    @Value("${WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_START_TLS}")
     private String emailBooleanStarttlsEnable;
     private String emailBooleanDebug;
 
