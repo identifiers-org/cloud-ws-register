@@ -9,4 +9,5 @@ package org.identifiers.org.cloud.ws.register.models;
  */
 public class UnitTestsHelper {
     // TODO - In future iterations, integrate this into a better modeled Unit Tests Context
+    public static String SERVICE_HTTP_STATUS_URL = "http://localhost:8079";
 }
