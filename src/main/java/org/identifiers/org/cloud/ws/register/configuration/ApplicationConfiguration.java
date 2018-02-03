@@ -55,7 +55,7 @@ public class ApplicationConfiguration {
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         // TODO
-        
+        javaMailSender.setHost(emailHost);
         return javaMailSender;
     }
 }
