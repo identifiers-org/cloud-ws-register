@@ -25,6 +25,7 @@ public class ApplicationConfiguration {
     // E-mail subsystem configuration
     @Value("${WS_REGISTRY_CONFIG_EMAIL_HOST}")
     private String emailHost;
+    @Value("${WS_REGISTRY_CONFIG_EMAIL_PORT}")
     private int emailPort;
     private String emailUserName;
     private String emailPassword;
