@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -52,6 +53,8 @@ public class ApplicationConfiguration {
 
     @Bean
     public JavaMailSender getJavaMailSender() {
+        JavaMailSender javaMailSender = new JavaMailSenderImpl();
         // TODO
+        return javaMailSender;
     }
 }
