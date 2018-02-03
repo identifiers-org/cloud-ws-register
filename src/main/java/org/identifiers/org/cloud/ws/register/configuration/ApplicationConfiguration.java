@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -47,5 +48,10 @@ public class ApplicationConfiguration {
     @Bean
     public PrefixRegistrationAgent prefixRegistrationAgent() {
         return new PrefixRegistrationAgentViaEmail();
+    }
+
+    @Bean
+    public JavaMailSender getJavaMailSender() {
+        // TODO
     }
 }
