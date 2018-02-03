@@ -53,8 +53,9 @@ public class ApplicationConfiguration {
 
     @Bean
     public JavaMailSender getJavaMailSender() {
-        JavaMailSender javaMailSender = new JavaMailSenderImpl();
+        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         // TODO
+        
         return javaMailSender;
     }
 }
