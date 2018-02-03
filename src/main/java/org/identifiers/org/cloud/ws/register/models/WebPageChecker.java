@@ -18,6 +18,7 @@ public interface WebPageChecker {
     // By breaking different checking steps into externalized pieces, I can reuse this code on other possible new web
     // page checkers
     default boolean checkForValidUrl(String url) {
+        // TODO - UrlValidator instance must be controlled by the running environment, as it should NOT accept localhost URLs in production
         return (new UrlValidator(UrlValidator.ALLOW_LOCAL_URLS)).isValid(url);
     }
 
