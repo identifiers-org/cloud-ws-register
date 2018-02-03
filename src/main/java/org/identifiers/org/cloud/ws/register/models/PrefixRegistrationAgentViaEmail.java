@@ -36,6 +36,7 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
             logger.info("REGISTERING PREFIX registration request\n{}", mapper.writeValueAsString(prefixRegistrationRequest));
         } catch (JsonProcessingException e) {
             // TODO - nothing to do here right now
+            logger.error("VALID Prefix registration request COULD NOT BE DUMPED in JSON format, which is kind of impossible...");
         }
     }
 }
