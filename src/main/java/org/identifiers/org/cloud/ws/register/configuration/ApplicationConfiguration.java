@@ -5,6 +5,7 @@ import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgentViaEm
 import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationRequestValidatorStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,6 +23,7 @@ public class ApplicationConfiguration {
     private PrefixRegistrationRequestValidatorStrategy sectedValidatorStrategy;
 
     // E-mail subsystem configuration
+    @Value("${WS_REGISTRY_CONFIG_EMAIL_HOST}")
     private String emailHost;
     private int emailPort;
     private String emailUserName;
