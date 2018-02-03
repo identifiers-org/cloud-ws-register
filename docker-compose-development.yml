@@ -1,2 +1,4 @@
 # This docker-compose file defines the development environment
 version: "3"
+services:
+    
