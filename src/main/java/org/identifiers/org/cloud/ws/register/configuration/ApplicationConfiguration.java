@@ -58,6 +58,7 @@ public class ApplicationConfiguration {
         javaMailSender.setHost(emailHost);
         javaMailSender.setPort(emailPort);
         javaMailSender.setUsername(emailUserName);
+        javaMailSender.setPassword(emailPassword);
         return javaMailSender;
     }
 }
