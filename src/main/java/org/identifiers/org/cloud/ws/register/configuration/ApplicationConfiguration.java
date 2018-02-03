@@ -65,6 +65,7 @@ public class ApplicationConfiguration {
         Properties properties = javaMailSender.getJavaMailProperties();
         properties.put("mail.transport.protocol", emailTransportProtocol);
         properties.put("mail.smtp.auth", emailBooleanSmtpAuth);
+        properties.put("mail.smtp.starttls.enable", emailBooleanStarttlsEnable);
         return javaMailSender;
     }
 }
