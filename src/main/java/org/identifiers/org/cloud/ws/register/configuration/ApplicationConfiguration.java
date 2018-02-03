@@ -1,11 +1,7 @@
 package org.identifiers.org.cloud.ws.register.configuration;
 
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgent;
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationRequestValidatorStrategy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -15,22 +11,23 @@ import org.springframework.context.annotation.Configuration;
  * ---
  */
 @Configuration
+@Profile("default")
 public class ApplicationConfiguration {
     // Production Environment Application Configuration
-    @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
+/*    @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
     private PrefixRegistrationRequestValidatorStrategy selectedValidatorStrategy;
-
-    @Autowired @Qualifier("PrefixRegistrationAgentViaEmail")
+*/
+/*    @Autowired @Qualifier("PrefixRegistrationAgentViaEmail")
     private PrefixRegistrationAgent selectedPrefixRegistrationAgent;
-
-    @Bean
+*/
+/*    @Bean
     public PrefixRegistrationRequestValidatorStrategy validatorStrategy() {
         return selectedValidatorStrategy;
     }
-
-    @Bean
+*/
+/*    @Bean
     public PrefixRegistrationAgent prefixRegistrationAgent() {
         return selectedPrefixRegistrationAgent;
     }
-
+*/
 }
