@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -12,6 +15,9 @@ import org.slf4j.LoggerFactory;
  * Timestamp: 2018-02-03 15:19
  * ---
  */
+@Component
+@Scope("prototype")
+@Profile("development")
 public class PrefixRegistrationAgentDumpRequestIntoLogs implements PrefixRegistrationAgent {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentDumpRequestIntoLogs.class);
 
