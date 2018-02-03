@@ -1,6 +1,5 @@
 package org.identifiers.org.cloud.ws.register.configuration;
 
-import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.PrefixRegistrationRequestValidatorStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,10 +17,10 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfiguration {
 
     @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
-    private PrefixRegistrationRequestValidatorStrategy sectedValidatorStrategy;
+    private PrefixRegistrationRequestValidatorStrategy selectedValidatorStrategy;
 
-    @Autowired @Qualifier("PrefixRegistrationAgentViaEmail")
-    private PrefixRegistrationAgent prefixRegistrationAgent;
+//    @Autowired @Qualifier("PrefixRegistrationAgentViaEmail")
+//    private PrefixRegistrationAgent prefixRegistrationAgent;
 
 /*    // E-mail subsystem configuration
     @Value("${WS_REGISTRY_CONFIG_EMAIL_HOST}")
@@ -34,7 +33,7 @@ public class ApplicationConfiguration {
     private String emailPassword;
     @Value("${WS_REGISTRY_CONFIG_EMAIL_TRANSPORT_PROTOCOL}")
     private String emailTransportProtocol;
-    @Value("${WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_SMTP_AUTH}")
+    @Value("${WS_REGISTRY_CONFIG_EMAIL_//BOOLEAN_SMTP_AUTH}")
     private String emailBooleanSmtpAuth;
     @Value("${WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_START_TLS}")
     private String emailBooleanStarttlsEnable;
@@ -43,13 +42,15 @@ public class ApplicationConfiguration {
 
     @Bean
     public PrefixRegistrationRequestValidatorStrategy validatorStrategy() {
-        return sectedValidatorStrategy;
+        return selectedValidatorStrategy;
     }
 
+/*
     @Bean
-    public PrefixRegistrationAgent getPrefixRegistrationAgent() {
-        return prefixRegistrationAgent;
+    public PrefixRegistrationAgent prefixRegistrationAgent() {
+        return selectedPrefixRegistrationAgent;
     }
+*/
 
 /*
     @Bean
