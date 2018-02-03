@@ -51,6 +51,7 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
         message.setTo(emailRecipient);
         message.setSubject("Prefix registration request");
         message.setText(registrationData);
+        // TODO - Refactor this part to use re-try pattern
         javaMailSender.send(message);
     }
 }
