@@ -49,7 +49,6 @@ public class RegisterApiModelTest {
 
     @Test
     public void testValidPrefixRegistrationRequests() {
-        // TODO
         getValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
             RegisterApiResponse response = registerApiModel.registerPrefix(testDataUseCase.request);
             assertThat(testDataUseCase.testDescription, response.getHttpStatus() == HttpStatus.OK, is(true));
