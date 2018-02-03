@@ -1,8 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -40,9 +38,6 @@ public class RegisterApiModelTest {
             return this;
         }
     }
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Autowired
     private RegisterApiModel registerApiModel;
