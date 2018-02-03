@@ -40,6 +40,7 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
         ObjectMapper mapper = new ObjectMapper();
         String registrationData = "--- IT COULD NOT BE SERIALIZED ---";
         try {
+            // TODO - Use external formaters that can be set in run time to format the request
             registrationData = mapper.writeValueAsString(prefixRegistrationRequest);
             logger.info("REGISTERING PREFIX registration request\n{}", registrationData);
         } catch (JsonProcessingException e) {
