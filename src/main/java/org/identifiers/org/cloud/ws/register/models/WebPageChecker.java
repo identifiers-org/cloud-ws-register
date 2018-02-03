@@ -18,7 +18,7 @@ public interface WebPageChecker {
     // By breaking different checking steps into externalized pieces, I can reuse this code on other possible new web
     // page checkers
     default boolean checkForValidUrl(String url) {
-        return (new UrlValidator()).isValid(url);
+        return (new UrlValidator(UrlValidator.ALLOW_LOCAL_URLS)).isValid(url);
     }
 
     default boolean checkForOkUrlEndpoint(String url) throws WebPageCheckerException {
