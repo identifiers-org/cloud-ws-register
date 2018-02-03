@@ -72,7 +72,7 @@ public class RegisterApiModelTest {
                                 .setHomePage("http://identifiers.org/")
                                 .setOrganization("EMBL-EBI Unit Testing Organization")
                                 .setPreferredPrefix("mynewprefix")
-                                .setResourceAccessRule("http://httpstat.us/{$id}")
+                                .setResourceAccessRule(String.format("%s/{$id}", UnitTestsHelper.SERVICE_HTTP_STATUS_URL))
                                 .setExampleIdentifier("200")
                                 .setRegexPattern("\\d+$")
                                 .setReferences(new String[]{"Reference 1", "Publication 1", "Citation 1"})
