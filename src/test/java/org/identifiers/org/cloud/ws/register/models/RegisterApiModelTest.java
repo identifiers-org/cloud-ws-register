@@ -68,7 +68,7 @@ public class RegisterApiModelTest {
                         .setTestDescription("Valid prefix registration request")
                         .setRequest(new RegisterApiRequestRegisterPrefix()
                                 .setName("Valid new testing prefix mynewprefix")
-                                .setDescription("This is a valid test prefix registration request")
+                                .setDescription("This is a valid test prefix registration request, and I need it to be long")
                                 .setHomePage("http://identifiers.org/")
                                 .setOrganization("EMBL-EBI Unit Testing Organization")
                                 .setPreferredPrefix("mynewprefix")
