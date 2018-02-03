@@ -24,8 +24,6 @@ import org.springframework.stereotype.Component;
 public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentViaEmail.class);
 
-    @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.from}")
-    private String emailSender;
     @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.to}")
     private String emailRecipient;
     @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.subject}")
