@@ -37,7 +37,6 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
 
     @Override
     public void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException {
-        // TODO
         ObjectMapper mapper = new ObjectMapper();
         String registrationData = "--- IT COULD NOT BE SERIALIZED ---";
         try {
