@@ -5,10 +5,14 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -48,6 +52,10 @@ public class RegisterApiModelTest {
     @Test
     public void testValidPrefixRegistrationRequests() {
         // TODO
+        getValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
+            RegisterApiResponse response = registerApiModel.registerPrefix(testDataUseCase.request);
+            assertThat(testDataUseCase.testDescription, response.getHttpStatus() == HttpStatus.OK, is(true));
+        });
     }
 
     @Test
