@@ -4,7 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -13,6 +16,9 @@ import org.springframework.mail.javamail.JavaMailSender;
  * Timestamp: 2018-01-30 23:13
  * ---
  */
+@Component
+@Scope("prototype")
+@Qualifier("PrefixRegistrationAgentViaEmail")
 public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentViaEmail.class);
 
