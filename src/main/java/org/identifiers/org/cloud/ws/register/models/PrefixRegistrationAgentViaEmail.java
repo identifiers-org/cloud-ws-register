@@ -28,6 +28,9 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
     private String emailSender;
     @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.to}")
     private String emailRecipient;
+    @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.subject}")
+    private String emailSubject;
+
     private JavaMailSender javaMailSender;
 
     public PrefixRegistrationAgentViaEmail(JavaMailSender javaMailSender) {
@@ -49,7 +52,7 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
         // TODO - Send the request via e-mail
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(emailRecipient);
-        message.setSubject("Prefix registration request");
+        message.setSubject(emailSubject);
         message.setText(registrationData);
         // TODO - Refactor this part to use re-try pattern
         javaMailSender.send(message);
