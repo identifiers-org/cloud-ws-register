@@ -38,8 +38,8 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
     @Override
     public void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException {
         // TODO - CHANGE THIS TO USE OAUTH2 with tokens, maybe as a specialization of this agent
-        ObjectMapper mapper = new ObjectMapper();
         String registrationData = "--- IT COULD NOT BE SERIALIZED ---";
+        ObjectMapper mapper = new ObjectMapper();
         try {
             // TODO - Use external formaters that can be set in run time to format the request
             registrationData = mapper.writeValueAsString(prefixRegistrationRequest);
