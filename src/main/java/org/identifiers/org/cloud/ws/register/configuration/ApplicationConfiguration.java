@@ -50,7 +50,7 @@ public class ApplicationConfiguration {
     }
     @Bean
     public PrefixRegistrationAgent prefixRegistrationAgent() {
-        return new PrefixRegistrationAgentViaEmail();
+        return new PrefixRegistrationAgentViaEmail(getJavaMailSender());
     }
 
     @Bean
