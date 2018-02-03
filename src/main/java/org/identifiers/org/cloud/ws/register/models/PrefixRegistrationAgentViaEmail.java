@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +18,11 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
     @Override
     public void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException {
         // TODO
-        logger.info("REGISTERING PREFIX registration request\n{}", prefixRegistrationRequest.toString());
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            logger.info("REGISTERING PREFIX registration request\n{}", mapper.writeValueAsString(prefixRegistrationRequest));
+        } catch (JsonProcessingException e) {
+            // TODO - nothing to do here right now
+        }
     }
 }
