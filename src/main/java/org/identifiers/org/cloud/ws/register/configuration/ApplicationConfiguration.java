@@ -37,6 +37,7 @@ public class ApplicationConfiguration {
     private String emailBooleanSmtpAuth;
     @Value("${WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_START_TLS}")
     private String emailBooleanStarttlsEnable;
+    @Value("${WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_DEBUG}")
     private String emailBooleanDebug;
 
     @Bean
