@@ -31,6 +31,7 @@ public class ApplicationConfiguration {
     private String emailUserName;
     @Value("${WS_REGISTRY_CONFIG_EMAIL_PASSWORD}")
     private String emailPassword;
+    @Value("${WS_REGISTRY_CONFIG_EMAIL_TRANSPORT_PROTOCOL}")
     private String emailTransportProtocol;
     private String emailBooleanSmtpAuth;
     private String emailBooleanStarttlsEnable;
