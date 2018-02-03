@@ -56,6 +56,7 @@ public class ApplicationConfiguration {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         // TODO
         javaMailSender.setHost(emailHost);
+        javaMailSender.setPort(emailPort);
         return javaMailSender;
     }
 }
