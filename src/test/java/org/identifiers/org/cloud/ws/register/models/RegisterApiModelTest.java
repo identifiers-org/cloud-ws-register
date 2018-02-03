@@ -52,7 +52,6 @@ public class RegisterApiModelTest {
 
     @Test
     public void testInvalidUseCases() {
-        // TODO
         getNotValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
             RegisterApiResponse response = registerApiModel.registerPrefix(testDataUseCase.request);
             assertThat(testDataUseCase.testDescription, response.getHttpStatus() == HttpStatus.BAD_REQUEST, is(true));
