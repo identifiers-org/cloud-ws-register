@@ -66,6 +66,7 @@ public class ApplicationConfiguration {
         properties.put("mail.transport.protocol", emailTransportProtocol);
         properties.put("mail.smtp.auth", emailBooleanSmtpAuth);
         properties.put("mail.smtp.starttls.enable", emailBooleanStarttlsEnable);
+        properties.put("mail.debug", emailBooleanDebug);
         return javaMailSender;
     }
 }
