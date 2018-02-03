@@ -21,6 +21,16 @@ public class ApplicationConfiguration {
     @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
     private PrefixRegistrationRequestValidatorStrategy sectedValidatorStrategy;
 
+    // E-mail subsystem configuration
+    private String emailHost;
+    private int emailPort;
+    private String emailUserName;
+    private String emailPassword;
+    private String emailTransportProtocol;
+    private String emailBooleanSmtpAuth;
+    private String emailBooleanStarttlsEnable;
+    private String emailBooleanDebug;
+
     @Bean
     public PrefixRegistrationRequestValidatorStrategy validatorStrategy() {
         return sectedValidatorStrategy;
