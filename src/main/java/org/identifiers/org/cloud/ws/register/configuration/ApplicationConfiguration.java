@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ApplicationConfiguration {
-
+    // Production Environment Application Configuration
     @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
     private PrefixRegistrationRequestValidatorStrategy selectedValidatorStrategy;
 
