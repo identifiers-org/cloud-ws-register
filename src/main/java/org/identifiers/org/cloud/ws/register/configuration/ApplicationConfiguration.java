@@ -63,7 +63,8 @@ public class ApplicationConfiguration {
         javaMailSender.setPassword(emailPassword);
         // Properties
         Properties properties = javaMailSender.getJavaMailProperties();
-        properties.put("mail.transport.protocol", "smtp");
+        properties.put("mail.transport.protocol", emailTransportProtocol);
+        
         return javaMailSender;
     }
 }
