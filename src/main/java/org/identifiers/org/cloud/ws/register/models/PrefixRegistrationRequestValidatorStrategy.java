@@ -25,7 +25,7 @@ public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegist
                 .parallelStream()
                 .map(validator -> {
                     try {
-                        validate(request);
+                        validator.validate(request);
                     } catch (PrefixRegistrationRequestValidatorException e) {
                         return e.getMessage();
                     }
