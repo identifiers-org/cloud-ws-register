@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +24,10 @@ import org.springframework.stereotype.Component;
 public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentViaEmail.class);
 
+    @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.from}")
+    private String emailSender;
+    @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.to}")
+    private String emailRecipient;
     private JavaMailSender javaMailSender;
 
     public PrefixRegistrationAgentViaEmail(JavaMailSender javaMailSender) {
@@ -32,11 +38,19 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
     public void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException {
         // TODO
         ObjectMapper mapper = new ObjectMapper();
+        String registrationData = "--- IT COULD NOT BE SERIALIZED ---";
         try {
-            logger.info("REGISTERING PREFIX registration request\n{}", mapper.writeValueAsString(prefixRegistrationRequest));
+            registrationData = mapper.writeValueAsString(prefixRegistrationRequest);
+            logger.info("REGISTERING PREFIX registration request\n{}", registrationData);
         } catch (JsonProcessingException e) {
             // TODO - nothing to do here right now
             logger.error("VALID Prefix registration request COULD NOT BE DUMPED in JSON format, which is kind of impossible...");
         }
+        // TODO - Send the request via e-mail
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(emailRecipient);
+        message.setSubject("Prefix registration request");
+        message.setText(registrationData);
+        javaMailSender.send(message);
     }
 }
