@@ -5,3 +5,7 @@ services:
         image: identifiersorg/cloud-ws-resolver
         ports:
             - 8080:8080
+    httpstatus:
+        image: identifiersorg/cloud-ws-httpstatus
+        ports:
+            - 8079:8079
