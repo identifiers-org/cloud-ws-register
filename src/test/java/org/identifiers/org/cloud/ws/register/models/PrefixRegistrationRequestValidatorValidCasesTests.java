@@ -43,7 +43,7 @@ public class PrefixRegistrationRequestValidatorValidCasesTests {
                 // Test name validator
                 {new PrefixRegistrationRequestValidatorName(), new RegisterApiRequestRegisterPrefix().setName("TestName"), "Request with valid name"},
                 {new PrefixRegistrationRequestValidatorDescription(), new RegisterApiRequestRegisterPrefix().setDescription("This is a valid description, according to the rules"), "Prefix registration request description is present and meets the requirements"},
-                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage("http://httpstat.us/200"), "Valid home page is accepted"},
+                {new PrefixRegistrationRequestValidatorHomePage(), new RegisterApiRequestRegisterPrefix().setHomePage(String.format("%s/200", UnitTestsHelper.SERVICE_HTTP_STATUS_URL)), "Valid home page is accepted"},
                 {new PrefixRegistrationRequestValidatorOrganization(), new RegisterApiRequestRegisterPrefix().setOrganization("This is a Sample Organization Inc."), "Organization information is supplied"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/pdb/{$id}"), "Valid resource access rule"},
                 {new PrefixRegistrationRequestValidatorResourceAccessRule(), new RegisterApiRequestRegisterPrefix().setResourceAccessRule("http://www.ebi.ac.uk/pdbe/entry/{$id}/another"), "Valid resource access rule"},
