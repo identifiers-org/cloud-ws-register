@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
+import java.util.Properties;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -54,11 +56,14 @@ public class ApplicationConfiguration {
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        // TODO
+        // Host access configuration
         javaMailSender.setHost(emailHost);
         javaMailSender.setPort(emailPort);
         javaMailSender.setUsername(emailUserName);
         javaMailSender.setPassword(emailPassword);
+        // Properties
+        Properties properties = javaMailSender.getJavaMailProperties();
+        
         return javaMailSender;
     }
 }
