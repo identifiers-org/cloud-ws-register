@@ -11,6 +11,10 @@ springboot_development_profile = development
 
 # TODO default target
 
+clean:
+	@echo "<===|DEVOPS|===> [CLEAN] Running House Keeping tasks"
+	@mvn clean > /dev/null
+
 development_env_up:
 	@echo "<===|DEVOPS|===> [ENVIRONMENT] Bringing development environment UP"
 	@docker-compose -f $(docker_compose_development_file) up -d
@@ -28,9 +32,5 @@ development_env_down:
 development_run_tests: development_env_up
 	@echo "<===|DEVOPS|===> [TESTS] Running Unit Tests"
 	@mvn -Dspring.profiles.active=$(springboot_development_profile) clean test
-
-clean:
-	@echo "<===|DEVOPS|===> [CLEAN] Running House Keeping tasks"
-	@mvn clean > /dev/null
 
 .PHONY: all clean development_run_tests
