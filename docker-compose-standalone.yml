@@ -1,6 +1,23 @@
 # This docker-compose can be used to run this service in standalone mode, i.e. on its own, isolated
 version: "3"
 services:
+    registry:
+        image: identifiersorg/cloud-ws-registry
+        environment:
+            - WS_REGISTRY_CONFIG_RESOLVER_HOST=set_your_environment_value
+            - WS_REGISTRY_CONFIG_RESOLVER_PORT=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_HOST=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_PORT=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_USERNAME=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_PASSWORD=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_TRANSPORT_PROTOCOL=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_SMTP_AUTH=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_START_TLS=set_your_environment_value
+            - WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_DEBUG=set_your_environment_value
+        ports:
+            - 8081:8081
+        depends_on:
+            - resolver
     resolver:
         image: identifiersorg/cloud-ws-resolver
         ports:
