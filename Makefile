@@ -28,3 +28,5 @@ development_env_down:
 development_run_tests: development_env_up
 	@echo "<===|DEVOPS|===> [TESTS] Running Unit Tests"
 	@mvn -Dspring.profiles.active=$(springboot_development_profile) clean test
+
+.PHONY: all clean development_run_tests
