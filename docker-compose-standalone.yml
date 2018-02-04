@@ -9,8 +9,8 @@ services:
     registry:
         image: identifiersorg/cloud-ws-registry
         environment:
-            - WS_REGISTRY_CONFIG_RESOLVER_HOST=set_your_environment_value
-            - WS_REGISTRY_CONFIG_RESOLVER_PORT=set_your_environment_value
+            - WS_REGISTRY_CONFIG_RESOLVER_HOST=resolver
+            - WS_REGISTRY_CONFIG_RESOLVER_PORT=8080
             - WS_REGISTRY_CONFIG_EMAIL_HOST=set_your_environment_value
             - WS_REGISTRY_CONFIG_EMAIL_PORT=set_your_environment_value
             - WS_REGISTRY_CONFIG_EMAIL_USERNAME=set_your_environment_value
