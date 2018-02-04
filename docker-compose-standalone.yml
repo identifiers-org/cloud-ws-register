@@ -1,2 +1,7 @@
 # This docker-compose can be used to run this service in standalone mode, i.e. on its own, isolated
 version: "3"
+services:
+    resolver:
+        image: identifiersorg/cloud-ws-resolver
+        ports:
+            - 8080:8080
