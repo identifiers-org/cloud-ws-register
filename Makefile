@@ -33,10 +33,10 @@ development_run_tests: development_env_up
 	@echo "<===|DEVOPS|===> [TESTS] Running Unit Tests"
 	@mvn -Dspring.profiles.active=$(springboot_development_profile) clean test
 
-app_structure: development_env_up
+app_structure:
 	@echo "<===|DEVOPS|===> [PACKAGE] Application"
 	@mvn clean > /dev/null
-	@mvn package -DskipTests 
+	@mvn package -DskipTests
 	@mkdir -p target/app/log
 	@mkdir -p target/app/tmp
 	@cp target/register-*.jar target/app/service.jar
