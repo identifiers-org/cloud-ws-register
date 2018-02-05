@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
  * ---
  */
 @Configuration
-@Profile("production")
+@Profile({"production", "standalone"})
 public class ApplicationConfiguration {
     // Production Environment Application Configuration
 /*    @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
