@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 //@Qualifier("PrefixRegistrationAgentViaEmail")
-@Profile("default")
+@Profile({"production", "standalone"})
 public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentViaEmail.class);
 
