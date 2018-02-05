@@ -11,6 +11,8 @@ springboot_development_profile = development
 
 # TODO default target
 
+all: container_production_push
+	
 clean:
 	@echo "<===|DEVOPS|===> [CLEAN] Running House Keeping tasks"
 	@mvn clean > /dev/null
