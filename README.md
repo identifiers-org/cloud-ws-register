@@ -1,2 +1,2 @@
-# cloud-ws-registrer
+# Overview
 Prototype of cloud native registration service
