@@ -30,7 +30,11 @@ This will start the service in the background, to stop it, just run
 
 
 # How to submit Requests to the Namespace Registration service
-TODO
+The _Namespace Registration Service_ runs on port 8081. Its main endpoint for registration requests is via **HTTP POST** requests to
+
+> http://registry:8081
+
+being 'registry' the name of the host that's running the service.
 
 
 ### Contact
