@@ -29,7 +29,7 @@ This will start the service in the background, to stop it, just run
 > docker-compose -f docker-compose-standalone.yml down
 
 
-# How to POST Requests to the Namespace Registration service
+# How to submit Requests to the Namespace Registration service
 TODO
 
 
