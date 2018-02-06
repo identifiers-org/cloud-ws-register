@@ -29,7 +29,7 @@ This will start the service in the background, to stop it, just run
 > docker-compose -f docker-compose-standalone.yml down
 
 
-# How to submit Requests to the Namespace Registration service
+# Submitting Requests to the Namespace Registration Service
 The _Namespace Registration Service_ runs on port 8081. Its main endpoint for registration requests is via **HTTP POST** requests to
 
 > http://registry:8081
