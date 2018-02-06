@@ -61,6 +61,9 @@ The _body_ of the registration requests must contain the following information:
 }
 ```
 
+If your request is **valid**, you will receive the corresponding _HTTP OK_ response and it will be queued for final review by a curator in [__identifiers.org__](http://identifiers.org).
+
+In case your request is **not valid**, you will get an _HTTP BAD REQUEST_ response including the reasons why your request did not validate in the body of the response.
 
 ### Contact
 Manuel Bernal Llinares
