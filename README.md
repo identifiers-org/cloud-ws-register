@@ -65,5 +65,10 @@ If your request is **valid**, you will receive the corresponding _HTTP OK_ respo
 
 In case your request is **not valid**, you will get an _HTTP BAD REQUEST_ response including the reasons why your request did not validate in the body of the response.
 
+
+# Contributions
+Documentation for developers will be coming soon, through the repository Wiki.
+
+
 ### Contact
 Manuel Bernal Llinares
