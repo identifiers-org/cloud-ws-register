@@ -36,6 +36,31 @@ The _Namespace Registration Service_ runs on port 8081. Its main endpoint for re
 
 being 'registry' the name of the host that's running the service.
 
+The _body_ of the registration requests must contain the following information:
+
+```json
+{
+    "name": "Valid new testing prefix mynewprefix",
+    "description": "This describes your namespace registration request, and it needs to be more than 50 characters long",
+    "homePage": "http://your_home_page.tld/",
+    "organization": "Your Organization Name",
+    "preferredPrefix": "mynewprefix",
+    "resourceAccessRule": "http://somewhere.tld/{$id}",
+    "exampleIdentifier": "9875624",
+    "regexPattern": "\\d+$",
+    "references": [
+        "Reference",
+        "Publication",
+        "Citation"
+    ],
+    "additionalInformation": "Additional information you'd like to attach to this registration request",
+    "requester": {
+        "name": "Requester name",
+        "email": "requester_name@yourorganization.tld"
+    }
+}
+```
+
 
 ### Contact
 Manuel Bernal Llinares
