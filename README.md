@@ -8,3 +8,6 @@ TODO
 
 # How to POST Requests to the Namespace Registration service
 TODO
+
+### Contact
+Manuel Bernal Llinares
