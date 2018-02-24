@@ -53,4 +53,7 @@ public class RegisterApiModel {
         return runningSessionId;
     }
 
+    public String readinessCheck() {
+        return runningSessionId;
+    }
 }
