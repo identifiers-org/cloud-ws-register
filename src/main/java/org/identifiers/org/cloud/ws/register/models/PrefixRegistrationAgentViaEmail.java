@@ -27,6 +27,8 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
 
     @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.to}")
     private String emailRecipient;
+    @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.from}")
+    private String emailFrom;
     @Value("${org.identifiers.cloud.ws.register.prefix.registration.agent.email.subject}")
     private String emailSubject;
 
@@ -51,6 +53,7 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
         }
         // TODO - Send the request via e-mail
         SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(emailFrom);
         message.setTo(emailRecipient);
         message.setSubject(emailSubject);
         message.setText(registrationData);
