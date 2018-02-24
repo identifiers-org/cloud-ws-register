@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RegisterApiModel {
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
+    private static String runningSessionId = UUID.randomUUID().toString();
 
     @Autowired
     private PrefixRegistrationRequestValidatorStrategy validatorStrategy;
