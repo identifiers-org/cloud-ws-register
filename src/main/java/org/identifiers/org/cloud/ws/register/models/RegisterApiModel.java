@@ -48,4 +48,9 @@ public class RegisterApiModel {
         }
         return response;
     }
+
+    public String livenessCheck() {
+        return runningSessionId;
+    }
+
 }
