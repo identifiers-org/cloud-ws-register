@@ -22,11 +22,11 @@ services:
         image: redis
         ports:
             - 6379:6379
-    httpstatus:
-        image: identifiersorg/cloud-ws-httpstatus
-        ports:
-            - 8079:8079
     recommender:
         image: identifiersorg/cloud-ws-resource-recommender
         ports:
             - 8083:8083
+    httpstatus:
+        image: identifiersorg/cloud-ws-httpstatus
+        ports:
+            - 8079:8079
