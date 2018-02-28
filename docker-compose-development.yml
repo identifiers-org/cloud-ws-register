@@ -11,10 +11,13 @@ services:
         environment:
             - WS_RESOLVER_CONFIG_REDIS_HOST=redis
             - WS_RESOLVER_CONFIG_REDIS_PORT=6379
+            - WS_RESOLVER_CONFIG_RESOURCE_RECOMMENDER_HOST=recommender
+            - WS_RESOLVER_CONFIG_RESOURCE_RECOMMENDER_PORT=8083
         ports:
             - 8080:8080
         depends_on:
             - redis
+            - recommender
     redis:
         image: redis
         ports:
@@ -23,3 +26,7 @@ services:
         image: identifiersorg/cloud-ws-httpstatus
         ports:
             - 8079:8079
+    recommender:
+        image: identifiersorg/cloud-ws-resource-recommender
+        ports:
+            - 8083:8083
