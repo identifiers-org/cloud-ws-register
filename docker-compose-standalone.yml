@@ -20,6 +20,7 @@ services:
             - WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_START_TLS=set_your_environment_value
             - WS_REGISTRY_CONFIG_EMAIL_BOOLEAN_DEBUG=set_your_environment_value
             - WS_REGISTRY_CONFIG_EMAIL_FROM=set_your_environment_value
+            - REGISTRY_JVM_MEMORY_MAX=1024m
         ports:
             - 8081:8081
         depends_on:
