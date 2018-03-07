@@ -1,6 +1,7 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.validators;
 
 import org.apache.commons.validator.routines.EmailValidator;
+import org.identifiers.org.cloud.ws.register.models.Requester;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>

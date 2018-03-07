@@ -1,5 +1,6 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.validators;
 
+import org.identifiers.org.cloud.ws.register.models.Requester;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

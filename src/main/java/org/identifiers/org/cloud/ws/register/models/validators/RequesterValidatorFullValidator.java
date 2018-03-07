@@ -1,4 +1,6 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.validators;
+
+import org.identifiers.org.cloud.ws.register.models.Requester;
 
 import java.util.ArrayList;
 import java.util.Arrays;
