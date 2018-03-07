@@ -8,6 +8,7 @@ package org.identifiers.org.cloud.ws.register.models;
  * ---
  */
 public class WebPageCheckerFactory {
+    // TODO - Remind me why I created a Factory for this...
     public static WebPageChecker getWebPageChecker() {
         return new WebPageCheckerDefault();
     }
