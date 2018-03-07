@@ -2,7 +2,7 @@ package org.identifiers.org.cloud.ws.register.controllers;
 
 import org.identifiers.org.cloud.ws.register.models.RegisterApiModel;
 import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
-import org.identifiers.org.cloud.ws.register.models.RegisterApiResponse;
+import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
