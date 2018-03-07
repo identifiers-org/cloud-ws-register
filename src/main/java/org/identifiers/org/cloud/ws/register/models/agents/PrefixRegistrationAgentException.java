@@ -1,4 +1,4 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.agents;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>

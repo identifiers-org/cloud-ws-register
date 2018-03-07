@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
+import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
 import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
