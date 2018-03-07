@@ -1,6 +1,9 @@
 package org.identifiers.org.cloud.ws.register.models;
 
 import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidator;
+import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
+import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorPreferredPrefix;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

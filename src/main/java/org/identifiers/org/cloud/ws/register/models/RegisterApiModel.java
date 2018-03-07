@@ -2,6 +2,8 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
+import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
+import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

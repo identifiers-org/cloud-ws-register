@@ -1,4 +1,4 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.validators;
 
 import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
 
@@ -6,14 +6,15 @@ import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequ
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
  * Package: org.identifiers.org.cloud.ws.register.models
- * Timestamp: 2018-02-02 10:52
+ * Timestamp: 2018-02-01 14:51
  * ---
  */
-public class PrefixRegistrationRequestValidatorRegexPattern implements PrefixRegistrationRequestValidator {
+public class PrefixRegistrationRequestValidatorExampleIdentifier implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
-        if (request.getRegexPattern() == null) {
-            throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Regex Pattern");
+        // Check the ID information is present
+        if (request.getExampleIdentifier() == null) {
+            throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Example Identifier");
         }
         return true;
     }

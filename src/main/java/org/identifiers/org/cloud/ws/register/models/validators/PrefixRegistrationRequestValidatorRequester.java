@@ -1,5 +1,7 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.validators;
 
+import org.identifiers.org.cloud.ws.register.models.RequesterValidatorException;
+import org.identifiers.org.cloud.ws.register.models.RequesterValidatorFactory;
 import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
 
 /**
