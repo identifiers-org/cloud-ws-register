@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

@@ -1,6 +1,7 @@
-package org.identifiers.org.cloud.ws.register.models;
+package org.identifiers.org.cloud.ws.register.models.api.requests;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.identifiers.org.cloud.ws.register.models.Requester;
 
 import java.io.Serializable;
 

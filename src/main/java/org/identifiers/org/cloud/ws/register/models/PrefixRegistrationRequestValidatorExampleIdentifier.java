@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register

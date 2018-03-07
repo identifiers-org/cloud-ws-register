@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
 import org.springframework.util.StringUtils;
 
 /**
