@@ -20,26 +20,63 @@ import java.util.List;
 public class PrefixRegistrationRequestValidatorStrategyFullValidation implements PrefixRegistrationRequestValidatorStrategy {
 
     @Autowired
-    private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
+    @Qualifier("prefixRegistrationRequestValidatorPreferredPrefix")
+    private PrefixRegistrationRequestValidator prefixValidator;
 
     @Autowired
     @Qualifier("prefixRegistrationRequestValidatorName")
     private PrefixRegistrationRequestValidator nameValidator;
 
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorDescription")
+    private PrefixRegistrationRequestValidator descriptionValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorHomePage")
+    private PrefixRegistrationRequestValidator homePageValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorOrganization")
+    private PrefixRegistrationRequestValidator organizationValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorResourceAccessRule")
+    private PrefixRegistrationRequestValidator resourceAccessRuleValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule")
+    private PrefixRegistrationRequestValidator crossedExampleIdentifierResourceAccessRuleValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier")
+    private PrefixRegistrationRequestValidator crossedRegexPatternAndExampleIdentifierValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorReferences")
+    private PrefixRegistrationRequestValidator referencesValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorAdditionalInformation")
+    private PrefixRegistrationRequestValidator additionalInformationValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorRequester")
+    private PrefixRegistrationRequestValidator requesterValidator;
+
     @Override
     public List<PrefixRegistrationRequestValidator> getValidationChain() {
         return Arrays.asList(
                 nameValidator,
-                new PrefixRegistrationRequestValidatorDescription(),
-                new PrefixRegistrationRequestValidatorHomePage(),
-                new PrefixRegistrationRequestValidatorOrganization(),
+                descriptionValidator,
+                homePageValidator,
+                organizationValidator,
                 prefixValidator,
-                new PrefixRegistrationRequestValidatorResourceAccessRule(),
-                new PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule(),
-                new PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier(),
-                new PrefixRegistrationRequestValidatorReferences(),
-                new PrefixRegistrationRequestValidatorAdditionalInformation(),
-                new PrefixRegistrationRequestValidatorRequester()
+                resourceAccessRuleValidator,
+                crossedExampleIdentifierResourceAccessRuleValidator,
+                crossedRegexPatternAndExampleIdentifierValidator,
+                referencesValidator,
+                additionalInformationValidator,
+                requesterValidator
         );
     }
 }

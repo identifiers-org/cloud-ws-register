@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ import java.io.IOException;
 // We don't need qualifier here?
 @Component
 @Scope("prototype")
+@Qualifier("prefixRegistrationRequestValidatorPreferredPrefix")
 public class PrefixRegistrationRequestValidatorPreferredPrefix implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorPreferredPrefix.class);
 
