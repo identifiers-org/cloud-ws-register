@@ -128,4 +128,11 @@ public class ValidationApiModel {
         return doValidation(request, resourceAccessRuleValidator);
     }
 
+    public ServiceResponseValidateRequest validateRegisterPrefixExampleIdentifier(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, crossedExampleIdentifierResourceAccessRuleValidator);
+    }
+
+    
+
 }
