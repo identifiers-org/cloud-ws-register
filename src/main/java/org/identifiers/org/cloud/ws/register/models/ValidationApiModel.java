@@ -133,6 +133,10 @@ public class ValidationApiModel {
         return doValidation(request, crossedExampleIdentifierResourceAccessRuleValidator);
     }
 
-    
+    public ServiceResponseValidateRequest validateRegisterPrefixRegexPattern(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, crossedRegexPatternAndExampleIdentifierValidator);
+    }
+
 
 }
