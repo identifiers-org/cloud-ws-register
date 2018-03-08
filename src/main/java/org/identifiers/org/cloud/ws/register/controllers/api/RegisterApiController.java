@@ -1,6 +1,6 @@
-package org.identifiers.org.cloud.ws.register.controllers;
+package org.identifiers.org.cloud.ws.register.controllers.api;
 
-import org.identifiers.org.cloud.ws.register.models.RegisterApiModel;
+import org.identifiers.org.cloud.ws.register.models.api.RegisterApiModel;
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.models.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.springframework.beans.factory.annotation.Autowired;

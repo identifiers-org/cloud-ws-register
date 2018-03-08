@@ -1,6 +1,6 @@
-package org.identifiers.org.cloud.ws.register.controllers;
+package org.identifiers.org.cloud.ws.register.controllers.api;
 
-import org.identifiers.org.cloud.ws.register.models.ValidationApiModel;
+import org.identifiers.org.cloud.ws.register.models.api.ValidationApiModel;
 import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidate;
 import org.identifiers.org.cloud.ws.register.models.api.responses.validation.ServiceResponseValidateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
