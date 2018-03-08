@@ -4,6 +4,9 @@ import org.identifiers.org.cloud.ws.register.models.ResourceAccessHelper;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerException;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerFactory;
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +18,9 @@ import java.util.List;
  * Timestamp: 2018-02-02 9:50
  * ---
  */
+@Component
+@Scope("prototype")
+@Qualifier("prefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule")
 public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
