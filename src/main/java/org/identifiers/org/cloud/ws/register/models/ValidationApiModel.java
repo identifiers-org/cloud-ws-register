@@ -117,4 +117,10 @@ public class ValidationApiModel {
         // TODO - Check API version information?
         return doValidation(request, organizationValidator);
     }
+
+    public ServiceResponseValidateRequest validateRegisterPrefixPreferredPrefix(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, prefixValidator);
+    }
+
 }
