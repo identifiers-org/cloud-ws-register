@@ -34,6 +34,7 @@ public class ValidationApiController {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixDescription(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixHomePage", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixHomePage(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixHomePage(request);
@@ -51,31 +52,37 @@ public class ValidationApiController {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixPreferredPrefix(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixResourceAccessRule", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixResourceAccessRule(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixResourceAccessRule(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixExampleIdentifier", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixExampleIdentifier(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixExampleIdentifier(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixRegexPattern", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixRegexPattern(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixRegexPattern(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixReferences", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixReferences(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixReferences(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixAdditionalInformation", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixAdditionalInformation(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixAdditionalInformation(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixRequester", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixRequester(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixRequester(request);
