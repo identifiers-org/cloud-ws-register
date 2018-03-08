@@ -138,5 +138,9 @@ public class ValidationApiModel {
         return doValidation(request, crossedRegexPatternAndExampleIdentifierValidator);
     }
 
+    public ServiceResponseValidateRequest validateRegisterPrefixReferences(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, referencesValidator);
+    }
 
 }
