@@ -2,8 +2,9 @@ package org.identifiers.org.cloud.ws.register.models;
 
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
-import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
-import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponseRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponseRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorStrategy;
 import org.slf4j.Logger;
@@ -24,6 +25,7 @@ import java.util.UUID;
 // For this iteration, it is ok for this model to be a singleton
 @Component
 public class RegisterApiModel {
+    public static final String apiVersion = "1.0";
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
     private static String runningSessionId = UUID.randomUUID().toString();
 
@@ -33,12 +35,20 @@ public class RegisterApiModel {
     @Autowired
     private PrefixRegistrationAgent prefixRegistrationAgent;
 
-    public RegisterApiResponse registerPrefix(ServiceRequestRegisterPrefixPayload request) {
-        RegisterApiResponse response = new RegisterApiResponse();
+    private ServiceResponseRegisterPrefix createDefaultResponse() {
+        ServiceResponseRegisterPrefix response = new ServiceResponseRegisterPrefix();
+        response.setApiVersion(apiVersion).setHttpStatus(HttpStatus.OK);
+        response.setPayload(new ServiceResponseRegisterPrefixPayload());
+        return response;
+    }
+
+    public ServiceResponseRegisterPrefix registerPrefix(ServiceRequestRegisterPrefix request) {
+        // TODO - Check API version information?
+        ServiceResponseRegisterPrefix response = createDefaultResponse();
         // Validate the request
         boolean isValidRequest = false;
         try {
-            isValidRequest = validatorStrategy.validate(request);
+            isValidRequest = validatorStrategy.validate(request.getPayload());
         } catch (PrefixRegistrationRequestValidatorException e) {
             response.setErrorMessage(e.getMessage());
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
@@ -46,7 +56,7 @@ public class RegisterApiModel {
         if (isValidRequest) {
             // Use a registration agent to push the request further
             try {
-                prefixRegistrationAgent.registerPrefix(request);
+                prefixRegistrationAgent.registerPrefix(request.getPayload());
             } catch (PrefixRegistrationAgentException e) {
                 response.setErrorMessage(e.getMessage());
                 response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);

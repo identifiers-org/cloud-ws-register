@@ -1,7 +1,8 @@
 package org.identifiers.org.cloud.ws.register.models;
 
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
-import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
+import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponseRegisterPrefix;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,10 @@ public class RegisterApiModelTest {
     @Test
     public void testValidPrefixRegistrationRequests() {
         getValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
-            RegisterApiResponse response = registerApiModel.registerPrefix(testDataUseCase.request);
+            ServiceRequestRegisterPrefix request = new ServiceRequestRegisterPrefix();
+            request.setApiVersion("1.0");
+            request.setPayload(testDataUseCase.request);
+            ServiceResponseRegisterPrefix response = registerApiModel.registerPrefix(request);
             assertThat(testDataUseCase.testDescription, response.getHttpStatus() == HttpStatus.OK, is(true));
         });
     }
@@ -55,7 +59,10 @@ public class RegisterApiModelTest {
     @Test
     public void testInvalidUseCases() {
         getNotValidTestCasesData().parallelStream().forEach(testDataUseCase -> {
-            RegisterApiResponse response = registerApiModel.registerPrefix(testDataUseCase.request);
+            ServiceRequestRegisterPrefix request = new ServiceRequestRegisterPrefix();
+            request.setApiVersion("1.0");
+            request.setPayload(testDataUseCase.request);
+            ServiceResponseRegisterPrefix response = registerApiModel.registerPrefix(request);
             assertThat(testDataUseCase.testDescription, response.getHttpStatus() == HttpStatus.BAD_REQUEST, is(true));
         });
     }

@@ -1,8 +1,8 @@
 package org.identifiers.org.cloud.ws.register.controllers;
 
 import org.identifiers.org.cloud.ws.register.models.RegisterApiModel;
-import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
-import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponseRegisterPrefix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +24,11 @@ public class RegisterApiController {
     private RegisterApiModel registerApiModel;
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ResponseEntity<?> registerPrefix(@RequestBody ServiceRequestRegisterPrefixPayload serviceRequestRegisterPrefixPayload) {
+    public ResponseEntity<?> registerPrefix(@RequestBody ServiceRequestRegisterPrefix serviceRequestRegisterPrefixPayload) {
         // The model associated with the controller should handle any possible exception that could happen while running
         // the business logic, thus, the controller should handle only exceptions within the domain of the controller.
-        RegisterApiResponse registerApiResponse = registerApiModel.registerPrefix(serviceRequestRegisterPrefixPayload);
-        return new ResponseEntity<>(registerApiResponse, registerApiResponse.getHttpStatus());
+        ServiceResponseRegisterPrefix serviceResponseRegisterPrefix = registerApiModel.registerPrefix(serviceRequestRegisterPrefixPayload);
+        return new ResponseEntity<>(serviceResponseRegisterPrefix, serviceResponseRegisterPrefix.getHttpStatus());
     }
 
     // liveness probe
