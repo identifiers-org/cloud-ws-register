@@ -1,7 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models;
 
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
-import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidateRegisterPrefixName;
+import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidate;
 import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponse;
 import org.identifiers.org.cloud.ws.register.models.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.models.api.responses.validation.ServiceResponseValidateRequest;
@@ -56,7 +56,7 @@ public class ValidationApiModel {
         return response;
     }
 
-    public ServiceResponseValidateRequest validateRegisterPrefixName(ServiceRequestValidateRegisterPrefixName request) {
+    public ServiceResponseValidateRequest validateRegisterPrefixName(ServiceRequestValidate request) {
         // TODO - Check API version information?
         ServiceResponseValidateRequest response = new ServiceResponseValidateRequest();
         initDefaultResponse(response, new ServiceResponseRegisterPrefixPayload());

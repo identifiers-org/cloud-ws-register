@@ -10,5 +10,5 @@ import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistrat
  * Timestamp: 2018-03-08 6:11
  * ---
  */
-public class ServiceRequestValidateRegisterPrefixName extends ServiceRequest<ServiceRequestRegisterPrefixPayload> {
+public class ServiceRequestValidate extends ServiceRequest<ServiceRequestRegisterPrefixPayload> {
 }

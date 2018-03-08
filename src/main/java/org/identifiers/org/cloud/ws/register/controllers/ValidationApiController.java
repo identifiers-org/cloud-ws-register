@@ -1,7 +1,7 @@
 package org.identifiers.org.cloud.ws.register.controllers;
 
 import org.identifiers.org.cloud.ws.register.models.ValidationApiModel;
-import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidateRegisterPrefixName;
+import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidate;
 import org.identifiers.org.cloud.ws.register.models.api.responses.validation.ServiceResponseValidateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class ValidationApiController {
     private ValidationApiModel model;
 
     @RequestMapping(value = "/validateRegisterPrefixName", method = RequestMethod.POST)
-    public ResponseEntity<?> validateRegisterPrefixName(@RequestBody ServiceRequestValidateRegisterPrefixName request) {
+    public ResponseEntity<?> validateRegisterPrefixName(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixName(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
