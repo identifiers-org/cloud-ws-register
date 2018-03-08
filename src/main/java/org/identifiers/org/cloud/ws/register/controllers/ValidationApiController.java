@@ -66,4 +66,9 @@ public class ValidationApiController {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixRegexPattern(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+    @RequestMapping(value = "/validateRegisterPrefixReferences", method = RequestMethod.POST)
+    public ResponseEntity<?> validateRegisterPrefixReferences(@RequestBody ServiceRequestValidate request) {
+        ServiceResponseValidateRequest response = model.validateRegisterPrefixReferences(request);
+        return new ResponseEntity<>(response, response.getHttpStatus());
+    }
 }
