@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Scope("prototype")
-@Qualifier("PrefixRegistrationRequestValidatorDescription")
+@Qualifier("prefixRegistrationRequestValidatorDescription")
 public class PrefixRegistrationRequestValidatorDescription implements PrefixRegistrationRequestValidator {
     public static final int DESCRIPTION_CONTENT_MIN_CHARS = 50;
 
