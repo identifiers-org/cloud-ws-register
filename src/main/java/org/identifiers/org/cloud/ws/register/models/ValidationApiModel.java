@@ -112,4 +112,9 @@ public class ValidationApiModel {
         // TODO - Check API version information?
         return doValidation(request, homePageValidator);
     }
+
+    public ServiceResponseValidateRequest validateRegisterPrefixOrganization(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, organizationValidator);
+    }
 }
