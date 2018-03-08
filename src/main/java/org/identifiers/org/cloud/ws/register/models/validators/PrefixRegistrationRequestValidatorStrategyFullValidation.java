@@ -17,7 +17,6 @@ import java.util.List;
  */
 @Component
 @Scope("prototype")
-//@Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
 public class PrefixRegistrationRequestValidatorStrategyFullValidation implements PrefixRegistrationRequestValidatorStrategy {
 
     @Autowired
