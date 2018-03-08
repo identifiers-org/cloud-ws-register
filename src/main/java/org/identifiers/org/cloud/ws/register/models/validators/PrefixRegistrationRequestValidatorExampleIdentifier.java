@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Scope("prototype")
-@Qualifier("PrefixRegistrationRequestValidatorExampleIdentifier")
+@Qualifier("prefixRegistrationRequestValidatorExampleIdentifier")
 public class PrefixRegistrationRequestValidatorExampleIdentifier implements PrefixRegistrationRequestValidator {
     @Override
     public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
