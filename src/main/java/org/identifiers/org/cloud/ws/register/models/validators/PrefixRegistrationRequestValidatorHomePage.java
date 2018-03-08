@@ -4,6 +4,9 @@ import org.identifiers.org.cloud.ws.register.models.WebPageChecker;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerException;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerFactory;
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -12,6 +15,9 @@ import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistrat
  * Timestamp: 2018-01-31 10:52
  * ---
  */
+@Component
+@Scope("prototype")
+@Qualifier("prefixRegistrationRequestValidatorHomePage")
 public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistrationRequestValidator {
 
     private WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
