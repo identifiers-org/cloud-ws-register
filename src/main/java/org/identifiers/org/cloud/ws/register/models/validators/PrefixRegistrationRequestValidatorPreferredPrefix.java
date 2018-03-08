@@ -21,6 +21,7 @@ import java.io.IOException;
  * Timestamp: 2018-01-31 14:40
  * ---
  */
+// We don't need qualifier here?
 @Component
 @Scope("prototype")
 public class PrefixRegistrationRequestValidatorPreferredPrefix implements PrefixRegistrationRequestValidator {
