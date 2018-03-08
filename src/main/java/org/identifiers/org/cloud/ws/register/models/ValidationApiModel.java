@@ -123,4 +123,9 @@ public class ValidationApiModel {
         return doValidation(request, prefixValidator);
     }
 
+    public ServiceResponseValidateRequest validateRegisterPrefixResourceAccessRule(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, resourceAccessRuleValidator);
+    }
+
 }
