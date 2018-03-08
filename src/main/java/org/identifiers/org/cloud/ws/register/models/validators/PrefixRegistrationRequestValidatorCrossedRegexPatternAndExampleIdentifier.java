@@ -3,6 +3,9 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,9 @@ import java.util.regex.Pattern;
  * Timestamp: 2018-02-02 10:58
  * ---
  */
+@Component
+@Scope("prototype")
+@Qualifier("prefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier")
 public class PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier.class);
 
