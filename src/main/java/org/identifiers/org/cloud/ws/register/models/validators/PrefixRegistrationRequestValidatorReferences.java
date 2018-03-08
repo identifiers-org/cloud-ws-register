@@ -3,6 +3,9 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -11,6 +14,9 @@ import org.slf4j.LoggerFactory;
  * Timestamp: 2018-02-02 12:36
  * ---
  */
+@Component
+@Scope("prototype")
+@Qualifier("prefixRegistrationRequestValidatorReferences")
 public class PrefixRegistrationRequestValidatorReferences implements PrefixRegistrationRequestValidator {
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorReferences.class);
 
