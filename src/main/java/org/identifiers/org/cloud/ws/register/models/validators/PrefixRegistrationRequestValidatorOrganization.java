@@ -1,6 +1,9 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
 import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -9,6 +12,9 @@ import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistrat
  * Timestamp: 2018-01-31 14:20
  * ---
  */
+@Component
+@Scope("prototype")
+@Qualifier("prefixRegistrationRequestValidatorOrganization")
 public class PrefixRegistrationRequestValidatorOrganization implements PrefixRegistrationRequestValidator {
     // Up to this point, a developer may be wondering why I return a value that it is not used, because in case a
     // validator "fails", I notify the "not valid" state and also the reason via an exception. It could have been done
