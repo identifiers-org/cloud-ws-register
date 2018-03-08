@@ -97,6 +97,7 @@ public class ValidationApiModel {
         return response;
     }
 
+    // As you have seen, there are no unit tests for all this, obviously, it would be duplicating validators unit tests.
     // --- API ---
 
     public ServiceResponseValidateRequest validateRegisterPrefixName(ServiceRequestValidate request) {
