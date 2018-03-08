@@ -1,6 +1,5 @@
 package org.identifiers.org.cloud.ws.register.models;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidate;
 import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponse;
 import org.identifiers.org.cloud.ws.register.models.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
@@ -38,13 +37,14 @@ public class ValidationApiModel {
         response.setPayload(payload);
     }
 
-    private ServiceResponseValidateRequest doValidation(ServiceRequestRegisterPrefixPayload payload,
-                                                        ServiceResponseValidateRequest response,
+    private ServiceResponseValidateRequest doValidation(ServiceRequestValidate request,
                                                         PrefixRegistrationRequestValidator validator) {
+        ServiceResponseValidateRequest response = new ServiceResponseValidateRequest();
+        initDefaultResponse(response, new ServiceResponseRegisterPrefixPayload());
         // Validate the request
         boolean isValidRequest = false;
         try {
-            isValidRequest = validator.validate(payload);
+            isValidRequest = validator.validate(request.getPayload());
         } catch (PrefixRegistrationRequestValidatorException e) {
             response.setErrorMessage(e.getMessage());
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
@@ -56,10 +56,10 @@ public class ValidationApiModel {
         return response;
     }
 
+    // --- API ---
+
     public ServiceResponseValidateRequest validateRegisterPrefixName(ServiceRequestValidate request) {
         // TODO - Check API version information?
-        ServiceResponseValidateRequest response = new ServiceResponseValidateRequest();
-        initDefaultResponse(response, new ServiceResponseRegisterPrefixPayload());
-        return doValidation(request.getPayload(), response, nameValidator);
+        return doValidation(request, nameValidator);
     }
 }
