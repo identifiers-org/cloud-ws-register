@@ -24,10 +24,10 @@ public class RegisterApiController {
     private RegisterApiModel registerApiModel;
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ResponseEntity<?> registerPrefix(@RequestBody ServiceRequestRegisterPrefix serviceRequestRegisterPrefixPayload) {
+    public ResponseEntity<?> registerPrefix(@RequestBody ServiceRequestRegisterPrefix request) {
         // The model associated with the controller should handle any possible exception that could happen while running
         // the business logic, thus, the controller should handle only exceptions within the domain of the controller.
-        ServiceResponseRegisterPrefix serviceResponseRegisterPrefix = registerApiModel.registerPrefix(serviceRequestRegisterPrefixPayload);
+        ServiceResponseRegisterPrefix serviceResponseRegisterPrefix = registerApiModel.registerPrefix(request);
         return new ResponseEntity<>(serviceResponseRegisterPrefix, serviceResponseRegisterPrefix.getHttpStatus());
     }
 
