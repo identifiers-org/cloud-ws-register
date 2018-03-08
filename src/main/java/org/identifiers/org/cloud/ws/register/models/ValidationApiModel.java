@@ -143,4 +143,10 @@ public class ValidationApiModel {
         return doValidation(request, referencesValidator);
     }
 
+    public ServiceResponseValidateRequest validateRegisterPrefixAdditionalInformation(ServiceRequestValidate request) {
+        // TODO - Check API version information?
+        return doValidation(request, additionalInformationValidator);
+    }
+
+
 }
