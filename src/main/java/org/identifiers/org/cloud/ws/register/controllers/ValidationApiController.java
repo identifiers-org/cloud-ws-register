@@ -56,4 +56,9 @@ public class ValidationApiController {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixResourceAccessRule(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+    @RequestMapping(value = "/validateRegisterPrefixExampleIdentifier", method = RequestMethod.POST)
+    public ResponseEntity<?> validateRegisterPrefixExampleIdentifier(@RequestBody ServiceRequestValidate request) {
+        ServiceResponseValidateRequest response = model.validateRegisterPrefixExampleIdentifier(request);
+        return new ResponseEntity<>(response, response.getHttpStatus());
+    }
 }
