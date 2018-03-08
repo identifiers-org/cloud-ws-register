@@ -28,8 +28,48 @@ public class ValidationApiModel {
     private static Logger logger = LoggerFactory.getLogger(ValidationApiModel.class);
 
     @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorPreferredPrefix")
+    private PrefixRegistrationRequestValidator prefixValidator;
+
+    @Autowired
     @Qualifier("prefixRegistrationRequestValidatorName")
     private PrefixRegistrationRequestValidator nameValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorDescription")
+    private PrefixRegistrationRequestValidator descriptionValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorHomePage")
+    private PrefixRegistrationRequestValidator homePageValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorOrganization")
+    private PrefixRegistrationRequestValidator organizationValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorResourceAccessRule")
+    private PrefixRegistrationRequestValidator resourceAccessRuleValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule")
+    private PrefixRegistrationRequestValidator crossedExampleIdentifierResourceAccessRuleValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorCrossedRegexPatternAndExampleIdentifier")
+    private PrefixRegistrationRequestValidator crossedRegexPatternAndExampleIdentifierValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorReferences")
+    private PrefixRegistrationRequestValidator referencesValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorAdditionalInformation")
+    private PrefixRegistrationRequestValidator additionalInformationValidator;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorRequester")
+    private PrefixRegistrationRequestValidator requesterValidator;
 
     private <T> void initDefaultResponse(ServiceResponse<T> response, T payload) {
         response.setApiVersion(apiVersion)
