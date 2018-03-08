@@ -39,10 +39,16 @@ public class ValidationApiController {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixHomePage(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+
     @RequestMapping(value = "/validateRegisterPrefixOrganization", method = RequestMethod.POST)
     public ResponseEntity<?> validateRegisterPrefixOrganization(@RequestBody ServiceRequestValidate request) {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixOrganization(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
 
+    @RequestMapping(value = "/validateRegisterPrefixPreferredPrefix", method = RequestMethod.POST)
+    public ResponseEntity<?> validateRegisterPrefixPreferredPrefix(@RequestBody ServiceRequestValidate request) {
+        ServiceResponseValidateRequest response = model.validateRegisterPrefixPreferredPrefix(request);
+        return new ResponseEntity<>(response, response.getHttpStatus());
+    }
 }
