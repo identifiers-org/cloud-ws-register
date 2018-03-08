@@ -1,6 +1,7 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -22,10 +23,14 @@ public class PrefixRegistrationRequestValidatorStrategyFullValidation implements
     @Autowired
     private PrefixRegistrationRequestValidatorPreferredPrefix prefixValidator;
 
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorName")
+    private PrefixRegistrationRequestValidator nameValidator;
+
     @Override
     public List<PrefixRegistrationRequestValidator> getValidationChain() {
         return Arrays.asList(
-                new PrefixRegistrationRequestValidatorName(),
+                nameValidator,
                 new PrefixRegistrationRequestValidatorDescription(),
                 new PrefixRegistrationRequestValidatorHomePage(),
                 new PrefixRegistrationRequestValidatorOrganization(),
