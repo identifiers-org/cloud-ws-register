@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidator;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorPreferredPrefix;
@@ -31,7 +31,7 @@ public class PrefixValidatorTests {
 
     class TestDataUseCase {
         PrefixRegistrationRequestValidator validator;
-        RegisterApiRequestRegisterPrefix request;
+        ServiceRequestRegisterPrefixPayload request;
         String testDescription;
 
         TestDataUseCase setValidator(PrefixRegistrationRequestValidator validator) {
@@ -39,7 +39,7 @@ public class PrefixValidatorTests {
             return this;
         }
 
-        TestDataUseCase setRequest(RegisterApiRequestRegisterPrefix request) {
+        TestDataUseCase setRequest(ServiceRequestRegisterPrefixPayload request) {
             this.request = request;
             return this;
         }
@@ -79,11 +79,11 @@ public class PrefixValidatorTests {
         return Arrays.asList(
                 new TestDataUseCase()
                         .setTestDescription("Valid prefix accepted")
-                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("mynewprefix"))
+                        .setRequest(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix("mynewprefix"))
                         .setValidator(prefixValidator),
                 new TestDataUseCase()
                         .setTestDescription("Another valid prefix accepted")
-                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("myotherprefix"))
+                        .setRequest(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix("myotherprefix"))
                         .setValidator(prefixValidator)
         );
     }
@@ -92,11 +92,11 @@ public class PrefixValidatorTests {
         return Arrays.asList(
                 new TestDataUseCase()
                         .setTestDescription("Valid prefix accepted")
-                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("chebi"))
+                        .setRequest(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix("chebi"))
                         .setValidator(prefixValidator),
                 new TestDataUseCase()
                         .setTestDescription("Another valid prefix accepted")
-                        .setRequest(new RegisterApiRequestRegisterPrefix().setPreferredPrefix("pdb"))
+                        .setRequest(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix("pdb"))
                         .setValidator(prefixValidator)
         );
     }

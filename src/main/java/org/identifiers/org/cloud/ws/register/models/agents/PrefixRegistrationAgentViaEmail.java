@@ -2,7 +2,7 @@ package org.identifiers.org.cloud.ws.register.models.agents;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,7 +40,7 @@ public class PrefixRegistrationAgentViaEmail implements PrefixRegistrationAgent 
     }
 
     @Override
-    public void registerPrefix(RegisterApiRequestRegisterPrefix prefixRegistrationRequest) throws PrefixRegistrationAgentException {
+    public void registerPrefix(ServiceRequestRegisterPrefixPayload prefixRegistrationRequest) throws PrefixRegistrationAgentException {
         // TODO - CHANGE THIS TO USE OAUTH2 with tokens, maybe as a specialization of this agent
         String registrationData = "--- IT COULD NOT BE SERIALIZED ---";
         ObjectMapper mapper = new ObjectMapper();

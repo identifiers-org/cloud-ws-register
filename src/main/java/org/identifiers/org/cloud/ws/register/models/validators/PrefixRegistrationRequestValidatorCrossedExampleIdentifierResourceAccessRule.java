@@ -3,7 +3,7 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.ResourceAccessHelper;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerException;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerFactory;
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class PrefixRegistrationRequestValidatorCrossedExampleIdentifierResourceAccessRule implements PrefixRegistrationRequestValidator {
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         List<String> errors = new ArrayList<>();
         // Check resource access rule
         try {

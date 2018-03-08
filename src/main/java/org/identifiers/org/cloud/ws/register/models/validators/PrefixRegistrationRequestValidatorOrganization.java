@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -18,7 +18,7 @@ public class PrefixRegistrationRequestValidatorOrganization implements PrefixReg
     // component, I only need to know if it failed (in order to continue or not), and it case it did fail, I always
     // want to know why. So that's why I decided to do it via this coding style.
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         if (request.getOrganization() == null) {
             throw new PrefixRegistrationRequestValidatorException("The name of the providing organization is MISSING");
         }

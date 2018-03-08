@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ public class PrefixRegistrationRequestValidatorAdditionalInformation implements 
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorAdditionalInformation.class);
 
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         // Validate by default, no requirements are enforced
         logger.info("DEFAULT policy for Additional Information is ALWAYS VALID");
         if (request.getAdditionalInformation() == null) {

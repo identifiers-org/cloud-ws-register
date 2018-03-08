@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,7 +49,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
     private int resolverPort;
 
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         // TODO - This method is going to call a Resolver WS, and it will do it straight away for this iteration of the
         // TODO - software, but in the future, we need to provide Resolver Web Service clients for several languages,
         // TODO - e.g. Java and Python, so people don't have to write their own code every time

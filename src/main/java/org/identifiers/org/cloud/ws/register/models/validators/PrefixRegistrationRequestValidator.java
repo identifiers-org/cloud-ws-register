@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -11,7 +11,7 @@ import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequ
  */
 public interface PrefixRegistrationRequestValidator {
     // Well, this default implementation doesn't really bring anything on the table but semantic sugar
-    default boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    default boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         return false;
     }
 }

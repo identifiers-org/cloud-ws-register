@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ public class PrefixRegistrationRequestValidatorReferences implements PrefixRegis
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestValidatorReferences.class);
 
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         // References are not enforced, so they just validate
         logger.info("References validation policy is VALID by default");
         if (request.getReferences() == null) {

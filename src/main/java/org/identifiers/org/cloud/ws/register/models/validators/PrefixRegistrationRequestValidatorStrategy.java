@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public interface PrefixRegistrationRequestValidatorStrategy extends PrefixRegist
     }
 
     @Override
-    default boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    default boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         // List of errors for reporting to the client
         // Get all the validation errors
         List<String> errors = getValidationChain()

@@ -3,7 +3,7 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.ResourceAccessHelper;
 import org.identifiers.org.cloud.ws.register.models.WebPageChecker;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerFactory;
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.springframework.util.StringUtils;
 
 /**
@@ -15,7 +15,7 @@ import org.springframework.util.StringUtils;
  */
 public class PrefixRegistrationRequestValidatorResourceAccessRule implements PrefixRegistrationRequestValidator {
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         // TODO
         if (request.getResourceAccessRule() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING required Resource Access Rule");

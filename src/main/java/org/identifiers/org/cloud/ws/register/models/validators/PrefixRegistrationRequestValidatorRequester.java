@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -11,7 +11,7 @@ import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequ
  */
 public class PrefixRegistrationRequestValidatorRequester implements PrefixRegistrationRequestValidator {
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         if (request.getRequester() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING REQUIRED Requester information");
         }

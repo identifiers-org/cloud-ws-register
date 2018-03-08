@@ -13,7 +13,7 @@ import java.io.Serializable;
  * ---
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RegisterApiRequestRegisterPrefix implements Serializable {
+public class ServiceRequestRegisterPrefixPayload implements Serializable {
     private String name;
     private String description;
     private String homePage;
@@ -30,7 +30,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return name;
     }
 
-    public RegisterApiRequestRegisterPrefix setName(String name) {
+    public ServiceRequestRegisterPrefixPayload setName(String name) {
         this.name = name;
         return this;
     }
@@ -39,7 +39,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return description;
     }
 
-    public RegisterApiRequestRegisterPrefix setDescription(String description) {
+    public ServiceRequestRegisterPrefixPayload setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -48,7 +48,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return homePage;
     }
 
-    public RegisterApiRequestRegisterPrefix setHomePage(String homePage) {
+    public ServiceRequestRegisterPrefixPayload setHomePage(String homePage) {
         this.homePage = homePage;
         return this;
     }
@@ -57,7 +57,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return organization;
     }
 
-    public RegisterApiRequestRegisterPrefix setOrganization(String organization) {
+    public ServiceRequestRegisterPrefixPayload setOrganization(String organization) {
         this.organization = organization;
         return this;
     }
@@ -66,7 +66,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return preferredPrefix;
     }
 
-    public RegisterApiRequestRegisterPrefix setPreferredPrefix(String preferredPrefix) {
+    public ServiceRequestRegisterPrefixPayload setPreferredPrefix(String preferredPrefix) {
         this.preferredPrefix = preferredPrefix;
         return this;
     }
@@ -75,7 +75,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return resourceAccessRule;
     }
 
-    public RegisterApiRequestRegisterPrefix setResourceAccessRule(String resourceAccessRule) {
+    public ServiceRequestRegisterPrefixPayload setResourceAccessRule(String resourceAccessRule) {
         this.resourceAccessRule = resourceAccessRule;
         return this;
     }
@@ -84,7 +84,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return exampleIdentifier;
     }
 
-    public RegisterApiRequestRegisterPrefix setExampleIdentifier(String exampleIdentifier) {
+    public ServiceRequestRegisterPrefixPayload setExampleIdentifier(String exampleIdentifier) {
         this.exampleIdentifier = exampleIdentifier;
         return this;
     }
@@ -93,7 +93,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return regexPattern;
     }
 
-    public RegisterApiRequestRegisterPrefix setRegexPattern(String regexPattern) {
+    public ServiceRequestRegisterPrefixPayload setRegexPattern(String regexPattern) {
         this.regexPattern = regexPattern;
         return this;
     }
@@ -102,7 +102,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return references;
     }
 
-    public RegisterApiRequestRegisterPrefix setReferences(String[] references) {
+    public ServiceRequestRegisterPrefixPayload setReferences(String[] references) {
         this.references = references;
         return this;
     }
@@ -111,7 +111,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return additionalInformation;
     }
 
-    public RegisterApiRequestRegisterPrefix setAdditionalInformation(String additionalInformation) {
+    public ServiceRequestRegisterPrefixPayload setAdditionalInformation(String additionalInformation) {
         this.additionalInformation = additionalInformation;
         return this;
     }
@@ -120,7 +120,7 @@ public class RegisterApiRequestRegisterPrefix implements Serializable {
         return requester;
     }
 
-    public RegisterApiRequestRegisterPrefix setRequester(Requester requester) {
+    public ServiceRequestRegisterPrefixPayload setRequester(Requester requester) {
         this.requester = requester;
         return this;
     }

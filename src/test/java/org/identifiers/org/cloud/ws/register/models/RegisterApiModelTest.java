@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.models.api.responses.RegisterApiResponse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,10 +27,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class RegisterApiModelTest {
 
     class TestDataUseCase {
-        RegisterApiRequestRegisterPrefix request;
+        ServiceRequestRegisterPrefixPayload request;
         String testDescription;
 
-        TestDataUseCase setRequest(RegisterApiRequestRegisterPrefix request) {
+        TestDataUseCase setRequest(ServiceRequestRegisterPrefixPayload request) {
             this.request = request;
             return this;
         }
@@ -64,7 +64,7 @@ public class RegisterApiModelTest {
         return Arrays.asList(
                 new TestDataUseCase()
                         .setTestDescription("Valid prefix registration request")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setName("Valid new testing prefix mynewprefix")
                                 .setDescription("This is a valid test prefix registration request, and I need it to be long")
                                 .setHomePage("http://identifiers.org/")
@@ -86,7 +86,7 @@ public class RegisterApiModelTest {
                 // TODO
                 new TestDataUseCase()
                         .setTestDescription("Prefix registration request missing 'name'")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setDescription("This is a valid test prefix registration request, and I need it to be long")
                                 .setHomePage("http://identifiers.org/")
                                 .setOrganization("EMBL-EBI Unit Testing Organization")
@@ -102,7 +102,7 @@ public class RegisterApiModelTest {
                         ),
                 new TestDataUseCase()
                         .setTestDescription("Prefix registration request with too short description")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setName("Valid new testing prefix mynewprefix")
                                 .setDescription("This description is too short")
                                 .setHomePage("http://identifiers.org/")
@@ -119,7 +119,7 @@ public class RegisterApiModelTest {
                         ),
                 new TestDataUseCase()
                         .setTestDescription("Prefix registration request with invalid home page")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setName("Valid new testing prefix mynewprefix")
                                 .setDescription("This is a valid test prefix registration request, and I need it to be long")
                                 .setHomePage(String.format("%s/404", UnitTestsHelper.SERVICE_HTTP_STATUS_URL))
@@ -137,7 +137,7 @@ public class RegisterApiModelTest {
 
                 new TestDataUseCase()
                         .setTestDescription("Prefix registration request with invalid resource access rule")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setName("Valid new testing prefix mynewprefix")
                                 .setDescription("This is a valid test prefix registration request, and I need it to be long")
                                 .setHomePage(String.format("%s/200", UnitTestsHelper.SERVICE_HTTP_STATUS_URL))
@@ -154,7 +154,7 @@ public class RegisterApiModelTest {
                         ),
                 new TestDataUseCase()
                         .setTestDescription("Prefix registration request with invalid regular expression pattern")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setName("Valid new testing prefix mynewprefix")
                                 .setDescription("This is a valid test prefix registration request, and I need it to be long")
                                 .setHomePage(String.format("%s/200", UnitTestsHelper.SERVICE_HTTP_STATUS_URL))
@@ -171,7 +171,7 @@ public class RegisterApiModelTest {
                         ),
                 new TestDataUseCase()
                         .setTestDescription("Prefix registration request with multiple errors")
-                        .setRequest(new RegisterApiRequestRegisterPrefix()
+                        .setRequest(new ServiceRequestRegisterPrefixPayload()
                                 .setName("Valid new testing prefix mynewprefix")
                                 .setDescription("This description is too short")
                                 .setHomePage(String.format("%s/404", UnitTestsHelper.SERVICE_HTTP_STATUS_URL))

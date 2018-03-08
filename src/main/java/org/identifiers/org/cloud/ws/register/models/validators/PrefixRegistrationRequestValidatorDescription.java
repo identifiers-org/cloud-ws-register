@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -13,7 +13,7 @@ public class PrefixRegistrationRequestValidatorDescription implements PrefixRegi
     public static final int DESCRIPTION_CONTENT_MIN_CHARS = 50;
 
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         if ((request.getDescription() == null) || (request.getDescription().length() < DESCRIPTION_CONTENT_MIN_CHARS)) {
             throw new PrefixRegistrationRequestValidatorException(String.format("Prefix request description must be provided and be longer than %d characters", DESCRIPTION_CONTENT_MIN_CHARS));
         }

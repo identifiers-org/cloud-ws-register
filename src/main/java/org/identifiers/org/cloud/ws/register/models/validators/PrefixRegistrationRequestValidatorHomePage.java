@@ -3,7 +3,7 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.WebPageChecker;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerException;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerFactory;
-import org.identifiers.org.cloud.ws.register.models.api.requests.RegisterApiRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -17,7 +17,7 @@ public class PrefixRegistrationRequestValidatorHomePage implements PrefixRegistr
     private WebPageChecker webPageChecker = WebPageCheckerFactory.getWebPageChecker();
 
     @Override
-    public boolean validate(RegisterApiRequestRegisterPrefix request) throws PrefixRegistrationRequestValidatorException {
+    public boolean validate(ServiceRequestRegisterPrefixPayload request) throws PrefixRegistrationRequestValidatorException {
         // TODO - Refactor this code out as a URL checker
         // Home Page URL for the resource is required
         if (request.getHomePage() == null) {
