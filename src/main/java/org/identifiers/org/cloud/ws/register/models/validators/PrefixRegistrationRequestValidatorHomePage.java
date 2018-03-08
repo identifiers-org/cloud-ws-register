@@ -3,7 +3,7 @@ package org.identifiers.org.cloud.ws.register.models.validators;
 import org.identifiers.org.cloud.ws.register.models.WebPageChecker;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerException;
 import org.identifiers.org.cloud.ws.register.models.WebPageCheckerFactory;
-import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequestRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>

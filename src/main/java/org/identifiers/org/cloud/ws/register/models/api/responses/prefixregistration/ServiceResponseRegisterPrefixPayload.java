@@ -1,4 +1,4 @@
-package org.identifiers.org.cloud.ws.register.models.api.responses;
+package org.identifiers.org.cloud.ws.register.models.api.responses.prefixregistration;
 
 import java.io.Serializable;
 

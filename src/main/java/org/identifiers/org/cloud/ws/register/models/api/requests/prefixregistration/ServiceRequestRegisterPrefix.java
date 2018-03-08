@@ -1,4 +1,6 @@
-package org.identifiers.org.cloud.ws.register.models.api.requests;
+package org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration;
+
+import org.identifiers.org.cloud.ws.register.models.api.requests.ServiceRequest;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>

@@ -1,4 +1,4 @@
-package org.identifiers.org.cloud.ws.register.models.api.requests;
+package org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.identifiers.org.cloud.ws.register.models.Requester;
