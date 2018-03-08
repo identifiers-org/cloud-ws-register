@@ -79,6 +79,7 @@ public class ValidationApiModel {
 
     private ServiceResponseValidateRequest doValidation(ServiceRequestValidate request,
                                                         PrefixRegistrationRequestValidator validator) {
+        // TODO - Check API version information?
         ServiceResponseValidateRequest response = new ServiceResponseValidateRequest();
         initDefaultResponse(response, new ServiceResponseRegisterPrefixPayload());
         // Validate the request
@@ -99,57 +100,46 @@ public class ValidationApiModel {
     // --- API ---
 
     public ServiceResponseValidateRequest validateRegisterPrefixName(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, nameValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixDescription(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, descriptionValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixHomePage(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, homePageValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixOrganization(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, organizationValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixPreferredPrefix(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, prefixValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixResourceAccessRule(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, resourceAccessRuleValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixExampleIdentifier(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, crossedExampleIdentifierResourceAccessRuleValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixRegexPattern(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, crossedRegexPatternAndExampleIdentifierValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixReferences(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, referencesValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixAdditionalInformation(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, additionalInformationValidator);
     }
 
     public ServiceResponseValidateRequest validateRegisterPrefixRequester(ServiceRequestValidate request) {
-        // TODO - Check API version information?
         return doValidation(request, requesterValidator);
     }
 
