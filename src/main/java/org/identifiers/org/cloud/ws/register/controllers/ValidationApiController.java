@@ -34,4 +34,9 @@ public class ValidationApiController {
         ServiceResponseValidateRequest response = model.validateRegisterPrefixDescription(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
     }
+    @RequestMapping(value = "/validateRegisterPrefixHomePage", method = RequestMethod.POST)
+    public ResponseEntity<?> validateRegisterPrefixHomePage(@RequestBody ServiceRequestValidate request) {
+        ServiceResponseValidateRequest response = model.validateRegisterPrefixHomePage(request);
+        return new ResponseEntity<>(response, response.getHttpStatus());
+    }
 }
