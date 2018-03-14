@@ -12,11 +12,29 @@ tag_version = `cat VERSION`
 
 # default target
 
-all: container_production_push
+all: deploy
 
 clean:
 	@echo "<===|DEVOPS|===> [CLEAN] Running House Keeping tasks"
 	@mvn clean > /dev/null
+	@mvn versions:commit
+
+release: deploy set_next_development_version
+	@echo "<===|DEVOPS|===> [RELEASE] New Software Release, and next development version prepared"
+	@git add pom.xml
+	@git commit -am "Next project development version prepared"
+	@git push
+
+sync_project_version:
+	@echo "<===|DEVOPS|===> [SYNC] Synchronizing project version to version '${tag_version}'"
+	@mvn versions:set -DnewVersion=${tag_version}
+
+set_next_development_version:
+	@echo "<===|DEVOPS|===> [SYNC] Setting the new development version, current ${tag_version}"
+	@mvn versions:set -DnewVersion=$(shell ./increment_version.sh -p ${tag_version})-SNAPSHOT
+
+deploy: clean container_production_push
+	@echo "<===|DEVOPS|===> [DEPLOY] Deploying service container version ${tag_version}"
 
 development_env_up:
 	@echo "<===|DEVOPS|===> [ENVIRONMENT] Bringing development environment UP"
@@ -42,7 +60,7 @@ app_structure:
 	@mvn package -DskipTests
 	@mkdir -p target/app/log
 	@mkdir -p target/app/tmp
-	@cp target/register-*.jar target/app/service.jar
+	@cp target/register-$(shell mvn help:evaluate -Dexpression=project.version | grep -v '^\[').jar target/app/service.jar
 
 container_production_build: app_structure
 	@echo "<===|DEVOPS|===> [BUILD] Production container $(container_name):$(tag_version)"
@@ -53,4 +71,4 @@ container_production_push: container_production_build
 	@docker push $(container_name):$(tag_version)
 	@docker push $(container_name):latest
 
-.PHONY: all clean development_run_tests app_structure container_production_build container_production_push
+.PHONY: all clean development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
