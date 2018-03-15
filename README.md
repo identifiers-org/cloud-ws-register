@@ -30,40 +30,10 @@ This will start the service in the background, to stop it, just run
 
 
 # Submitting Requests to the Namespace Registration Service
-The _Namespace Registration Service_ runs on port 8081. Its main endpoint for registration requests is via **HTTP POST** requests to
+There is a Java based library, [libapi](https://github.com/identifiers-org/cloud-libapi), that implements a client for this Web
+Service.
 
-> http://registry:8081
-
-being 'registry' the name of the host that's running the service.
-
-The _body_ of the registration requests must contain the following information:
-
-```json
-{
-    "name": "Valid new testing prefix mynewprefix",
-    "description": "This describes your namespace registration request, and it needs to be more than 50 characters long",
-    "homePage": "http://your_home_page.tld/",
-    "organization": "Your Organization Name",
-    "preferredPrefix": "mynewprefix",
-    "resourceAccessRule": "http://somewhere.tld/{$id}",
-    "exampleIdentifier": "9875624",
-    "regexPattern": "\\d+$",
-    "references": [
-        "Reference",
-        "Publication",
-        "Citation"
-    ],
-    "additionalInformation": "Additional information you'd like to attach to this registration request",
-    "requester": {
-        "name": "Requester name",
-        "email": "requester_name@yourorganization.tld"
-    }
-}
-```
-
-If your request is **valid**, you will receive the corresponding _HTTP OK_ response and it will be queued for final review by a curator in [__identifiers.org__](http://identifiers.org).
-
-In case your request is **not valid**, you will get an _HTTP BAD REQUEST_ response including the reasons why your request did not validate in the body of the response.
+Please, refer to its documentation on how to connect to [identifiers.org](https://identifiers.org) Web Services.
 
 
 # Contributions
