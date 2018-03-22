@@ -77,7 +77,7 @@ container_production_push: container_production_build
 # Folders
 tmp/fakesmtp:
 	@echo "<===|DEVOPS|===> [FOLDER] Creating temporary folder for email service"
-	@mkdir tmp/fakesmtp
+	@mkdir -p tmp/fakesmtp
 
 clean_tmp:
 	@echo "<===|DEVOPS|===> [HOUSEKEEPING] Cleaning temporary folders"
