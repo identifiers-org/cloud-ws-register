@@ -71,4 +71,9 @@ container_production_push: container_production_build
 	@docker push $(container_name):$(tag_version)
 	@docker push $(container_name):latest
 
+# Folders
+tmp/fakesmtp:
+	@echo "<===|DEVOPS|===> [FOLDER] Creating temporary folder for email service"
+	@mkdir tmp
+
 .PHONY: all clean development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
