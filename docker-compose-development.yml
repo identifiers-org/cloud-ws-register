@@ -33,3 +33,9 @@ services:
         image: identifiersorg/cloud-ws-httpstatus
         ports:
             - 8079:8079
+    fakesmtp:
+        image: digiplant/fake-smtp
+        ports:
+            - 1025:25
+        volumes:
+            - ./tmp/fakesmtp:/var/mail
