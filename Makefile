@@ -19,6 +19,9 @@ clean:
 	@mvn clean > /dev/null
 	@mvn versions:commit
 
+clean_all: clean clean_tmp
+	@echo "<===|DEVOPS|===> [HOUSEKEEPING] Cleaning space"
+
 release: deploy set_next_development_version
 	@echo "<===|DEVOPS|===> [RELEASE] New Software Release, and next development version prepared"
 	@git add pom.xml
@@ -80,4 +83,4 @@ clean_tmp:
 	@echo "<===|DEVOPS|===> [HOUSEKEEPING] Cleaning temporary folders"
 	@rm -rf tmp
 
-.PHONY: all clean clean_tmp development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
+.PHONY: all clean clean_all clean_tmp development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
