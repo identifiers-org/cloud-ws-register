@@ -76,4 +76,8 @@ tmp/fakesmtp:
 	@echo "<===|DEVOPS|===> [FOLDER] Creating temporary folder for email service"
 	@mkdir tmp/fakesmtp
 
-.PHONY: all clean development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
+clean_tmp:
+	@echo "<===|DEVOPS|===> [HOUSEKEEPING] Cleaning temporary folders"
+	@rm -rf tmp
+
+.PHONY: all clean clean_tmp development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
