@@ -75,7 +75,7 @@ container_production_push: container_production_build
 	@docker push $(container_name):latest
 
 # Folders
-tmp/fakesmtp:
+tmp:
 	@echo "<===|DEVOPS|===> [FOLDER] Creating temporary folder for email service"
 	@mkdir -p tmp/fakesmtp
 
