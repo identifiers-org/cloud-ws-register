@@ -74,6 +74,6 @@ container_production_push: container_production_build
 # Folders
 tmp/fakesmtp:
 	@echo "<===|DEVOPS|===> [FOLDER] Creating temporary folder for email service"
-	@mkdir tmp
+	@mkdir tmp/fakesmtp
 
 .PHONY: all clean development_run_tests app_structure container_production_build container_production_push deploy release sync_project_version set_next_development_version
