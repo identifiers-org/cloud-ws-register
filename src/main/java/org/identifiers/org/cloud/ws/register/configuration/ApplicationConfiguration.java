@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * ---
  */
 @Configuration
-@Profile({"production", "standalone"})
+@Profile("production")
 public class ApplicationConfiguration {
     // Production Environment Application Configuration
 
