@@ -14,20 +14,5 @@ import org.springframework.context.annotation.Profile;
 @Profile({"production", "standalone"})
 public class ApplicationConfiguration {
     // Production Environment Application Configuration
-/*    @Autowired @Qualifier("PrefixRegistrationRequestValidatorStrategyFullValidation")
-    private PrefixRegistrationRequestValidatorStrategy selectedValidatorStrategy;
-*/
-/*    @Autowired @Qualifier("PrefixRegistrationAgentViaEmail")
-    private PrefixRegistrationAgent selectedPrefixRegistrationAgent;
-*/
-/*    @Bean
-    public PrefixRegistrationRequestValidatorStrategy validatorStrategy() {
-        return selectedValidatorStrategy;
-    }
-*/
-/*    @Bean
-    public PrefixRegistrationAgent prefixRegistrationAgent() {
-        return selectedPrefixRegistrationAgent;
-    }
-*/
+
 }
