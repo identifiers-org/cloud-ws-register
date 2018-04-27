@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * ---
  */
 @Configuration
-//@Profile({"production", "standalone"})
+@Profile({"production", "standalone"})
 public class ApplicationConfiguration {
     // Production Environment Application Configuration
 
