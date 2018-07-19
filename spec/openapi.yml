@@ -10,3 +10,14 @@ info:
     https://github.com/identifiers-org/cloud-ws-register](GitHub). To find out
     more about Identifiers.org, please, visit our main website at
     [http://identifiers.org](identifiers.org)
+  version: "1.0"
+  title: Identifiers.org Prefix Registration Service
+  termsOfService: http://httpstat.us/200
+  contact:
+    name: Manuel Bernal Llinares
+    url: http://identifiers.org
+    email: mbdebian@gmail.com
+  license:
+    name: MIT
+    url: 'http://opensource.org/licenses/MIT'
+# TODO - paths section
