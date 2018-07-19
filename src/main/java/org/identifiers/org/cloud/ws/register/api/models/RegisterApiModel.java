@@ -1,10 +1,10 @@
 package org.identifiers.org.cloud.ws.register.api.models;
 
-import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
-import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
+import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorStrategy;
 import org.slf4j.Logger;
@@ -12,8 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -27,7 +25,6 @@ import java.util.UUID;
 public class RegisterApiModel {
     public static final String apiVersion = "1.0";
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
-    private static String runningSessionId = UUID.randomUUID().toString();
 
     @Autowired
     private PrefixRegistrationRequestValidatorStrategy validatorStrategy;
@@ -65,11 +62,4 @@ public class RegisterApiModel {
         return response;
     }
 
-    public String livenessCheck() {
-        return runningSessionId;
-    }
-
-    public String readinessCheck() {
-        return runningSessionId;
-    }
 }
