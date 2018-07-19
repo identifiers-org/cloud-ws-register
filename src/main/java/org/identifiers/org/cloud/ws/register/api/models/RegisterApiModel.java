@@ -1,4 +1,4 @@
-package org.identifiers.org.cloud.ws.register.models.api;
+package org.identifiers.org.cloud.ws.register.api.models;
 
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
