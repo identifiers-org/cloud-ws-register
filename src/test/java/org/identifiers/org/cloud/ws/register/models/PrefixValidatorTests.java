@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidator;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorPreferredPrefix;

@@ -1,4 +1,4 @@
-package org.identifiers.org.cloud.ws.register.models.api.responses;
+package org.identifiers.org.cloud.ws.register.api.responses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
- * Package: org.identifiers.org.cloud.ws.register.models.api.requests
+ * Package: org.identifiers.org.cloud.ws.register.api.requests
  * Timestamp: 2018-03-06 11:32
  * ---
  */

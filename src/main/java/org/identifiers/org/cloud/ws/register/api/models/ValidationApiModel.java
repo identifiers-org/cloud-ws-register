@@ -1,9 +1,9 @@
 package org.identifiers.org.cloud.ws.register.api.models;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.validation.ServiceRequestValidate;
-import org.identifiers.org.cloud.ws.register.models.api.responses.ServiceResponse;
-import org.identifiers.org.cloud.ws.register.models.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
-import org.identifiers.org.cloud.ws.register.models.api.responses.validation.ServiceResponseValidateRequest;
+import org.identifiers.org.cloud.ws.register.api.requests.validation.ServiceRequestValidate;
+import org.identifiers.org.cloud.ws.register.api.responses.ServiceResponse;
+import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.api.responses.validation.ServiceResponseValidateRequest;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidator;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.slf4j.Logger;

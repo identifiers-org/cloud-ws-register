@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.validators;
 
-import org.identifiers.org.cloud.ws.register.models.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 
 import java.util.ArrayList;
 import java.util.List;
