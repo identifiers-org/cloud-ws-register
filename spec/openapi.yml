@@ -1,0 +1,12 @@
+# OpenAPI Specification for Identifiers.org Registry API Service
+# Author: Manuel Bernal Llinares <mbdebian@gmail.com>
+openapi: 3.0.0
+servers:
+  - url: 'http://registry.api.identifiers.org/'
+info:
+  description: >-
+    Identifiers.org Registry Web Service, for registration of new _prefixes_.
+    This Web Service is also open source, released under MIT license on
+    https://github.com/identifiers-org/cloud-ws-register](GitHub). To find out
+    more about Identifiers.org, please, visit our main website at
+    [http://identifiers.org](identifiers.org)
