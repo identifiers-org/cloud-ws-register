@@ -4,7 +4,7 @@ openapi: 3.0.0
 servers:
   - url: 'http://registry.api.identifiers.org/'
 info:
-  description: 
+  description:
     Identifiers.org Registry Web Service, for registration of new _prefixes_.
     This Web Service is also open source, released under MIT license on
     https://github.com/identifiers-org/cloud-ws-register](GitHub). To find out
