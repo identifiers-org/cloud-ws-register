@@ -12,7 +12,7 @@ info:
     [http://identifiers.org](identifiers.org)
   version: "1.0"
   title: Identifiers.org Prefix Registration Service
-  termsOfService: http://httpstat.us/200
+  termsOfService: https://www.ebi.ac.uk/about/terms-of-use
   contact:
     name: Manuel Bernal Llinares
     url: http://identifiers.org
