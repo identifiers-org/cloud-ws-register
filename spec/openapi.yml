@@ -39,7 +39,7 @@ components:
           description:
             An email address to notify if there are any issues with the
             registration
-    ApiResponsePayload:
+    ServiceResponseRegisterPrefixPayload:
       type: object
       properties:
         comment:
