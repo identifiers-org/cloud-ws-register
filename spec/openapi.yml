@@ -33,6 +33,9 @@ components:
           type: string
           example: 1.0
           description: API version used in this request
+        payload:
+          type: object
+          description: This is the payload associated with the particular request made
     RequesterDetails:
       type: object
       required:
