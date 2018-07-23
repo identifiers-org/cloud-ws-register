@@ -73,3 +73,5 @@ components:
             A series of possible error messages regarding the validation of the
             different request attributes, or 'null' if the request has been
             validated
+        payload:
+          type: object
