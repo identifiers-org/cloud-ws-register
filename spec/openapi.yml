@@ -69,6 +69,13 @@ components:
           type: string
           example: Protein Data Bank
           description: Some meaningful name for this request
+        description:
+          type: string
+          example:
+            The Protein Data Bank is the single worldwide archive of structural
+            data of biological macromolecules
+          description: 'A description for this request that is, at least, 50 characters long'
+        
       # TODO
     RequesterDetails:
       type: object
