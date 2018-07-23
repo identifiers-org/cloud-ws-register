@@ -64,6 +64,11 @@ components:
         - additionalInformation
         - requester
         - references
+      properties:
+        name:
+          type: string
+          example: Protein Data Bank
+          description: Some meaningful name for this request
       # TODO
     RequesterDetails:
       type: object
