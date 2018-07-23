@@ -83,6 +83,13 @@ components:
           type: string
           example: 'The European Bioinformatics Institute, Hinxton, Cambridgeshire, UK'
           description: The name of the providing organization
+        preferredPrefix:
+          type: string
+          example: pdb
+          description:
+            Character string meant to precede the colon in resolved identifiers.
+            No spaces or punctuation, only letters, numbers and underscores, and
+            it must start with a letter
         
       # TODO
     RequesterDetails:
