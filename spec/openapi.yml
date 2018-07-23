@@ -79,6 +79,10 @@ components:
           type: string
           example: 'http://www.pdbe.org'
           description: A URL describing the resource
+        organization:
+          type: string
+          example: 'The European Bioinformatics Institute, Hinxton, Cambridgeshire, UK'
+          description: The name of the providing organization
         
       # TODO
     RequesterDetails:
