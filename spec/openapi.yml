@@ -107,6 +107,9 @@ components:
           description:
             A regular expression specifying the form of string expected for this
             identifier
+        additionalInformation:
+          type: string
+          description: Anything else you wish to tell or ask us
         
       # TODO
     RequesterDetails:
