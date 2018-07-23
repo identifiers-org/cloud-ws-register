@@ -30,6 +30,8 @@ paths:
     post:
       tags:
         - default
+      summary: Request the registration of a new prefix
+      operationId: registerPrefix
       
     # TODO - Prefix registration path
 
