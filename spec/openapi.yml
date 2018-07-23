@@ -23,6 +23,8 @@ info:
 # TODO - paths section
 components:
   schemas:
+    ServiceRequest:
+    #TODO
     RequesterDetails:
       type: object
       required:
