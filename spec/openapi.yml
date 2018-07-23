@@ -28,7 +28,11 @@ components:
       required:
         - apiVersion
         - payload
-
+      properties:
+        apiVersion:
+          type: string
+          example: 1.0
+          description: API version used in this request
     RequesterDetails:
       type: object
       required:
