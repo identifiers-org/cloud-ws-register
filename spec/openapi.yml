@@ -66,7 +66,8 @@ paths:
           Registration request object regarding the prefix that is being to be
           registered
         required: true
-    # TODO - Prefix registration path
+  /validateRegisterPrefixName:
+  # TODO
 
 # TODO - paths section
 components:
