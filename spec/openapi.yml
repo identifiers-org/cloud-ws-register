@@ -97,6 +97,10 @@ components:
             A URL-like string specifying a rule for resolving this class of
             identifier. This rule should contain the substring '{$id}', which is
             a placeholder for the local identifier
+        exampleIdentifier:
+          type: string
+          example: 2gc4
+          description: An example identifier
         
       # TODO
     RequesterDetails:
