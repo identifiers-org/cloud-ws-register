@@ -90,6 +90,13 @@ components:
             Character string meant to precede the colon in resolved identifiers.
             No spaces or punctuation, only letters, numbers and underscores, and
             it must start with a letter
+        resourceAccessRule:
+          type: string
+          example: 'http://www.ebi.ac.uk/pdbe/entry/pdb/{$id}'
+          description:
+            A URL-like string specifying a rule for resolving this class of
+            identifier. This rule should contain the substring '{$id}', which is
+            a placeholder for the local identifier
         
       # TODO
     RequesterDetails:
