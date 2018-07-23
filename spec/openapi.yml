@@ -46,7 +46,7 @@ components:
           type: string
           description:
             Any comment regarding the operation completion
-    ApiResponse:
+    ServiceResponse:
       type: object
       properties:
         apiVersion:
