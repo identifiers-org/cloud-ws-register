@@ -80,6 +80,8 @@ paths:
   # TODO
   /validateRegisterPrefixExampleIdentifier:
   # TODO
+  /validateRegisterPrefixRegexPattern:
+  # TODO
 
 # TODO - paths section
 components:
