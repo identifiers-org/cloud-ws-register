@@ -27,7 +27,12 @@ info:
     url: 'http://opensource.org/licenses/MIT'
 paths:
   /:
+    post:
+      tags:
+        - default
+      
     # TODO - Prefix registration path
+
 # TODO - paths section
 components:
   schemas:
