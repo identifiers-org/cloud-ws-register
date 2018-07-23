@@ -6,6 +6,8 @@ servers:
     description: Main endpoint for this service
   - url: 'http://registry.api.gcloud.identifiers.org/'
     description: Google Cloud API Service deployment
+  - url: 'http://registry.api.aws.identifiers.org/'
+    description: AWS API Service deployment
 info:
   description:
     Identifiers.org Registry Web Service, for registration of new _prefixes_.
