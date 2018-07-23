@@ -68,6 +68,8 @@ paths:
         required: true
   /validateRegisterPrefixName:
   # TODO
+  /validateRegisterPrefixDescription:
+  # TODO
 
 # TODO - paths section
 components:
