@@ -122,7 +122,6 @@ components:
           description:
             References (URLs, citations), if any, to published work describing
             the resource
-      # TODO
     RequesterDetails:
       type: object
       required:
