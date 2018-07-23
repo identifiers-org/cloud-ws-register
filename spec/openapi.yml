@@ -51,6 +51,19 @@ components:
             payload:
               $ref: '#/components/schemas/ServiceRequestRegisterPrefixPayload'
     ServiceRequestRegisterPrefixPayload:
+      type: object
+      required:
+        - name
+        - description
+        - homePage
+        - organization
+        - preferredPrefix
+        - resourceAccessRule
+        - exampleIdentifier
+        - regexPattern
+        - additionalInformation
+        - requester
+        - references
       # TODO
     RequesterDetails:
       type: object
