@@ -110,6 +110,8 @@ components:
         additionalInformation:
           type: string
           description: Anything else you wish to tell or ask us
+        requester:
+          $ref: '#/components/schemas/RequesterDetails'
         
       # TODO
     RequesterDetails:
