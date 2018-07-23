@@ -40,7 +40,12 @@ components:
             An email address to notify if there are any issues with the
             registration
     ApiResponsePayload:
-      # TODO
+      type: object
+      properties:
+        comment:
+          type: string
+          description:
+            Any comment regarding the operation completion
     ApiResponse:
       type: object
       properties:
