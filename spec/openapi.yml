@@ -112,7 +112,16 @@ components:
           description: Anything else you wish to tell or ask us
         requester:
           $ref: '#/components/schemas/RequesterDetails'
-        
+        references:
+          type: array
+          xml:
+            name: reference
+            wrapped: true
+          items:
+            type: string
+          description:
+            References (URLs, citations), if any, to published work describing
+            the resource
       # TODO
     RequesterDetails:
       type: object
