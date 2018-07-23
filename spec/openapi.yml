@@ -72,6 +72,8 @@ paths:
   # TODO
   /validateRegisterPrefixHomePage:
   # TODO
+  /validateRegisterPrefixOrganization:
+  # TODO
 
 # TODO - paths section
 components:
