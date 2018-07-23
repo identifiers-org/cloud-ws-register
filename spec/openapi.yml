@@ -54,7 +54,12 @@ components:
             payload:
               $ref: '#/components/schemas/ServiceResponseRegisterPrefixPayload'
     ServiceResponseValidateRequest:
-    # TODO
+      allOf:
+        - $ref: '#/components/schemas/ServiceResponse'
+        - type: object
+          properties:
+            payload:
+              $ref: '#/components/schemas/ServiceResponseRegisterPrefixPayload'
     ServiceResponse:
       type: object
       properties:
