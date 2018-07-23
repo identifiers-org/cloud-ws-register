@@ -57,7 +57,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceResponseRegisterPrefix'
-      
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestRegisterPrefix'
+        description:
+          Registration request object regarding the prefix that is being to be
+          registered
+        required: true
     # TODO - Prefix registration path
 
 # TODO - paths section
