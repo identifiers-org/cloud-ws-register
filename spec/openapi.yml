@@ -24,7 +24,11 @@ info:
 components:
   schemas:
     ServiceRequest:
-    #TODO
+      type: object
+      required:
+        - apiVersion
+        - payload
+
     RequesterDetails:
       type: object
       required:
