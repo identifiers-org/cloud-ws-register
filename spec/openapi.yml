@@ -36,6 +36,13 @@ components:
         payload:
           type: object
           description: This is the payload associated with the particular request made
+    ServiceRequestRegisterPrefix:
+      allOf:
+        - $ref: '#/components/schemas/ServiceRequest'
+        - type: object
+          properties:
+            payload:
+              $ref: '#/components/schemas/ServiceRequestRegisterPrefixPayload'
     ServiceRequestRegisterPrefixPayload:
       # TODO
     RequesterDetails:
