@@ -86,6 +86,8 @@ paths:
   # TODO
   /validateRegisterPrefixAdditionalInformation:
   # TODO
+  /validateRegisterPrefixRequester:
+  # TODO
 
 # TODO - paths section
 components:
