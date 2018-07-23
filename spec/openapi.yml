@@ -52,8 +52,7 @@ components:
         - type: object
           properties:
             payload:
-              allOf:
-                - $ref: '#/components/schemas/ServiceResponseRegisterPrefixPayload'
+              $ref: '#/components/schemas/ServiceResponseRegisterPrefixPayload'
     ServiceResponse:
       type: object
       properties:
