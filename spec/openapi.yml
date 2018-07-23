@@ -32,7 +32,16 @@ paths:
         - default
       summary: Request the registration of a new prefix
       operationId: registerPrefix
-      
+      responses:
+        '200':
+          description:
+            The prefix registration request has been validated, and it will be
+            reviewed by a curator
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseRegisterPrefix'
+        
     # TODO - Prefix registration path
 
 # TODO - paths section
