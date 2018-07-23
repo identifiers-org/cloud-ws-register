@@ -3,6 +3,7 @@
 openapi: 3.0.0
 servers:
   - url: 'http://registry.api.identifiers.org/'
+    description: Main endpoint for this service
 info:
   description:
     Identifiers.org Registry Web Service, for registration of new _prefixes_.
