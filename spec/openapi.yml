@@ -41,6 +41,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceResponseRegisterPrefix'
+        '400':
+          description:
+            The request has been rejected because the prefix cannot be
+            registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseRegisterPrefix'
         
     # TODO - Prefix registration path
 
