@@ -43,6 +43,8 @@ components:
           properties:
             payload:
               $ref: '#/components/schemas/ServiceRequestRegisterPrefixPayload'
+    ServiceRequestValidate:
+      # TODO
     ServiceRequestRegisterPrefixPayload:
       # TODO
     RequesterDetails:
