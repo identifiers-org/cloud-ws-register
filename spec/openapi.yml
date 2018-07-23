@@ -36,6 +36,8 @@ components:
         payload:
           type: object
           description: This is the payload associated with the particular request made
+    ServiceRequestRegisterPrefixPayload:
+      # TODO
     RequesterDetails:
       type: object
       required:
