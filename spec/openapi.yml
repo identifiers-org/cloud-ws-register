@@ -29,7 +29,7 @@ paths:
   /:
     post:
       tags:
-        - default
+        - prefixRegistration
       summary: Request the registration of a new prefix
       operationId: registerPrefix
       responses:
@@ -88,7 +88,6 @@ paths:
   # TODO
   /validateRegisterPrefixRequester:
   # TODO
-
 # TODO - paths section
 components:
   schemas:
