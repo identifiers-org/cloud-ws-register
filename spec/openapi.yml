@@ -25,6 +25,9 @@ info:
   license:
     name: MIT
     url: 'http://opensource.org/licenses/MIT'
+paths:
+  /:
+    # TODO - Prefix registration path
 # TODO - paths section
 components:
   schemas:
