@@ -76,7 +76,8 @@ paths:
   # TODO
   /validateRegisterPrefixPreferredPrefix:
   # TODO
-  
+  /validateRegisterPrefixResourceAccessRule:
+  # TODO
 
 # TODO - paths section
 components:
