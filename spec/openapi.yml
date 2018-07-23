@@ -101,6 +101,12 @@ components:
           type: string
           example: 2gc4
           description: An example identifier
+        regexPattern:
+          type: string
+          example: '^[0-9][A-Za-z0-9]{3}$'
+          description:
+            A regular expression specifying the form of string expected for this
+            identifier
         
       # TODO
     RequesterDetails:
