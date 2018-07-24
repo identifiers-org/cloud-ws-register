@@ -481,25 +481,25 @@ components:
           description: The name of the providing organization
         preferredPrefix:
           type: string
-          example: pdb
+          example: myprefix
           description:
             Character string meant to precede the colon in resolved identifiers.
             No spaces or punctuation, only letters, numbers and underscores, and
             it must start with a letter
         resourceAccessRule:
           type: string
-          example: 'http://www.ebi.ac.uk/pdbe/entry/pdb/{$id}'
+          example: 'http://httpstat.us/{$id}'
           description:
             A URL-like string specifying a rule for resolving this class of
             identifier. This rule should contain the substring '{$id}', which is
             a placeholder for the local identifier
         exampleIdentifier:
           type: string
-          example: 2gc4
+          example: 200
           description: An example identifier
         regexPattern:
           type: string
-          example: '^[0-9][A-Za-z0-9]{3}$'
+          example: '^\d+$'
           description:
             A regular expression specifying the form of string expected for this
             identifier
