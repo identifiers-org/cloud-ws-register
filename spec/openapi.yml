@@ -211,6 +211,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+              description: Only field 'preferredPrefix' needs to be filled in
       responses:
         '200':
           description: The given 'preferred prefix' has been validated within the context of a prefix validation request
