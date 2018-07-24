@@ -277,6 +277,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+              description: To validate an example identifier, information on resource access rule and regular expression
+               is needed
       responses:
         '200':
           description: The given 'example identifier' has been validated within the context of a prefix validation request
