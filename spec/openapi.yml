@@ -291,6 +291,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
   /validateRegisterPrefixRegexPattern:
+    post:
+      summary: Request validation of 'regex pattern' within the context of a prefix validation request
+      operationId: validateRegisterPrefixName
+      tags:
+        - validationAPI
   # TODO
   /validateRegisterPrefixReferences:
   # TODO
