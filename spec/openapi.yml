@@ -79,6 +79,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+      responses:
+        '200':
+        '400':
+        '500':
   # TODO
   /validateRegisterPrefixDescription:
   # TODO
