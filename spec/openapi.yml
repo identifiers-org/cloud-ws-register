@@ -168,6 +168,13 @@ paths:
       operationId: validateRegisterPrefixName
       tags:
         - validationAPI
+      requestBody:
+        description: Request body for validation of 'organization' within the context of a prefix validation request
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestValidate'
   # TODO
   /validateRegisterPrefixPreferredPrefix:
   # TODO
