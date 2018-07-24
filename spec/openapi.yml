@@ -505,6 +505,7 @@ components:
             identifier
         additionalInformation:
           type: string
+          example: This is additional information on my new prefix registration request
           description: Anything else you wish to tell or ask us
         requester:
           $ref: '#/components/schemas/RequesterDetails'
