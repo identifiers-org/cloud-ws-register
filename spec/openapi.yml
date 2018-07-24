@@ -464,17 +464,16 @@ components:
       properties:
         name:
           type: string
-          example: Protein Data Bank
+          example: My New Prefix / Namespace
           description: Some meaningful name for this request
         description:
           type: string
           example:
-            The Protein Data Bank is the single worldwide archive of structural
-            data of biological macromolecules
+            Welcome to my newly registered namespace, that I'm using as an example
           description: 'A description for this request that is, at least, 50 characters long'
         homePage:
           type: string
-          example: 'http://www.pdbe.org'
+          example: 'http://cloud.identifiers.org'
           description: A URL describing the resource
         organization:
           type: string
