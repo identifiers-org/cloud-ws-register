@@ -162,7 +162,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
-  # TODO
   /validateRegisterPrefixOrganization:
   # TODO
   /validateRegisterPrefixPreferredPrefix:
