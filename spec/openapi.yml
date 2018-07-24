@@ -311,6 +311,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+              description: To validate the regular expression, information on a sample identifier is needed
       responses:
         '200':
           description: The given 'regex pattern' has been validated within the context of a prefix validation request
