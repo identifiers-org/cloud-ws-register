@@ -310,6 +310,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
+        '400':
+          description: The given 'regex pattern' has NOT been validated within the context of a prefix validation request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
   # TODO
   /validateRegisterPrefixReferences:
   # TODO
