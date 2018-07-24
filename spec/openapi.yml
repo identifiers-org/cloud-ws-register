@@ -150,6 +150,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
+        '400':
+          description: The given 'home page' has NOT been validated within the context of a prefix validation request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
   # TODO
   /validateRegisterPrefixOrganization:
   # TODO
