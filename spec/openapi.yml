@@ -513,6 +513,7 @@ components:
           type: array
           items:
             type: string
+          example: ['reference A', 'reference B']
           description:
             References (URLs, citations), if any, to published work describing
             the resource
