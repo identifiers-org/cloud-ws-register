@@ -87,6 +87,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
         '400':
+          description: The given 'name' has NOT been validated within the context of a prefix validation request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
         '500':
   # TODO
   /validateRegisterPrefixDescription:
