@@ -93,7 +93,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
         '500':
-  # TODO
+          description: An error occurred while trying to run the validation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
   /validateRegisterPrefixDescription:
   # TODO
   /validateRegisterPrefixHomePage:
