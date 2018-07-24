@@ -511,9 +511,6 @@ components:
           $ref: '#/components/schemas/RequesterDetails'
         references:
           type: array
-          xml:
-            name: reference
-            wrapped: true
           items:
             type: string
           description:
