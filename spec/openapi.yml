@@ -399,6 +399,13 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+      responses:
+        '200':
+          description: The given 'additional information' has been validated within the context of a prefix validation request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
   # TODO
 # TODO - paths section
 components:
