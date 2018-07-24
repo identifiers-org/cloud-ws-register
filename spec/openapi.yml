@@ -239,6 +239,13 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+      responses:
+        '200':
+          description: The given 'resource access rule' has been validated within the context of a prefix validation request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
   # TODO
   /validateRegisterPrefixExampleIdentifier:
   # TODO
