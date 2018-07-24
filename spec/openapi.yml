@@ -410,8 +410,9 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
-              description: Information on the requester of the prefix registration request is the only one needed to
-              run this validation
+              description:
+                Information on the requester of the prefix registration request is the only one needed to run this
+                validation
       responses:
         '200':
           description: The given 'requester' has been validated within the context of a prefix validation request
