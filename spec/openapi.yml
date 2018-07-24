@@ -29,7 +29,7 @@ paths:
   /:
     post:
       tags:
-        - prefixRegistration
+        - registrationAPI
       summary: Request the registration of a new prefix
       operationId: registerPrefix
       responses:
@@ -67,6 +67,11 @@ paths:
           registered
         required: true
   /validateRegisterPrefixName:
+    post:
+      summary: Request validation of 'name' within the context of a prefix validation request
+      operationId: validateRegisterPrefixName
+      tags:
+        - validationAPI
   # TODO
   /validateRegisterPrefixDescription:
   # TODO
