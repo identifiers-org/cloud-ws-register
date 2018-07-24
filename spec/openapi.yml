@@ -112,6 +112,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+              description: Only field 'description' needs to be filled in
       responses:
         '200':
           description: The given 'description' has been validated within the context of a prefix validation request
