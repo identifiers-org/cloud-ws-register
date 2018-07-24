@@ -99,6 +99,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
   /validateRegisterPrefixDescription:
+    post:
+      summary: Request validation of 'description' within the context of a prefix validation request
+      operationId: validateRegisterPrefixName
+      tags:
+        - validationAPI
   # TODO
   /validateRegisterPrefixHomePage:
   # TODO
