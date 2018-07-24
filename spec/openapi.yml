@@ -344,6 +344,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ServiceRequestValidate'
+              description: Only references information is needed to validate this
       responses:
         '200':
           description: The given 'prefix references' has been validated within the context of a prefix validation request
