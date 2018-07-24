@@ -388,12 +388,12 @@ paths:
                 $ref: '#/components/schemas/ServiceResponseValidateRequest'
   /validateRegisterPrefixRequester:
     post:
-      summary: Request validation of 'additional information' within the context of a prefix validation request
+      summary: Request validation of 'requester' within the context of a prefix validation request
       operationId: validateRegisterPrefixName
       tags:
         - validationAPI
       requestBody:
-        description: Request body for validation of 'additional information' within the context of a prefix validation request
+        description: Request body for validation of 'requester' within the context of a prefix validation request
         required: true
         content:
           application/json:
@@ -401,7 +401,13 @@ paths:
               $ref: '#/components/schemas/ServiceRequestValidate'
       responses:
         '200':
-          description: The given 'additional information' has been validated within the context of a prefix validation request
+          description: The given 'requester' has been validated within the context of a prefix validation request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseValidateRequest'
+        '400':
+          description: The given 'requester' has NOT been validated within the context of a prefix validation request
           content:
             application/json:
               schema:
