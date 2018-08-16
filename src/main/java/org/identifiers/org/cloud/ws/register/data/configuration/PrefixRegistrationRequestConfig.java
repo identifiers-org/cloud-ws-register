@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.data.configuration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,4 +18,9 @@ public class PrefixRegistrationRequestConfig {
     private static final Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestConfig.class);
 
     public static Long timeToLive = 10L;
+
+    @Value("${org.identifiers.cloud.ws.registry.backend.data.prefixregistrationrequest.ttl.seconds}")
+    private Long timeToLiveParam;
+
+    
 }
