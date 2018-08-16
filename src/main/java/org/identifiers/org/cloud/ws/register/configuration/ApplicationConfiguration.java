@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisKeyValueAdapter;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
@@ -15,5 +16,9 @@ import org.springframework.data.redis.repository.configuration.EnableRedisReposi
 @Configuration
 @EnableRedisRepositories(enableKeyspaceEvents = RedisKeyValueAdapter.EnableKeyspaceEvents.ON_STARTUP)
 public class ApplicationConfiguration {
-    
+    @Value("${spring.redis.port}")
+    private int redisPort;
+
+    @Value("${spring.redis.host}")
+    private String redisHost;
 }
