@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.data.models;
 
+import org.identifiers.org.cloud.ws.register.models.Requester;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
@@ -14,4 +15,16 @@ import java.io.Serializable;
  */
 @RedisHash("RegistryPrefixRegistrationRequest")
 public class PrefixRegistrationRequest implements Serializable {
+    private String name;
+    private String description;
+    private String homePage;
+    private String organization;
+    private String preferredPrefix;
+    private String resourceAccessRule;
+    private String exampleIdentifier;
+    private String regexPattern;
+    private String[] references;
+    private String additionalInformation;
+    private Requester requester;
+    
 }
