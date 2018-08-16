@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,8 +25,9 @@ public class PrefixRegistrationRequestService {
     @Autowired
     private PrefixRegistrationRequestRepository repository;
 
-    public List<PrefixRegistrationRequest> findByPreferredPrefix(String preferredPrefix) {
+    public List<PrefixRegistrationRequest> findByPreferredPrefixAndToken(String preferredPrefix, String token) {
         // TODO
+        return new ArrayList<>();
     }
     // TODO
 }
