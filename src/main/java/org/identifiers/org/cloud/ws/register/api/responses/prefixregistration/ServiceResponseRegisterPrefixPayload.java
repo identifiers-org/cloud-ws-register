@@ -10,6 +10,7 @@ import java.io.Serializable;
  * ---
  */
 public class ServiceResponseRegisterPrefixPayload implements Serializable {
+    // Comments on the prefix registration request
     private String comment = "No comments on your prefix registration request";
 
     public String getComment() {
