@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.data.models;
 
+import org.identifiers.org.cloud.ws.register.data.configuration.PrefixRegistrationRequestConfig;
 import org.identifiers.org.cloud.ws.register.models.Requester;
 import org.springframework.data.redis.core.RedisHash;
 
@@ -28,5 +29,5 @@ public class PrefixRegistrationRequest implements Serializable {
     private Requester requester;
     // Management
     private String token = "";
-    private Long timeToLeave;
+    private Long timeToLeave = PrefixRegistrationRequestConfig.timeToLive;
 }
