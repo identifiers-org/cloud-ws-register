@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.data.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,5 +14,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class PrefixRegistrationRequestService {
+    private static final Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestService.class);
     // TODO
 }
