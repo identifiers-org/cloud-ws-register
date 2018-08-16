@@ -23,8 +23,10 @@ public class PrefixRegistrationRequestService {
     private PrefixRegistrationRequestRepository repository;
 
     // Find the request that matches the given prefix and token
-    public PrefixRegistrationRequest findRequest(String preferredPrefix, String token) {
-        // TODO
+    public PrefixRegistrationRequest findRequest(String preferredPrefix, String token) throws PrefixRegistrationRequestServiceException {
+        try {
+            // TODO
+        } catch ();
         return null;
     }
     // TODO
