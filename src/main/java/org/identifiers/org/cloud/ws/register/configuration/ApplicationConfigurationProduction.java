@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 @Profile("production")
-public class ApplicationConfiguration {
+public class ApplicationConfigurationProduction {
     // Production Environment Application Configuration
 
     @Value("${org.identifiers.cloud.ws.register.cors.origin}")
