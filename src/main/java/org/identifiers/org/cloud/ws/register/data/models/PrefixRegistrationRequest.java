@@ -4,8 +4,11 @@ import org.identifiers.org.cloud.ws.register.data.configuration.PrefixRegistrati
 import org.identifiers.org.cloud.ws.register.models.Requester;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Project: register
@@ -22,7 +25,7 @@ public class PrefixRegistrationRequest implements Serializable {
     private String description = "";
     private String homePage = "";
     private String organization = "";
-    private String preferredPrefix = "";
+    @Indexed private String preferredPrefix = "";
     private String resourceAccessRule = "";
     private String exampleIdentifier = "";
     private String regexPattern = "";
@@ -30,6 +33,18 @@ public class PrefixRegistrationRequest implements Serializable {
     private String additionalInformation = "";
     private Requester requester;
     // Management
-    private String token = "";
+    @Indexed private String token = "";
     private Long timeToLeave = PrefixRegistrationRequestConfig.timeToLive;
+    @Indexed private String timestamp = (new Timestamp(new Date().getTime())).toString();
+
+    public Timestamp getTimestamp() {
+        return Timestamp.valueOf(timestamp);
+    }
+
+    public PrefixRegistrationRequest setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp.toString();
+        return this;
+    }
+
+
 }
