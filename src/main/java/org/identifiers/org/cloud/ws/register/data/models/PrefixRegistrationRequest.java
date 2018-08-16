@@ -26,5 +26,7 @@ public class PrefixRegistrationRequest implements Serializable {
     private String[] references;
     private String additionalInformation;
     private Requester requester;
-    
+    // Management
+    private String token = "";
+    private Long timeToLeave;
 }
