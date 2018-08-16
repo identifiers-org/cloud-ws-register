@@ -24,4 +24,13 @@ public class ServiceResponseRegisterPrefixPayload implements Serializable {
         this.comment = comment;
         return this;
     }
+
+    public String getToken() {
+        return token;
+    }
+
+    public ServiceResponseRegisterPrefixPayload setToken(String token) {
+        this.token = token;
+        return this;
+    }
 }
