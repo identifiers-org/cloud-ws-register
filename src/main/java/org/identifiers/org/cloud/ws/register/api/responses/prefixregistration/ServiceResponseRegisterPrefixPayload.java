@@ -12,6 +12,9 @@ import java.io.Serializable;
 public class ServiceResponseRegisterPrefixPayload implements Serializable {
     // Comments on the prefix registration request
     private String comment = "No comments on your prefix registration request";
+    // This is an ephemeral token whose lifecycle is tight to the lifecycle of the prefix registration requests, so,
+    // once the prefix registration has been solved, either rejected or accepted, this token is no longer valid.
+    private String token = "";
 
     public String getComment() {
         return comment;
