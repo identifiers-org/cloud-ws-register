@@ -24,7 +24,7 @@ services:
         ports:
             - "6379:6379"
     recommender:
-        image: identifiersorg/cloud-ws-resource-recommender
+        image: identifiersorg/cloud-ws-resource-recommender:1.1.1
         environment:
             - WS_RESOURCE_RECOMMENDER_JVM_MEMORY_MAX=1024m
         ports:
