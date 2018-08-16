@@ -15,4 +15,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PrefixRegistrationRequestConfig {
     private static final Logger logger = LoggerFactory.getLogger(PrefixRegistrationRequestConfig.class);
+
+    public static Long timeToLive = 10L;
 }
