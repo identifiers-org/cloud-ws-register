@@ -19,7 +19,7 @@ import java.util.Date;
  * ---
  */
 @RedisHash("RegistryPrefixRegistrationRequest")
-public class PrefixRegistrationRequest implements Serializable {
+public class PrefixRegistrationRequest implements Serializable, Comparable<PrefixRegistrationRequest> {
     @Id private String id;
     private String name = "";
     private String description = "";
@@ -170,5 +170,10 @@ public class PrefixRegistrationRequest implements Serializable {
     public PrefixRegistrationRequest setTimeToLeave(Long timeToLeave) {
         this.timeToLeave = timeToLeave;
         return this;
+    }
+
+    @Override
+    public int compareTo(PrefixRegistrationRequest o) {
+        return getTimestamp().compareTo(o.getTimestamp());
     }
 }
