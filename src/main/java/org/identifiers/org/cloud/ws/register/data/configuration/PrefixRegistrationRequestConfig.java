@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Project: register
  * Package: org.identifiers.org.cloud.ws.register.data.configuration
@@ -22,5 +24,9 @@ public class PrefixRegistrationRequestConfig {
     @Value("${org.identifiers.cloud.ws.registry.backend.data.prefixregistrationrequest.ttl.seconds}")
     private Long timeToLiveParam;
 
-    
+    @PostConstruct
+    private void init() {
+        logger.info("Setting prefix registration request Time To Live value to {} seconds", timeToLiveParam);
+        timeToLive = timeToLiveParam;
+    }
 }
