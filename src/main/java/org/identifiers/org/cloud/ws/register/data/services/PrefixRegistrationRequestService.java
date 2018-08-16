@@ -23,11 +23,13 @@ public class PrefixRegistrationRequestService {
     private PrefixRegistrationRequestRepository repository;
 
     // Find the request that matches the given prefix and token
-    public PrefixRegistrationRequest findRequest(String preferredPrefix, String token) throws PrefixRegistrationRequestServiceException {
+    public PrefixRegistrationRequest findPrefixRegistrationRequest(String preferredPrefix, String token) throws PrefixRegistrationRequestServiceException {
         try {
-            // TODO
-        } catch ();
-        return null;
+            return repository.findByPreferredPrefixAndToken(preferredPrefix, token);
+        } catch (RuntimeException e) {
+            throw new PrefixRegistrationRequestServiceException(String.format("An error occurred " +
+                    "while trying to get a prefix registration request for prefix '%s', token '%s'",
+                    preferredPrefix, token));
+        }
     }
-    // TODO
 }
