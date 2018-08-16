@@ -20,7 +20,7 @@ import org.springframework.data.redis.repository.configuration.EnableRedisReposi
  */
 @Configuration
 @EnableRedisRepositories(enableKeyspaceEvents = RedisKeyValueAdapter.EnableKeyspaceEvents.ON_STARTUP)
-public class ApplicationConfiguration {
+public class ApplicationConfigurationRedis {
     @Value("${spring.redis.port}")
     private int redisPort;
 
