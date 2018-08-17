@@ -1,5 +1,8 @@
 package org.identifiers.org.cloud.ws.register.data;
 
+import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
+
 /**
  * Project: register
  * Package: org.identifiers.org.cloud.ws.register.data
@@ -12,4 +15,7 @@ package org.identifiers.org.cloud.ws.register.data;
  * factory methods.
  */
 public class PrefixRegistrationRequestHelper {
+    public static PrefixRegistrationRequest getPrefixRegistrationRequestFrom(ServiceRequestRegisterPrefix request) {
+        // TODO
+    }
 }
