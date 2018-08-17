@@ -167,7 +167,7 @@ public class RegisterApiModel {
                                 request.getPayload().getPrefix()))
                         .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE);
             } else if (validationResponse.getHttpStatus() != HttpStatus.OK) {
-                // TODO - deal with the error
+                // deal with the error
                 String errorMessage = String.format("An error occurred while trying to check if prefix '%s' is already active in the resolver", request.getPayload().getPrefix());
                 logger.error(errorMessage);
                 response.setErrorMessage(errorMessage);
