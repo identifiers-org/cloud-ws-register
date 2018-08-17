@@ -44,4 +44,15 @@ public class PrefixRegistrationRequestService {
         }
         return prefixRegistrationRequest;
     }
+
+    public PrefixRegistrationRequest delete(String preferredPrefix, String token) throws PrefixRegistrationRequestServiceException {
+        try {
+            // TODO
+        } catch (RuntimeException e) {
+            throw new PrefixRegistrationRequestServiceException(String.format("Could not save prefix registration request for prefix '%s', token '%s', due to error '%s'",
+                    preferredPrefix,
+                    token,
+                    e.getMessage()));
+        }
+    }
 }
