@@ -1,10 +1,11 @@
 package org.identifiers.org.cloud.ws.register.api.controllers;
 
 import org.identifiers.org.cloud.ws.register.api.models.RegisterApiModel;
+import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,9 +34,9 @@ public class RegisterApiController {
     }
 
     @RequestMapping(value="/check_prefix_registration_status", method = RequestMethod.POST)
-    public ResponseEntity<?> checkPrefixRegistrationStatus(){
-        // TODO
-        return new ResponseEntity<>("checkPrefixRegistrationStatus", HttpStatus.OK);
+    public ResponseEntity<?> checkPrefixRegistrationStatus(@RequestBody ServiceRequestCheckPrefixRegistrationStatus request) {
+        ServiceResponseCheckPrefixRegistrationStatus response = registerApiModel.checkPrefixRegistrationStatus(request);
+        return new ResponseEntity<>(response, response.getHttpStatus());
     }
 
 }
