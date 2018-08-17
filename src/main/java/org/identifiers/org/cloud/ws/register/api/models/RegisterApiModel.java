@@ -89,7 +89,6 @@ public class RegisterApiModel {
                     response.getHttpStatus().value());
         } else {
             // TODO
-
         }
         return response;
     }

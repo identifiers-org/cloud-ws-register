@@ -56,6 +56,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         // TODO - This method is going to call a Resolver WS, and it will do it straight away for this iteration of the
         // TODO - software, but in the future, we need to provide Resolver Web Service clients for several languages,
         // TODO - e.g. Java and Python, so people don't have to write their own code every time
+        // TODO - What happens if the prefix has been requested for registration but it's in "pending" state?
         // TODO
         if (request.getPreferredPrefix() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING Preferred Prefix");
