@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * Project: register
@@ -73,6 +75,10 @@ public class RegisterApiModel {
             }
         }
         return response;
+    }
+
+    private void setToken(PrefixRegistrationRequest prefixRegistrationRequest) {
+        prefixRegistrationRequest.setToken(UUID.randomUUID().toString());
     }
 
     /**
