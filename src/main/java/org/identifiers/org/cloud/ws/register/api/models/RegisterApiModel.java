@@ -36,6 +36,7 @@ import java.util.UUID;
 @Component
 public class RegisterApiModel {
     public static final String PREFIX_REGISTRATION_REQUEST_STATUS_PENDING = "Pending";
+    public static final String PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE = "Active";
 
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
