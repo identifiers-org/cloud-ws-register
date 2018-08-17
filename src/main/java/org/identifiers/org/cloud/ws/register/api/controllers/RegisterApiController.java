@@ -4,6 +4,7 @@ import org.identifiers.org.cloud.ws.register.api.models.RegisterApiModel;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,12 @@ public class RegisterApiController {
         // the business logic, thus, the controller should handle only exceptions within the domain of the controller.
         ServiceResponseRegisterPrefix serviceResponseRegisterPrefix = registerApiModel.registerPrefix(request);
         return new ResponseEntity<>(serviceResponseRegisterPrefix, serviceResponseRegisterPrefix.getHttpStatus());
+    }
+
+    @RequestMapping(value="/check_prefix_registration_status", method = RequestMethod.POST)
+    public ResponseEntity<?> checkPrefixRegistrationStatus(){
+        // TODO
+        return new ResponseEntity<>("checkPrefixRegistrationStatus", HttpStatus.OK);
     }
 
 }
