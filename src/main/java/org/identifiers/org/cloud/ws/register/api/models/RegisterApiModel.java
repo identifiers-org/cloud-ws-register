@@ -37,6 +37,7 @@ import java.util.UUID;
 public class RegisterApiModel {
     public static final String PREFIX_REGISTRATION_REQUEST_STATUS_PENDING = "PENDING";
     public static final String PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE = "ACTIVE";
+    public static final String PREFIX_REGISTRATION_REQUEST_STATUS_NOT_FOUND = "PREFIX REGISTRATION REQUEST NOT FOUND";
 
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
@@ -151,7 +152,7 @@ public class RegisterApiModel {
         ServiceResponseCheckPrefixRegistrationStatus response = createCheckPrefixRegistrationStatusDefaultResponse();
         response.getPayload().setPrefix(request.getPayload().getPrefix());
         try {
-            // Check if prefix exists
+            // Check if prefix is ALREADY ACTIVE
             // TODO - Refactor out in the future
             // TODO - This is only valid because the resolver won't validate the PID against the registered regular expression for the given prefix
             ServiceRequestValidate validationRequest = new ServiceRequestValidate();
@@ -160,30 +161,35 @@ public class RegisterApiModel {
             ServiceResponseValidateRequest validationResponse = validationApiModel.validateRegisterPrefixPreferredPrefix(validationRequest);
             if (validationResponse.getHttpStatus() == HttpStatus.BAD_REQUEST) {
                 // It is active
+                logger.info("STATUS for prefix registration request on prefix '{}' is ACTIVE", request.getPayload().getPrefix());
                 response.getPayload()
                         .setMessage(String.format("The prefix '%s' is ACTIVE and can be used in the resolution service",
                                 request.getPayload().getPrefix()))
                         .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE);
-                return response;
             } else if (validationResponse.getHttpStatus() != HttpStatus.OK) {
                 // TODO - deal with the error
                 String errorMessage = String.format("An error occurred while trying to check if prefix '%s' is already active in the resolver", request.getPayload().getPrefix());
                 logger.error(errorMessage);
                 response.setErrorMessage(errorMessage);
                 response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-                return response;
-            }
-            // Check if it's pending
-            PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
-                    .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());
-            if (prefixRegistrationRequest != null) {
-                response.getPayload()
-                        .setMessage("This prefix did not made it yet to the Resolution services")
-                        .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_PENDING)
-                        .setRequestedTimestamp(prefixRegistrationRequest.getTimestamp().toString());
-                return response;
             } else {
-                // TODO
+                // Check if it's PENDING
+                PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
+                        .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());
+                if (prefixRegistrationRequest != null) {
+                    logger.info("STATUS for prefix registration request on prefix '{}' is PENDING", request.getPayload().getPrefix());
+                    response.getPayload()
+                            .setMessage("This prefix did not made it yet to the Resolution services")
+                            .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_PENDING)
+                            .setRequestedTimestamp(prefixRegistrationRequest.getTimestamp().toString());
+                } else {
+                    // It was NOT POSSIBLE to find the prefix registration request
+                    logger.info("STATUS for prefix registration request on prefix '{}' is REQUEST NOT FOUND", request.getPayload().getPrefix());
+                    response.getPayload()
+                            .setMessage(String.format("No prefix registration request has been found for prefix '%s' token '%s'", request.getPayload().getPrefix(), request.getPayload().getToken()))
+                            .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_NOT_FOUND);
+                    response.setHttpStatus(HttpStatus.NOT_FOUND);
+                }
             }
         } catch (RuntimeException e) {
             // TODO Deal with it
