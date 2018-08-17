@@ -50,9 +50,11 @@ public class RegisterApiModel {
      */
     private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
         if (response.getHttpStatus() != HttpStatus.OK) {
-            logger.warn("Not registering valid request, " +
+            logger.warn("Not registering valid request for prefix '{}', " +
                     "because the response already has error '{}' and HTTP Status '{}'",
-                    response.getErrorMessage(), response.getHttpStatus().value());
+                    request.getPayload().getPreferredPrefix(),
+                    response.getErrorMessage(),
+                    response.getHttpStatus().value());
         } else {
             // Use a registration agent to push the request further
             logger.info("Pushing registration request for prefix '{}' from requester '{}' forward",
@@ -74,7 +76,11 @@ public class RegisterApiModel {
      * @return the ongoing response to the client, with possible changes depending on hwo the helper completes its job.
      */
     private ServiceResponseRegisterPrefix cacheValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
-        // TODO
+        if (response.getHttpStatus() != HttpStatus.OK) {
+            logger.warn("Not caching valid request")
+        } else {
+            // TODO
+        }
         return response;
     }
 
