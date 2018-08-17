@@ -42,7 +42,7 @@ public class RegisterApiModel {
     @Autowired
     private PrefixRegistrationRequestService prefixRegistrationRequestService;
 
-    private ServiceResponseRegisterPrefix createDefaultResponse() {
+    private ServiceResponseRegisterPrefix createRegisterPrefixDefaultResponse() {
         ServiceResponseRegisterPrefix response = new ServiceResponseRegisterPrefix();
         response.setApiVersion(apiVersion).setHttpStatus(HttpStatus.OK);
         response.setPayload(new ServiceResponseRegisterPrefixPayload());
@@ -113,7 +113,7 @@ public class RegisterApiModel {
     // --- API ---
     public ServiceResponseRegisterPrefix registerPrefix(ServiceRequestRegisterPrefix request) {
         // TODO - Check API version information?
-        ServiceResponseRegisterPrefix response = createDefaultResponse();
+        ServiceResponseRegisterPrefix response = createRegisterPrefixDefaultResponse();
         // Validate the request
         boolean isValidRequest = false;
         try {
