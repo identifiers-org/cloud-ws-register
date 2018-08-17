@@ -41,12 +41,20 @@ public class RegisterApiModel {
 
     // helpers
     private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
-        // Use a registration agent to push the request further
-        try {
-            prefixRegistrationAgent.registerPrefix(request.getPayload());
-        } catch (PrefixRegistrationAgentException e) {
-            response.setErrorMessage(e.getMessage());
-            response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+        if (response.getHttpStatus() != HttpStatus.OK) {
+            logger.warn("Not registering valid request, " +
+                    "because the response already has error '{}' and HTTP Status '{}'",
+                    response.getErrorMessage(), response.getHttpStatus().value());
+        } else {
+            // Use a registration agent to push the request further
+            logger.info("Pushing registration request for prefix '{}' from requester '{}' forward",
+                    request.getPayload().getPreferredPrefix(), request.getPayload().getRequester().getEmail());
+            try {
+                prefixRegistrationAgent.registerPrefix(request.getPayload());
+            } catch (PrefixRegistrationAgentException e) {
+                response.setErrorMessage(e.getMessage());
+                response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
         }
         return response;
     }
