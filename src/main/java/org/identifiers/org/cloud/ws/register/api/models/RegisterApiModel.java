@@ -40,7 +40,7 @@ public class RegisterApiModel {
     }
 
     // helpers
-    private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request) {
+    private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
         // TODO
     }
 
