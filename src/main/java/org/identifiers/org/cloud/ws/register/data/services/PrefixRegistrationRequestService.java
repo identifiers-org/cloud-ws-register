@@ -45,7 +45,7 @@ public class PrefixRegistrationRequestService {
         return prefixRegistrationRequest;
     }
 
-    public PrefixRegistrationRequest delete(String preferredPrefix, String token) throws PrefixRegistrationRequestServiceException {
+    public void delete(String preferredPrefix, String token) throws PrefixRegistrationRequestServiceException {
         try {
             // TODO
         } catch (RuntimeException e) {
