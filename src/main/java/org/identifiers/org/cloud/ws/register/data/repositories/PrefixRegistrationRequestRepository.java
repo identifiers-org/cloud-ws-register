@@ -13,4 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface PrefixRegistrationRequestRepository extends CrudRepository<PrefixRegistrationRequest, String> {
     PrefixRegistrationRequest findByPreferredPrefixAndToken(String preferredPrefix, String token);
+    void deleteByPreferredPrefixAndToken(String preferredPrefix, String token);
 }
