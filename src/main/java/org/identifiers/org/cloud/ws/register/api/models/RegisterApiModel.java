@@ -35,8 +35,8 @@ import java.util.UUID;
 // For this iteration, it is ok for this model to be a singleton
 @Component
 public class RegisterApiModel {
-    public static final String PREFIX_REGISTRATION_REQUEST_STATUS_PENDING = "Pending";
-    public static final String PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE = "Active";
+    public static final String PREFIX_REGISTRATION_REQUEST_STATUS_PENDING = "PENDING";
+    public static final String PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE = "ACTIVE";
 
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
