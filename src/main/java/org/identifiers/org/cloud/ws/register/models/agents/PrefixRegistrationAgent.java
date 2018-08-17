@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.models.agents;
 
-import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
 
 /**
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
@@ -10,5 +10,5 @@ import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.Ser
  * ---
  */
 public interface PrefixRegistrationAgent {
-    void registerPrefix(ServiceRequestRegisterPrefixPayload prefixRegistrationRequest) throws PrefixRegistrationAgentException;
+    void registerPrefix(PrefixRegistrationRequest prefixRegistrationRequest) throws PrefixRegistrationAgentException;
 }

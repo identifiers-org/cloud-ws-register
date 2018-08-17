@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.api.models;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.data.PrefixRegistrationRequestHelper;
 import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
 import org.identifiers.org.cloud.ws.register.data.services.PrefixRegistrationRequestService;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
@@ -112,6 +113,7 @@ public class RegisterApiModel {
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
         }
         if (isValidRequest) {
+            PrefixRegistrationRequest requestModel = PrefixRegistrationRequestHelper.getPrefixRegistrationRequestFrom(request.getPayload());
             registerValidRequest(request, response);
             cacheValidRequest(request, response);
         }
