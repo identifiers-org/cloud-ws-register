@@ -41,7 +41,13 @@ public class RegisterApiModel {
 
     // helpers
     private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
-        // TODO
+        // Use a registration agent to push the request further
+        try {
+            prefixRegistrationAgent.registerPrefix(request.getPayload());
+        } catch (PrefixRegistrationAgentException e) {
+            response.setErrorMessage(e.getMessage());
+            response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         return response;
     }
 
@@ -62,13 +68,7 @@ public class RegisterApiModel {
             response.setHttpStatus(HttpStatus.BAD_REQUEST);
         }
         if (isValidRequest) {
-            // Use a registration agent to push the request further
-            try {
-                prefixRegistrationAgent.registerPrefix(request.getPayload());
-            } catch (PrefixRegistrationAgentException e) {
-                response.setErrorMessage(e.getMessage());
-                response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
+            registerValidRequest(request, response);
         }
         return response;
     }
