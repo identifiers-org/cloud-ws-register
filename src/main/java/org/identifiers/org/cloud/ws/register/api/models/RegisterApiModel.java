@@ -44,7 +44,7 @@ public class RegisterApiModel {
         // TODO
     }
 
-    private ServiceResponseRegisterPrefix cacheValidRequest(ServiceRequestRegisterPrefix request) {
+    private ServiceResponseRegisterPrefix cacheValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
         // TODO
     }
 
