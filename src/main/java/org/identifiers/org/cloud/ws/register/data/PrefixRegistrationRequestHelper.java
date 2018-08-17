@@ -1,6 +1,6 @@
 package org.identifiers.org.cloud.ws.register.data;
 
-import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
 
 /**
@@ -15,19 +15,19 @@ import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationReque
  * factory methods.
  */
 public class PrefixRegistrationRequestHelper {
-    public static PrefixRegistrationRequest getPrefixRegistrationRequestFrom(ServiceRequestRegisterPrefix request) {
+    public static PrefixRegistrationRequest getPrefixRegistrationRequestFrom(ServiceRequestRegisterPrefixPayload requestModel) {
         // TODO
         return new PrefixRegistrationRequest()
-                .setName(request.getPayload().getName())
-                .setDescription(request.getPayload().getDescription())
-                .setHomePage(request.getPayload().getHomePage())
-                .setOrganization(request.getPayload().getOrganization())
-                .setPreferredPrefix(request.getPayload().getPreferredPrefix())
-                .setResourceAccessRule(request.getPayload().getResourceAccessRule())
-                .setExampleIdentifier(request.getPayload().getExampleIdentifier())
-                .setRegexPattern(request.getPayload().getRegexPattern())
-                .setReferences(request.getPayload().getReferences())
-                .setAdditionalInformation(request.getPayload().getAdditionalInformation())
-                .setRequester(request.getPayload().getRequester());
+                .setName(requestModel.getName())
+                .setDescription(requestModel.getDescription())
+                .setHomePage(requestModel.getHomePage())
+                .setOrganization(requestModel.getOrganization())
+                .setPreferredPrefix(requestModel.getPreferredPrefix())
+                .setResourceAccessRule(requestModel.getResourceAccessRule())
+                .setExampleIdentifier(requestModel.getExampleIdentifier())
+                .setRegexPattern(requestModel.getRegexPattern())
+                .setReferences(requestModel.getReferences())
+                .setAdditionalInformation(requestModel.getAdditionalInformation())
+                .setRequester(requestModel.getRequester());
     }
 }
