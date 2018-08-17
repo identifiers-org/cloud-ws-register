@@ -40,6 +40,14 @@ public class RegisterApiModel {
     }
 
     // helpers
+
+    /**
+     * This helper will move the prefix registration request forward in the process, by using a prefix registration agent.
+     * If the given 'response' already has an HTTP status other than 'OK', it won't do anything.
+     * @param request a valid prefix registration request
+     * @param response the response that is being built for sending back to the client
+     * @return the ongoing response to the client, with possible changes depending on how the helper completes its functionality.
+     */
     private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
         if (response.getHttpStatus() != HttpStatus.OK) {
             logger.warn("Not registering valid request, " +
