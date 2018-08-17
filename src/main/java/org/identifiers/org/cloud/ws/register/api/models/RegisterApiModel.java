@@ -39,6 +39,11 @@ public class RegisterApiModel {
         return response;
     }
 
+    // helpers
+    private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request) {
+        // TODO
+    }
+
     public ServiceResponseRegisterPrefix registerPrefix(ServiceRequestRegisterPrefix request) {
         // TODO - Check API version information?
         ServiceResponseRegisterPrefix response = createDefaultResponse();
