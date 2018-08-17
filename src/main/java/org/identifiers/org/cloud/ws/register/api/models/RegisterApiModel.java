@@ -2,6 +2,7 @@ package org.identifiers.org.cloud.ws.register.api.models;
 
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
+import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatusPayload;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
@@ -46,8 +47,7 @@ public class RegisterApiModel {
     private PrefixRegistrationRequestService prefixRegistrationRequestService;
 
     @Autowired
-    @Qualifier("prefixRegistrationRequestValidatorPreferredPrefix")
-    private PrefixRegistrationRequestValidator prefixValidator;
+    private ValidationApiModel validationApiModel;
 
     private ServiceResponseRegisterPrefix createRegisterPrefixDefaultResponse() {
         ServiceResponseRegisterPrefix response = new ServiceResponseRegisterPrefix();

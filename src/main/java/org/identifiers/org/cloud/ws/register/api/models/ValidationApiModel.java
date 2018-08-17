@@ -24,6 +24,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class ValidationApiModel {
+    // TODO - The validation code within this model should be refactored out of here, and put in a "DetailedValidationStrategy", and this API model should delegate on it
     public static final String apiVersion = "1.0";
     private static Logger logger = LoggerFactory.getLogger(ValidationApiModel.class);
 
