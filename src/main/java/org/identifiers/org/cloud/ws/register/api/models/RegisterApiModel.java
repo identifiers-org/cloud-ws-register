@@ -65,6 +65,7 @@ public class RegisterApiModel {
         ServiceResponseCheckPrefixRegistrationStatus response = new ServiceResponseCheckPrefixRegistrationStatus();
         response.setApiVersion(ApiCentral.apiVersion).setHttpStatus(HttpStatus.OK);
         response.setPayload(new ServiceResponseCheckPrefixRegistrationStatusPayload());
+        return response;
     }
 
     // helpers
@@ -192,7 +193,10 @@ public class RegisterApiModel {
                 }
             }
         } catch (RuntimeException e) {
-            // TODO Deal with it
+            // Deal with it
+            logger.error("An error occurred while checking prefix registration request status for prefix '{}', token '{}', due to '{}'", request.getPayload().getPrefix(), request.getPayload().getToken(), e.getMessage());
+            response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .setErrorMessage(String.format("An error occurred while checking prefix registration request status for prefix '%s', token '%s'", request.getPayload().getPrefix(), request.getPayload().getToken()));
         }
         return response;
     }
