@@ -1,5 +1,7 @@
 package org.identifiers.org.cloud.ws.register.api.responses.prefixregistration;
 
+import org.identifiers.org.cloud.ws.register.api.responses.ServiceResponse;
+
 /**
  * Project: register
  * Package: org.identifiers.org.cloud.ws.register.api.responses.prefixregistration
@@ -8,5 +10,5 @@ package org.identifiers.org.cloud.ws.register.api.responses.prefixregistration;
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * ---
  */
-public class ServiceResponseCheckPrefixRegistrationStatus {
+public class ServiceResponseCheckPrefixRegistrationStatus extends ServiceResponse<ServiceResponseCheckPrefixRegistrationStatusPayload> {
 }
