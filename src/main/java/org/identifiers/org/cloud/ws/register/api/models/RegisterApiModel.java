@@ -96,7 +96,14 @@ public class RegisterApiModel {
                     response.getErrorMessage(),
                     response.getHttpStatus().value());
         } else {
-            // TODO
+            try {
+                prefixRegistrationRequestService.save(request);
+            } catch (RuntimeException e) {
+                // If we could not cache the valid prefix registration request, it still is a valid prefix registration
+                // request, so we just log the error, but we won't tell the client about it.
+                logger.error("Could not cache prefix registration request for prefix '{}', requester '{}', due to '{}'",
+                        request.getPreferredPrefix(), request.getRequester().getEmail(), e.getMessage());
+            }
         }
         return response;
     }
