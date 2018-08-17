@@ -3,6 +3,7 @@ package org.identifiers.org.cloud.ws.register.api.models;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatus;
+import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatusPayload;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
 import org.identifiers.org.cloud.ws.register.data.PrefixRegistrationRequestHelper;
@@ -49,8 +50,13 @@ public class RegisterApiModel {
         return response;
     }
 
-    // helpers
+    private ServiceResponseCheckPrefixRegistrationStatus createCheckPrefixRegistrationStatusDefaultResponse() {
+        ServiceResponseCheckPrefixRegistrationStatus response = new ServiceResponseCheckPrefixRegistrationStatus();
+        response.setApiVersion(apiVersion).setHttpStatus(HttpStatus.OK);
+        response.setPayload(new ServiceResponseCheckPrefixRegistrationStatusPayload());
+    }
 
+    // helpers
     /**
      * This helper will move the prefix registration request forward in the process, by using a prefix registration agent.
      * If the given 'response' already has an HTTP status other than 'OK', it won't do anything.
