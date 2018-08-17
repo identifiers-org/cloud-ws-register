@@ -138,6 +138,13 @@ public class RegisterApiModel {
     }
 
     public ServiceResponseCheckPrefixRegistrationStatus checkPrefixRegistrationStatus(ServiceRequestCheckPrefixRegistrationStatus request) {
+        ServiceResponseCheckPrefixRegistrationStatus response = createCheckPrefixRegistrationStatusDefaultResponse();
         // TODO
+        try {
+            // Check if it's pending
+            PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
+                    .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());
+        }
+        return response;
     }
 }
