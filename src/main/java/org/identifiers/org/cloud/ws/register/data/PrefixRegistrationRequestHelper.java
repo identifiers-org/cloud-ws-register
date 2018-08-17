@@ -17,5 +17,17 @@ import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationReque
 public class PrefixRegistrationRequestHelper {
     public static PrefixRegistrationRequest getPrefixRegistrationRequestFrom(ServiceRequestRegisterPrefix request) {
         // TODO
+        return new PrefixRegistrationRequest()
+                .setName(request.getPayload().getName())
+                .setDescription(request.getPayload().getDescription())
+                .setHomePage(request.getPayload().getHomePage())
+                .setOrganization(request.getPayload().getOrganization())
+                .setPreferredPrefix(request.getPayload().getPreferredPrefix())
+                .setResourceAccessRule(request.getPayload().getResourceAccessRule())
+                .setExampleIdentifier(request.getPayload().getExampleIdentifier())
+                .setRegexPattern(request.getPayload().getRegexPattern())
+                .setReferences(request.getPayload().getReferences())
+                .setAdditionalInformation(request.getPayload().getAdditionalInformation())
+                .setRequester(request.getPayload().getRequester());
     }
 }
