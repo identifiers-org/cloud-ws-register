@@ -11,11 +11,13 @@ import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationReque
 import org.identifiers.org.cloud.ws.register.data.services.PrefixRegistrationRequestService;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
+import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidator;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -42,6 +44,10 @@ public class RegisterApiModel {
 
     @Autowired
     private PrefixRegistrationRequestService prefixRegistrationRequestService;
+
+    @Autowired
+    @Qualifier("prefixRegistrationRequestValidatorPreferredPrefix")
+    private PrefixRegistrationRequestValidator prefixValidator;
 
     private ServiceResponseRegisterPrefix createRegisterPrefixDefaultResponse() {
         ServiceResponseRegisterPrefix response = new ServiceResponseRegisterPrefix();
@@ -141,6 +147,10 @@ public class RegisterApiModel {
         ServiceResponseCheckPrefixRegistrationStatus response = createCheckPrefixRegistrationStatusDefaultResponse();
         // TODO
         try {
+            // Check if prefix exists
+            // TODO - Refactor out in the future
+            // TODO - This is only valid because the resolver won't validate the PID against the registered regular expression for the given prefix
+
             // Check if it's pending
             PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
                     .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());

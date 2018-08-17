@@ -61,6 +61,7 @@ public class PrefixRegistrationRequestValidatorPreferredPrefix implements Prefix
         if (request.getPreferredPrefix() == null) {
             throw new PrefixRegistrationRequestValidatorException("MISSING Preferred Prefix");
         }
+        // TODO - This hack is only valid because the resolver does not validate the PID against the registered regular expression for the given prefix
         String fakeCompactId = String.format("%s:093846", request.getPreferredPrefix());
         String queryUrl = String.format("http://%s:%d/%s", resolverHost, resolverPort, fakeCompactId);
         logger.info("Prefix Validation, hack URL '{}'", queryUrl);
