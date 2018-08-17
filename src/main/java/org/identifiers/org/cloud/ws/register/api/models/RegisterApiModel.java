@@ -69,6 +69,7 @@ public class RegisterApiModel {
         }
         if (isValidRequest) {
             registerValidRequest(request, response);
+            cacheValidRequest(request, response);
         }
         return response;
     }
