@@ -160,7 +160,10 @@ public class RegisterApiModel {
             ServiceResponseValidateRequest validationResponse = validationApiModel.validateRegisterPrefixPreferredPrefix(validationRequest);
             if (validationResponse.getHttpStatus() == HttpStatus.BAD_REQUEST) {
                 // It is active
-                response.getPayload().setMessage(String.format("The prefix '%s' is ACTIVE and can be used in the resolution service", request.getPayload().getPrefix()));
+                response.getPayload()
+                        .setMessage(String.format("The prefix '%s' is ACTIVE and can be used in the resolution service",
+                                request.getPayload().getPrefix()))
+                        .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_ACTIVE);
                 return response;
             } else if (validationResponse.getHttpStatus() != HttpStatus.OK) {
                 // TODO - deal with the error

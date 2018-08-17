@@ -1,8 +1,6 @@
 package org.identifiers.org.cloud.ws.register.api.responses.prefixregistration;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Date;
 
 /**
  * Project: register
@@ -16,7 +14,7 @@ public class ServiceResponseCheckPrefixRegistrationStatusPayload implements Seri
     private String message;
     private String prefix;
     private String status;
-    private String requestedTimestamp = (new Timestamp(new Date().getTime())).toString();
+    private String requestedTimestamp;
 
     public String getMessage() {
         return message;
