@@ -3,7 +3,8 @@ package org.identifiers.org.cloud.ws.register.api.models;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
-import org.identifiers.org.cloud.ws.register.data.repositories.PrefixRegistrationRequestRepository;
+import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
+import org.identifiers.org.cloud.ws.register.data.services.PrefixRegistrationRequestService;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
@@ -34,7 +35,7 @@ public class RegisterApiModel {
     private PrefixRegistrationAgent prefixRegistrationAgent;
 
     @Autowired
-    private PrefixRegistrationRequestRepository prefixRegistrationRequestRepository;
+    private PrefixRegistrationRequestService prefixRegistrationRequestService;
 
     private ServiceResponseRegisterPrefix createDefaultResponse() {
         ServiceResponseRegisterPrefix response = new ServiceResponseRegisterPrefix();
@@ -80,11 +81,11 @@ public class RegisterApiModel {
      * @param response the response that is being built for sending it back to the client
      * @return the ongoing response to the client, with possible changes depending on hwo the helper completes its job.
      */
-    private ServiceResponseRegisterPrefix cacheValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
+    private ServiceResponseRegisterPrefix cacheValidRequest(PrefixRegistrationRequest request, ServiceResponseRegisterPrefix response) {
         if (response.getHttpStatus() != HttpStatus.OK) {
             logger.warn("Not caching valid request for prefix '{}' from requester '{}'," +
                             " because the response already has error '{}' and HTTP Status '{}'",
-                    request.getPayload().getPreferredPrefix(),
+                    request.getPreferredPrefix(),
                     response.getErrorMessage(),
                     response.getHttpStatus().value());
         } else {
