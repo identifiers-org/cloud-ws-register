@@ -32,4 +32,16 @@ public class PrefixRegistrationRequestService {
                     preferredPrefix, token));
         }
     }
+
+    public PrefixRegistrationRequest save(PrefixRegistrationRequest prefixRegistrationRequest) throws PrefixRegistrationRequestServiceException {
+        try {
+            repository.save(prefixRegistrationRequest);
+        } catch (RuntimeException e) {
+            throw new PrefixRegistrationRequestServiceException(String.format("Could not save prefix registration request for prefix '%s', requester '%s', due to error '%s'",
+                    prefixRegistrationRequest.getPreferredPrefix(),
+                    prefixRegistrationRequest.getRequester().getEmail(),
+                    e.getMessage()));
+        }
+        return prefixRegistrationRequest;
+    }
 }
