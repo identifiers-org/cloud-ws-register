@@ -9,5 +9,24 @@ package org.identifiers.org.cloud.ws.register.api.requests.prefixregistration;
  * ---
  */
 public class ServiceRequestCheckPrefixRegistrationStatusPayload {
+    private String prefix;
+    private String token;
 
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public ServiceRequestCheckPrefixRegistrationStatusPayload setPrefix(String prefix) {
+        this.prefix = prefix;
+        return this;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public ServiceRequestCheckPrefixRegistrationStatusPayload setToken(String token) {
+        this.token = token;
+        return this;
+    }
 }
