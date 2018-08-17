@@ -46,6 +46,7 @@ public class RegisterApiModel {
     @Autowired
     private PrefixRegistrationRequestService prefixRegistrationRequestService;
 
+    // TODO - This is going to be implemented here as a hack, to get the functionality out as soon as possible for feedback gathering, but it should be refactored later on, to delegate validation to a "DetailedValidationStrategy"
     @Autowired
     private ValidationApiModel validationApiModel;
 
