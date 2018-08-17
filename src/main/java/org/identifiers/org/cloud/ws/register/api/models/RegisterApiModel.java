@@ -3,22 +3,22 @@ package org.identifiers.org.cloud.ws.register.api.models;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.api.requests.validation.ServiceRequestValidate;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseCheckPrefixRegistrationStatusPayload;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.responses.prefixregistration.ServiceResponseRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.api.responses.validation.ServiceResponseValidateRequest;
 import org.identifiers.org.cloud.ws.register.data.PrefixRegistrationRequestHelper;
 import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
 import org.identifiers.org.cloud.ws.register.data.services.PrefixRegistrationRequestService;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgent;
 import org.identifiers.org.cloud.ws.register.models.agents.PrefixRegistrationAgentException;
-import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidator;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorException;
 import org.identifiers.org.cloud.ws.register.models.validators.PrefixRegistrationRequestValidatorStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -146,12 +146,22 @@ public class RegisterApiModel {
 
     public ServiceResponseCheckPrefixRegistrationStatus checkPrefixRegistrationStatus(ServiceRequestCheckPrefixRegistrationStatus request) {
         ServiceResponseCheckPrefixRegistrationStatus response = createCheckPrefixRegistrationStatusDefaultResponse();
-        // TODO
+        response.getPayload().setPrefix(request.getPayload().getPrefix());
         try {
             // Check if prefix exists
             // TODO - Refactor out in the future
             // TODO - This is only valid because the resolver won't validate the PID against the registered regular expression for the given prefix
-
+            ServiceRequestValidate validationRequest = new ServiceRequestValidate();
+            validationRequest.setPayload(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix(request.getPayload().getPrefix()));
+            // According to this hack, if it doesn't validate, it means the prefix already is public and active
+            ServiceResponseValidateRequest validationResponse = validationApiModel.validateRegisterPrefixPreferredPrefix(validationRequest);
+            if (validationResponse.getHttpStatus() == HttpStatus.BAD_REQUEST) {
+                // It is active
+                response.getPayload().setMessage(String.format("The prefix '{}' is ACTIVE and can be used in the resolution service", request.getPayload().getPrefix()));
+                return response;
+            } else if (validationResponse.getHttpStatus() != HttpStatus.OK) {
+                // TODO - deal with the error
+            }
             // Check if it's pending
             PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
                     .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());
