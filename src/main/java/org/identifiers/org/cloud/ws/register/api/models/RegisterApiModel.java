@@ -177,11 +177,16 @@ public class RegisterApiModel {
             PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
                     .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());
             if (prefixRegistrationRequest != null) {
-                // TODO
-                response.getPayload().setMessage("This prefix did not made it yet to the Resolution services").setStatus()
+                response.getPayload()
+                        .setMessage("This prefix did not made it yet to the Resolution services")
+                        .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_PENDING)
+                        .setRequestedTimestamp(prefixRegistrationRequest.getTimestamp().toString());
+                return response;
             } else {
                 // TODO
             }
+        } catch (RuntimeException e) {
+            // TODO Deal with it
         }
         return response;
     }
