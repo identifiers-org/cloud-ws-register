@@ -2,7 +2,7 @@ package org.identifiers.org.cloud.ws.register.models.agents;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
+import org.identifiers.org.cloud.ws.register.data.models.PrefixRegistrationRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Profile;
@@ -23,7 +23,7 @@ public class PrefixRegistrationAgentDumpRequestIntoLogs implements PrefixRegistr
     private static Logger logger = LoggerFactory.getLogger(PrefixRegistrationAgentDumpRequestIntoLogs.class);
 
     @Override
-    public void registerPrefix(ServiceRequestRegisterPrefixPayload prefixRegistrationRequest) throws PrefixRegistrationAgentException {
+    public void registerPrefix(PrefixRegistrationRequest prefixRegistrationRequest) throws PrefixRegistrationAgentException {
         String registrationData = "--- IT COULD NOT BE SERIALIZED ---";
         ObjectMapper mapper = new ObjectMapper();
         try {
