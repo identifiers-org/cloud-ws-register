@@ -1,5 +1,6 @@
 package org.identifiers.org.cloud.ws.register.api.models;
 
+import org.identifiers.org.cloud.ws.register.api.ApiCentral;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestCheckPrefixRegistrationStatus;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefix;
 import org.identifiers.org.cloud.ws.register.api.requests.prefixregistration.ServiceRequestRegisterPrefixPayload;
@@ -34,7 +35,6 @@ import java.util.UUID;
 // For this iteration, it is ok for this model to be a singleton
 @Component
 public class RegisterApiModel {
-    public static final String apiVersion = "1.0";
     private static Logger logger = LoggerFactory.getLogger(RegisterApiModel.class);
 
     @Autowired
@@ -52,14 +52,14 @@ public class RegisterApiModel {
 
     private ServiceResponseRegisterPrefix createRegisterPrefixDefaultResponse() {
         ServiceResponseRegisterPrefix response = new ServiceResponseRegisterPrefix();
-        response.setApiVersion(apiVersion).setHttpStatus(HttpStatus.OK);
+        response.setApiVersion(ApiCentral.apiVersion).setHttpStatus(HttpStatus.OK);
         response.setPayload(new ServiceResponseRegisterPrefixPayload());
         return response;
     }
 
     private ServiceResponseCheckPrefixRegistrationStatus createCheckPrefixRegistrationStatusDefaultResponse() {
         ServiceResponseCheckPrefixRegistrationStatus response = new ServiceResponseCheckPrefixRegistrationStatus();
-        response.setApiVersion(apiVersion).setHttpStatus(HttpStatus.OK);
+        response.setApiVersion(ApiCentral.apiVersion).setHttpStatus(HttpStatus.OK);
         response.setPayload(new ServiceResponseCheckPrefixRegistrationStatusPayload());
     }
 
@@ -157,14 +157,25 @@ public class RegisterApiModel {
             ServiceResponseValidateRequest validationResponse = validationApiModel.validateRegisterPrefixPreferredPrefix(validationRequest);
             if (validationResponse.getHttpStatus() == HttpStatus.BAD_REQUEST) {
                 // It is active
-                response.getPayload().setMessage(String.format("The prefix '{}' is ACTIVE and can be used in the resolution service", request.getPayload().getPrefix()));
+                response.getPayload().setMessage(String.format("The prefix '%s' is ACTIVE and can be used in the resolution service", request.getPayload().getPrefix()));
                 return response;
             } else if (validationResponse.getHttpStatus() != HttpStatus.OK) {
                 // TODO - deal with the error
+                String errorMessage = String.format("An error occurred while trying to check if prefix '%s' is already active in the resolver", request.getPayload().getPrefix());
+                logger.error(errorMessage);
+                response.setErrorMessage(errorMessage);
+                response.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+                return response;
             }
             // Check if it's pending
             PrefixRegistrationRequest prefixRegistrationRequest = prefixRegistrationRequestService
                     .findPrefixRegistrationRequest(request.getPayload().getPrefix(), request.getPayload().getToken());
+            if (prefixRegistrationRequest != null) {
+                // TODO
+                response.getPayload().setMessage("This prefix did not made it yet to the Resolution services").setStatus()
+            } else {
+                // TODO
+            }
         }
         return response;
     }
