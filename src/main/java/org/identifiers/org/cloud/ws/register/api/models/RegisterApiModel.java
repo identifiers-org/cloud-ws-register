@@ -114,8 +114,9 @@ public class RegisterApiModel {
         }
         if (isValidRequest) {
             PrefixRegistrationRequest requestModel = PrefixRegistrationRequestHelper.getPrefixRegistrationRequestFrom(request.getPayload());
-            registerValidRequest(request, response);
-            cacheValidRequest(request, response);
+            setToken(requestModel);
+            registerValidRequest(requestModel, response);
+            cacheValidRequest(requestModel, response);
         }
         return response;
     }
