@@ -91,11 +91,11 @@ public class PrefixValidatorTests {
     private List<TestDataUseCase> getNotValidTestCasesData() {
         return Arrays.asList(
                 new TestDataUseCase()
-                        .setTestDescription("Valid prefix accepted")
+                        .setTestDescription("Valid prefix NOT accepted, 'chebi'")
                         .setRequest(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix("chebi"))
                         .setValidator(prefixValidator),
                 new TestDataUseCase()
-                        .setTestDescription("Another valid prefix accepted")
+                        .setTestDescription("Another NOT valid prefix, 'pdb'")
                         .setRequest(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix("pdb"))
                         .setValidator(prefixValidator)
         );
