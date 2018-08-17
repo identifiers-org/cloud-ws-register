@@ -50,9 +50,10 @@ public class RegisterApiModel {
      */
     private ServiceResponseRegisterPrefix registerValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
         if (response.getHttpStatus() != HttpStatus.OK) {
-            logger.warn("Not registering valid request for prefix '{}', " +
+            logger.warn("Not registering valid request for prefix '{}' from requester '{}', " +
                     "because the response already has error '{}' and HTTP Status '{}'",
                     request.getPayload().getPreferredPrefix(),
+                    request.getPayload().getRequester().getEmail(),
                     response.getErrorMessage(),
                     response.getHttpStatus().value());
         } else {
@@ -77,7 +78,11 @@ public class RegisterApiModel {
      */
     private ServiceResponseRegisterPrefix cacheValidRequest(ServiceRequestRegisterPrefix request, ServiceResponseRegisterPrefix response) {
         if (response.getHttpStatus() != HttpStatus.OK) {
-            logger.warn("Not caching valid request")
+            logger.warn("Not caching valid request for prefix '{}' from requester '{}'," +
+                            " because the response already has error '{}' and HTTP Status '{}'",
+                    request.getPayload().getPreferredPrefix(),
+                    response.getErrorMessage(),
+                    response.getHttpStatus().value());
         } else {
             // TODO
         }
