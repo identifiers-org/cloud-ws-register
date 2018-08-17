@@ -1,5 +1,9 @@
 package org.identifiers.org.cloud.ws.register.api.requests.prefixregistration;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+
 /**
  * Project: register
  * Package: org.identifiers.org.cloud.ws.register.api.requests.prefixregistration
@@ -8,7 +12,8 @@ package org.identifiers.org.cloud.ws.register.api.requests.prefixregistration;
  * @author Manuel Bernal Llinares <mbdebian@gmail.com>
  * ---
  */
-public class ServiceRequestCheckPrefixRegistrationStatusPayload {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ServiceRequestCheckPrefixRegistrationStatusPayload implements Serializable {
     private String prefix;
     private String token;
 
