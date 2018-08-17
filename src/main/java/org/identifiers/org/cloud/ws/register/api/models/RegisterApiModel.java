@@ -108,6 +108,7 @@ public class RegisterApiModel {
         return response;
     }
 
+    // --- API ---
     public ServiceResponseRegisterPrefix registerPrefix(ServiceRequestRegisterPrefix request) {
         // TODO - Check API version information?
         ServiceResponseRegisterPrefix response = createDefaultResponse();
