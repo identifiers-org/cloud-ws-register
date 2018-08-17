@@ -154,7 +154,7 @@ public class RegisterApiModel {
         response.getPayload().setPrefix(request.getPayload().getPrefix());
         try {
             // Check if prefix is ALREADY ACTIVE
-            // TODO - Refactor out in the future
+            // TODO - Refactor this out in the future
             // TODO - This is only valid because the resolver won't validate the PID against the registered regular expression for the given prefix
             ServiceRequestValidate validationRequest = new ServiceRequestValidate();
             validationRequest.setPayload(new ServiceRequestRegisterPrefixPayload().setPreferredPrefix(request.getPayload().getPrefix()));
