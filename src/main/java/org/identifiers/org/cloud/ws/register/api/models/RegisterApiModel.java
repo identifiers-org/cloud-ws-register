@@ -44,6 +44,10 @@ public class RegisterApiModel {
         // TODO
     }
 
+    private ServiceResponseRegisterPrefix cacheValidRequest(ServiceRequestRegisterPrefix request) {
+        // TODO
+    }
+
     public ServiceResponseRegisterPrefix registerPrefix(ServiceRequestRegisterPrefix request) {
         // TODO - Check API version information?
         ServiceResponseRegisterPrefix response = createDefaultResponse();
