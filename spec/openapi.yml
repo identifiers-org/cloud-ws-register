@@ -588,6 +588,9 @@ components:
           type: string
           enum: [PENDING, ACTIVE, PREFIX REGISTRATION REQUEST NOT FOUND]
           description: the status of the prefix registration request for the given prefix
+        requestedTimestamp:
+          type: string
+          description: Time Stamp on when the prefix registration request was submitted, format 'YYYY-MM-DD HH:MM:SS,sss'
     ServiceResponseRegisterPrefix:
       allOf:
         - $ref: '#/components/schemas/ServiceResponse'
@@ -595,6 +598,13 @@ components:
           properties:
             payload:
               $ref: '#/components/schemas/ServiceResponseRegisterPrefixPayload'
+    ServiceResponseCheckPrefixRegistrationStatus:
+      allOf:
+        - $ref: '#/components/schemas/ServiceResponse'
+        - type: object
+          properties:
+            payload:
+              $ref: '#/components/schemas/ServiceResponseCheckPrefixRegistrationStatusPayload'
     ServiceResponseValidateRequest:
       allOf:
         - $ref: '#/components/schemas/ServiceResponse'
