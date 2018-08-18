@@ -455,7 +455,12 @@ components:
             payload:
               $ref: '#/components/schemas/ServiceRequestRegisterPrefixPayload'
     ServiceRequestCheckPrefixRegistrationStatus:
-        # TODO
+      allOf:
+        - $ref: '#/components/schemas/ServiceRequest'
+        - type: object
+          properties:
+            payload:
+              $ref: '#/components/schemas/ServiceRequestCheckPrefixRegistrationStatusPayload'
     ServiceRequestValidate:
       allOf:
         - $ref: '#/components/schemas/ServiceRequest'
