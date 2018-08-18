@@ -610,6 +610,10 @@ components:
           type: string
           description:
             Any comment regarding the operation completion
+        token:
+          type: string
+          description:
+            This is a unique token associated with this prefix registration request, it is required for any operation related to this request
     ServiceResponseCheckPrefixRegistrationStatusPayload:
       type: object
       properties:
