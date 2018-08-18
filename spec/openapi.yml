@@ -72,7 +72,8 @@ paths:
         - registrationAPI
       summary: Check status of a prefix registration request
       operationId: checkPrefixRegistrationStatus
-      
+      responses:
+        # TODO
   /validateRegisterPrefixName:
     post:
       summary: Request validation of 'name' within the context of a prefix validation request
