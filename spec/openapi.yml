@@ -575,6 +575,12 @@ components:
           type: string
           description:
             Any comment regarding the operation completion
+    ServiceResponseCheckPrefixRegistrationStatusPayload:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Some literal explanation about the status of the registration request for the given prefix
     ServiceResponseRegisterPrefix:
       allOf:
         - $ref: '#/components/schemas/ServiceResponse'
