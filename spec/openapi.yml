@@ -73,7 +73,27 @@ paths:
       summary: Check status of a prefix registration request
       operationId: checkPrefixRegistrationStatus
       responses:
-        # TODO
+        '200':
+          description:
+            Checking prefix registration status operation completed with no error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseCheckPrefixRegistrationStatus'
+        '404':
+          description:
+            No prefix registration request has been found for the given prefix
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseCheckPrefixRegistrationStatus'
+        '500':
+          description:
+            An error occurred while trying to check prefix registration status for the given prefix
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponseCheckPrefixRegistrationStatus'
       requestBody:
         content:
           application/json:
