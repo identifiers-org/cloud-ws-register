@@ -4,6 +4,7 @@ import org.identifiers.org.cloud.ws.register.data.configuration.PrefixRegistrati
 import org.identifiers.org.cloud.ws.register.models.Requester;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.TimeToLive;
 import org.springframework.data.redis.core.index.Indexed;
 
 import java.io.Serializable;
@@ -34,7 +35,7 @@ public class PrefixRegistrationRequest implements Serializable, Comparable<Prefi
     private Requester requester;
     // Management
     @Indexed private String token = "";
-    private Long timeToLeave = PrefixRegistrationRequestConfig.timeToLive;
+    @TimeToLive private Long timeToLeave = PrefixRegistrationRequestConfig.timeToLive;
     @Indexed private String timestamp = (new Timestamp(new Date().getTime())).toString();
 
     public Timestamp getTimestamp() {
