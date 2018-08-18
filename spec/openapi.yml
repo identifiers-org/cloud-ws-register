@@ -549,6 +549,9 @@ components:
             registration
     ServiceRequestCheckPrefixRegistrationStatusPayload:
         type: object
+        required:
+            - prefix
+            - token
         properties:
             prefix:
                 type: string
