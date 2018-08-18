@@ -71,6 +71,7 @@ paths:
       tags:
         - registrationAPI
       summary: Check status of a prefix registration request
+      operationId: checkPrefixRegistrationStatus
       
   /validateRegisterPrefixName:
     post:
