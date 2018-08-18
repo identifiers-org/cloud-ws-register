@@ -181,7 +181,7 @@ public class RegisterApiModel {
                 if (prefixRegistrationRequest != null) {
                     logger.info("STATUS for prefix registration request on prefix '{}' is PENDING", request.getPayload().getPrefix());
                     response.getPayload()
-                            .setMessage("This prefix did not made it yet to the Resolution services")
+                            .setMessage("This prefix did not make it yet to the Resolution services")
                             .setStatus(PREFIX_REGISTRATION_REQUEST_STATUS_PENDING)
                             .setRequestedTimestamp(prefixRegistrationRequest.getTimestamp().toString());
                 } else {
