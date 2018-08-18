@@ -66,6 +66,7 @@ paths:
           Registration request object regarding the prefix that is being to be
           registered
         required: true
+  /check_prefix_registration_status
   /validateRegisterPrefixName:
     post:
       summary: Request validation of 'name' within the context of a prefix validation request

@@ -33,7 +33,7 @@ public class RegisterApiController {
         return new ResponseEntity<>(serviceResponseRegisterPrefix, serviceResponseRegisterPrefix.getHttpStatus());
     }
 
-    @RequestMapping(value="/check_prefix_registration_status", method = RequestMethod.POST)
+    @RequestMapping(value="/checkPrefixRegistrationStatus", method = RequestMethod.POST)
     public ResponseEntity<?> checkPrefixRegistrationStatus(@RequestBody ServiceRequestCheckPrefixRegistrationStatus request) {
         ServiceResponseCheckPrefixRegistrationStatus response = registerApiModel.checkPrefixRegistrationStatus(request);
         return new ResponseEntity<>(response, response.getHttpStatus());
