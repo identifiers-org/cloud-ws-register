@@ -74,6 +74,13 @@ paths:
       operationId: checkPrefixRegistrationStatus
       responses:
         # TODO
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestCheckPrefixRegistrationStatus'
+        description: Registration checking request object on the prefix that is being checked
+        required: true
   /validateRegisterPrefixName:
     post:
       summary: Request validation of 'name' within the context of a prefix validation request
