@@ -581,6 +581,13 @@ components:
         message:
           type: string
           description: Some literal explanation about the status of the registration request for the given prefix
+        prefix:
+          type: string
+          description: The given prefix on which the registration status was checked
+        status:
+          type: string
+          enum: [PENDING, ACTIVE, PREFIX REGISTRATION REQUEST NOT FOUND]
+          description: the status of the prefix registration request for the given prefix
     ServiceResponseRegisterPrefix:
       allOf:
         - $ref: '#/components/schemas/ServiceResponse'
