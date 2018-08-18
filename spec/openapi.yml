@@ -454,6 +454,8 @@ components:
           properties:
             payload:
               $ref: '#/components/schemas/ServiceRequestRegisterPrefixPayload'
+    ServiceRequestCheckPrefixRegistrationStatus:
+        # TODO
     ServiceRequestValidate:
       allOf:
         - $ref: '#/components/schemas/ServiceRequest'
