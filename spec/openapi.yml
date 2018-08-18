@@ -547,6 +547,17 @@ components:
           description:
             An email address to notify if there are any issues with the
             registration
+    ServiceRequestCheckPrefixRegistrationStatusPayload:
+        type: object
+        properties:
+            prefix:
+                type: string
+                description: The prefix about which we want to check its registration status
+                example: chebi
+            token:
+                type: string
+                description: This is the token given to the client when requesting the prefix registration
+                example: 44d93144-3f21-458b-b6fe-747801e6584c
     ServiceResponseRegisterPrefixPayload:
       type: object
       properties:
