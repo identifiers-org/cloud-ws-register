@@ -1,4 +1,4 @@
-# THIS SERVICE IS DEPRECATED
+# THIS SERVICE HAS BEEN DEPRECATED
 Please, refer to the [__Central Registry Service__](https://github.com/identifiers-org/cloud-hq-ws-registry) for more information.
 
 # Overview
